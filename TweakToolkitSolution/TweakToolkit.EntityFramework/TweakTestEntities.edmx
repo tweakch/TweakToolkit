@@ -1,0 +1,797 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TweakTestDataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="TweakTestDataModelStoreContainer">
+    <EntitySet Name="CarSet" EntityType="TweakTestDataModel.Store.CarSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TireSet" EntityType="TweakTestDataModel.Store.TireSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="HouseSet" EntityType="TweakTestDataModel.Store.HouseSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DoorSet" EntityType="TweakTestDataModel.Store.DoorSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CycleSet" EntityType="TweakTestDataModel.Store.CycleSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LockSet" EntityType="TweakTestDataModel.Store.LockSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RoomSet" EntityType="TweakTestDataModel.Store.RoomSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PersonSet" EntityType="TweakTestDataModel.Store.PersonSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="StockSet" EntityType="TweakTestDataModel.Store.StockSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PortfolioSet" EntityType="TweakTestDataModel.Store.PortfolioSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PriceSet" EntityType="TweakTestDataModel.Store.PriceSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="CarTire" Association="TweakTestDataModel.Store.CarTire">
+      <End Role="Car" EntitySet="CarSet" />
+      <End Role="Tire" EntitySet="TireSet" />
+    </AssociationSet>
+    <AssociationSet Name="HouseDoor" Association="TweakTestDataModel.Store.HouseDoor">
+      <End Role="House" EntitySet="HouseSet" />
+      <End Role="Door" EntitySet="DoorSet" />
+    </AssociationSet>
+    <AssociationSet Name="CycleLock" Association="TweakTestDataModel.Store.CycleLock">
+      <End Role="Cycle" EntitySet="CycleSet" />
+      <End Role="Lock" EntitySet="LockSet" />
+    </AssociationSet>
+    <AssociationSet Name="HouseRoom" Association="TweakTestDataModel.Store.HouseRoom">
+      <End Role="House" EntitySet="HouseSet" />
+      <End Role="Room" EntitySet="RoomSet" />
+    </AssociationSet>
+    <AssociationSet Name="RoomDoor" Association="TweakTestDataModel.Store.RoomDoor">
+      <End Role="Room" EntitySet="RoomSet" />
+      <End Role="Door" EntitySet="DoorSet" />
+    </AssociationSet>
+    <AssociationSet Name="PersonHouse" Association="TweakTestDataModel.Store.PersonHouse">
+      <End Role="Person" EntitySet="PersonSet" />
+      <End Role="House" EntitySet="HouseSet" />
+    </AssociationSet>
+    <AssociationSet Name="PersonCar" Association="TweakTestDataModel.Store.PersonCar">
+      <End Role="Person" EntitySet="PersonSet" />
+      <End Role="Car" EntitySet="CarSet" />
+    </AssociationSet>
+    <AssociationSet Name="PersonCycle" Association="TweakTestDataModel.Store.PersonCycle">
+      <End Role="Person" EntitySet="PersonSet" />
+      <End Role="Cycle" EntitySet="CycleSet" />
+    </AssociationSet>
+    <AssociationSet Name="PersonPortfolio" Association="TweakTestDataModel.Store.PersonPortfolio">
+      <End Role="Person" EntitySet="PersonSet" />
+      <End Role="Portfolio" EntitySet="PortfolioSet" />
+    </AssociationSet>
+    <AssociationSet Name="PortfolioStock" Association="TweakTestDataModel.Store.PortfolioStock">
+      <End Role="Portfolio" EntitySet="PortfolioSet" />
+      <End Role="Stock" EntitySet="StockSet" />
+    </AssociationSet>
+    <AssociationSet Name="StockPrice" Association="TweakTestDataModel.Store.StockPrice">
+      <End Role="Stock" EntitySet="StockSet" />
+      <End Role="Price" EntitySet="PriceSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="CarSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Brand" Type="nvarchar(max)" Nullable="true" DefaultValue="BMW" />
+    <Property Name="Bhp" Type="int" Nullable="false" />
+    <Property Name="Owner_Id" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="TireSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Dimension" Type="smallint" Nullable="false" />
+    <Property Name="Car_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HouseSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Address_PostalCode" Type="smallint" Nullable="false" />
+    <Property Name="Address_Street" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Address_StreetNumber" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Address_City" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Owner_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DoorSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Width" Type="smallint" Nullable="false" />
+    <Property Name="Height" Type="smallint" Nullable="false" />
+    <Property Name="House_Id" Type="int" Nullable="false" />
+    <Property Name="Room_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CycleSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Gears" Type="smallint" Nullable="false" />
+    <Property Name="Owner_Id" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="LockSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Brand" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Cycle_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RoomSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Size" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="House_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PersonSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StockSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ticker" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Valor" Type="int" Nullable="false" />
+    <Property Name="Portfolio_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PortfolioSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Person_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PriceSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Bid" Type="decimal" Nullable="true" />
+    <Property Name="Ask" Type="decimal" Nullable="true" />
+    <Property Name="LastUpdate" Type="datetime" Nullable="true" />
+    <Property Name="Stock_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="CarTire">
+    <End Role="Car" Type="TweakTestDataModel.Store.CarSet" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Tire" Type="TweakTestDataModel.Store.TireSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Car">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Tire">
+        <PropertyRef Name="Car_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HouseDoor">
+    <End Role="House" Type="TweakTestDataModel.Store.HouseSet" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Door" Type="TweakTestDataModel.Store.DoorSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="House">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Door">
+        <PropertyRef Name="House_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CycleLock">
+    <End Role="Cycle" Type="TweakTestDataModel.Store.CycleSet" Multiplicity="1" />
+    <End Role="Lock" Type="TweakTestDataModel.Store.LockSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cycle">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Lock">
+        <PropertyRef Name="Cycle_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HouseRoom">
+    <End Role="House" Type="TweakTestDataModel.Store.HouseSet" Multiplicity="1" />
+    <End Role="Room" Type="TweakTestDataModel.Store.RoomSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="House">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Room">
+        <PropertyRef Name="House_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RoomDoor">
+    <End Role="Room" Type="TweakTestDataModel.Store.RoomSet" Multiplicity="1" />
+    <End Role="Door" Type="TweakTestDataModel.Store.DoorSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Room">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Door">
+        <PropertyRef Name="Room_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PersonHouse">
+    <End Role="Person" Type="TweakTestDataModel.Store.PersonSet" Multiplicity="1" />
+    <End Role="House" Type="TweakTestDataModel.Store.HouseSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="House">
+        <PropertyRef Name="Owner_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PersonCar">
+    <End Role="Person" Type="TweakTestDataModel.Store.PersonSet" Multiplicity="0..1" />
+    <End Role="Car" Type="TweakTestDataModel.Store.CarSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Car">
+        <PropertyRef Name="Owner_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PersonCycle">
+    <End Role="Person" Type="TweakTestDataModel.Store.PersonSet" Multiplicity="0..1" />
+    <End Role="Cycle" Type="TweakTestDataModel.Store.CycleSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Cycle">
+        <PropertyRef Name="Owner_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PersonPortfolio">
+    <End Role="Person" Type="TweakTestDataModel.Store.PersonSet" Multiplicity="1" />
+    <End Role="Portfolio" Type="TweakTestDataModel.Store.PortfolioSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Portfolio">
+        <PropertyRef Name="Person_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PortfolioStock">
+    <End Role="Portfolio" Type="TweakTestDataModel.Store.PortfolioSet" Multiplicity="1" />
+    <End Role="Stock" Type="TweakTestDataModel.Store.StockSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Portfolio">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Stock">
+        <PropertyRef Name="Portfolio_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="StockPrice">
+    <End Role="Stock" Type="TweakTestDataModel.Store.StockSet" Multiplicity="1" />
+    <End Role="Price" Type="TweakTestDataModel.Store.PriceSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stock">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Price">
+        <PropertyRef Name="Stock_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TweakTestDataModel" Alias="Self"
+              xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation"
+              xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="TweakTestDataEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CarSet" EntityType="TweakTestDataModel.Car" />
+          <EntitySet Name="TireSet" EntityType="TweakTestDataModel.Tire" />
+          <AssociationSet Name="CarTire" Association="TweakTestDataModel.CarTire">
+            <End Role="Car" EntitySet="CarSet" />
+            <End Role="Tire" EntitySet="TireSet" />
+          </AssociationSet>
+          <EntitySet Name="HouseSet" EntityType="TweakTestDataModel.House" />
+          <EntitySet Name="DoorSet" EntityType="TweakTestDataModel.Door" />
+          <AssociationSet Name="HouseDoor" Association="TweakTestDataModel.HouseDoor">
+            <End Role="House" EntitySet="HouseSet" />
+            <End Role="Door" EntitySet="DoorSet" />
+          </AssociationSet>
+          <EntitySet Name="CycleSet" EntityType="TweakTestDataModel.Cycle" />
+          <EntitySet Name="LockSet" EntityType="TweakTestDataModel.Lock" />
+          <AssociationSet Name="CycleLock" Association="TweakTestDataModel.CycleLock">
+            <End Role="Cycle" EntitySet="CycleSet" />
+            <End Role="Lock" EntitySet="LockSet" />
+          </AssociationSet>
+          <EntitySet Name="RoomSet" EntityType="TweakTestDataModel.Room" />
+          <AssociationSet Name="HouseRoom" Association="TweakTestDataModel.HouseRoom">
+            <End Role="House" EntitySet="HouseSet" />
+            <End Role="Room" EntitySet="RoomSet" />
+          </AssociationSet>
+          <AssociationSet Name="RoomDoor" Association="TweakTestDataModel.RoomDoor">
+            <End Role="Room" EntitySet="RoomSet" />
+            <End Role="Door" EntitySet="DoorSet" />
+          </AssociationSet>
+          <EntitySet Name="PersonSet" EntityType="TweakTestDataModel.Person" />
+          <AssociationSet Name="PersonHouse" Association="TweakTestDataModel.PersonHouse">
+            <End Role="Person" EntitySet="PersonSet" />
+            <End Role="House" EntitySet="HouseSet" />
+          </AssociationSet>
+          <AssociationSet Name="PersonCar" Association="TweakTestDataModel.PersonCar">
+            <End Role="Person" EntitySet="PersonSet" />
+            <End Role="Car" EntitySet="CarSet" />
+          </AssociationSet>
+          <AssociationSet Name="PersonCycle" Association="TweakTestDataModel.PersonCycle">
+            <End Role="Person" EntitySet="PersonSet" />
+            <End Role="Cycle" EntitySet="CycleSet" />
+          </AssociationSet>
+          <FunctionImport Name="StoredProcedure1" EntitySet="CarSet" ReturnType="Collection(TweakTestDataModel.Car)" />
+          <EntitySet Name="StockSet" EntityType="TweakTestDataModel.Stock" />
+          <EntitySet Name="PortfolioSet" EntityType="TweakTestDataModel.Portfolio" />
+          <AssociationSet Name="PersonPortfolio" Association="TweakTestDataModel.PersonPortfolio">
+            <End Role="Person" EntitySet="PersonSet" />
+            <End Role="Portfolio" EntitySet="PortfolioSet" />
+          </AssociationSet>
+          <AssociationSet Name="PortfolioStock" Association="TweakTestDataModel.PortfolioStock">
+            <End Role="Portfolio" EntitySet="PortfolioSet" />
+            <End Role="Stock" EntitySet="StockSet" />
+          </AssociationSet>
+          <EntitySet Name="PriceSet" EntityType="TweakTestDataModel.Price" />
+          <AssociationSet Name="StockPrice" Association="TweakTestDataModel.StockPrice">
+            <End Role="Stock" EntitySet="StockSet" />
+            <End Role="Price" EntitySet="PriceSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Car">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Tires" Relationship="TweakTestDataModel.CarTire" FromRole="Car" ToRole="Tire" />
+          <Property Type="String" Name="Brand" Nullable="true" DefaultValue="BMW" />
+          <Property Type="Int32" Name="Bhp" Nullable="false" />
+          <NavigationProperty Name="Owner" Relationship="TweakTestDataModel.PersonCar" FromRole="Car" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="Tire">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Car" Relationship="TweakTestDataModel.CarTire" FromRole="Tire" ToRole="Car" />
+          <Property Type="Int16" Name="Dimension" Nullable="false" />
+        </EntityType>
+        <Association Name="CarTire">
+          <End Type="TweakTestDataModel.Car" Role="Car" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="TweakTestDataModel.Tire" Role="Tire" Multiplicity="*">
+          </End>
+        </Association>
+        <EntityType Name="House">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Door" Relationship="TweakTestDataModel.HouseDoor" FromRole="House" ToRole="Door" />
+          <NavigationProperty Name="Room" Relationship="TweakTestDataModel.HouseRoom" FromRole="House" ToRole="Room" />
+          <Property Name="Address" Type="TweakTestDataModel.AddressType" Nullable="false" />
+          <NavigationProperty Name="Owner" Relationship="TweakTestDataModel.PersonHouse" FromRole="House" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="Door">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="House" Relationship="TweakTestDataModel.HouseDoor" FromRole="Door" ToRole="House" />
+          <Property Type="Int16" Name="Width" Nullable="false" />
+          <Property Type="Int16" Name="Height" Nullable="false" />
+          <NavigationProperty Name="Room" Relationship="TweakTestDataModel.RoomDoor" FromRole="Door" ToRole="Room" />
+        </EntityType>
+        <Association Name="HouseDoor">
+          <End Type="TweakTestDataModel.House" Role="House" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="TweakTestDataModel.Door" Role="Door" Multiplicity="1" />
+        </Association>
+        <EntityType Name="Cycle">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Lock" Relationship="TweakTestDataModel.CycleLock" FromRole="Cycle" ToRole="Lock" />
+          <Property Type="Int16" Name="Gears" Nullable="false" />
+          <NavigationProperty Name="Owner" Relationship="TweakTestDataModel.PersonCycle" FromRole="Cycle" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="Lock">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Cycle" Relationship="TweakTestDataModel.CycleLock" FromRole="Lock" ToRole="Cycle" />
+          <Property Type="String" Name="Brand" Nullable="false" />
+        </EntityType>
+        <Association Name="CycleLock">
+          <End Type="TweakTestDataModel.Cycle" Role="Cycle" Multiplicity="1" />
+          <End Type="TweakTestDataModel.Lock" Role="Lock" Multiplicity="0..1" />
+        </Association>
+        <EntityType Name="Room">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Size" Nullable="false" />
+          <NavigationProperty Name="House" Relationship="TweakTestDataModel.HouseRoom" FromRole="Room" ToRole="House" />
+          <NavigationProperty Name="Door" Relationship="TweakTestDataModel.RoomDoor" FromRole="Room" ToRole="Door" />
+        </EntityType>
+        <Association Name="HouseRoom">
+          <End Type="TweakTestDataModel.House" Role="House" Multiplicity="1" />
+          <End Type="TweakTestDataModel.Room" Role="Room" Multiplicity="*" />
+        </Association>
+        <Association Name="RoomDoor">
+          <End Type="TweakTestDataModel.Room" Role="Room" Multiplicity="1" />
+          <End Type="TweakTestDataModel.Door" Role="Door" Multiplicity="*" />
+        </Association>
+        <ComplexType Name="AddressType" >
+          <Property Type="Int16" Name="PostalCode" Nullable="false" />
+          <Property Type="String" Name="Street" Nullable="false" />
+          <Property Type="String" Name="StreetNumber" Nullable="false" />
+          <Property Type="String" Name="City" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <NavigationProperty Name="House" Relationship="TweakTestDataModel.PersonHouse" FromRole="Person" ToRole="House" />
+          <NavigationProperty Name="Car" Relationship="TweakTestDataModel.PersonCar" FromRole="Person" ToRole="Car" />
+          <NavigationProperty Name="Cycle" Relationship="TweakTestDataModel.PersonCycle" FromRole="Person" ToRole="Cycle" />
+          <NavigationProperty Name="Portfolio" Relationship="TweakTestDataModel.PersonPortfolio" FromRole="Person" ToRole="Portfolio" />
+        </EntityType>
+        <Association Name="PersonHouse">
+          <End Type="TweakTestDataModel.Person" Role="Person" Multiplicity="1" />
+          <End Type="TweakTestDataModel.House" Role="House" Multiplicity="*" />
+        </Association>
+        <Association Name="PersonCar">
+          <End Type="TweakTestDataModel.Person" Role="Person" Multiplicity="0..1" />
+          <End Type="TweakTestDataModel.Car" Role="Car" Multiplicity="*" />
+        </Association>
+        <Association Name="PersonCycle">
+          <End Type="TweakTestDataModel.Person" Role="Person" Multiplicity="0..1" />
+          <End Type="TweakTestDataModel.Cycle" Role="Cycle" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Stock">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Portfolio" Relationship="TweakTestDataModel.PortfolioStock" FromRole="Stock" ToRole="Portfolio" />
+          <Property Type="String" Name="Ticker" Nullable="true" />
+          <NavigationProperty Name="Price" Relationship="TweakTestDataModel.StockPrice" FromRole="Stock" ToRole="Price" />
+          <Property Type="Int32" Name="Valor" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Portfolio">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Person" Relationship="TweakTestDataModel.PersonPortfolio" FromRole="Portfolio" ToRole="Person" />
+          <NavigationProperty Name="Stock" Relationship="TweakTestDataModel.PortfolioStock" FromRole="Portfolio" ToRole="Stock" />
+        </EntityType>
+        <Association Name="PersonPortfolio">
+          <End Type="TweakTestDataModel.Person" Role="Person" Multiplicity="1" />
+          <End Type="TweakTestDataModel.Portfolio" Role="Portfolio" Multiplicity="0..1" />
+        </Association>
+        <Association Name="PortfolioStock">
+          <End Type="TweakTestDataModel.Portfolio" Role="Portfolio" Multiplicity="1" />
+          <End Type="TweakTestDataModel.Stock" Role="Stock" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Price">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Stock" Relationship="TweakTestDataModel.StockPrice" FromRole="Price" ToRole="Stock" />
+          <Property Type="Decimal" Name="Bid" Nullable="true" />
+          <Property Type="Decimal" Name="Ask" Nullable="true" />
+          <Property Type="DateTime" Name="LastUpdate" Nullable="true" />
+        </EntityType>
+        <Association Name="StockPrice">
+          <End Type="TweakTestDataModel.Stock" Role="Stock" Multiplicity="1" />
+          <End Type="TweakTestDataModel.Price" Role="Price" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TweakTestDataModelStoreContainer" CdmEntityContainer="TweakTestDataEntities">
+    <EntitySetMapping Name="CarSet">
+      <EntityTypeMapping TypeName="IsTypeOf(TweakTestDataModel.Car)">
+        <MappingFragment StoreEntitySet="CarSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Brand" ColumnName="Brand" />
+          <ScalarProperty Name="Bhp" ColumnName="Bhp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TireSet">
+      <EntityTypeMapping TypeName="IsTypeOf(TweakTestDataModel.Tire)">
+        <MappingFragment StoreEntitySet="TireSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Dimension" ColumnName="Dimension" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HouseSet">
+      <EntityTypeMapping TypeName="IsTypeOf(TweakTestDataModel.House)">
+        <MappingFragment StoreEntitySet="HouseSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ComplexProperty Name="Address" TypeName="TweakTestDataModel.AddressType">
+            <ScalarProperty Name="PostalCode" ColumnName="Address_PostalCode" />
+            <ScalarProperty Name="Street" ColumnName="Address_Street" />
+            <ScalarProperty Name="StreetNumber" ColumnName="Address_StreetNumber" />
+            <ScalarProperty Name="City" ColumnName="Address_City" />
+          </ComplexProperty>
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DoorSet">
+      <EntityTypeMapping TypeName="IsTypeOf(TweakTestDataModel.Door)">
+        <MappingFragment StoreEntitySet="DoorSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Width" ColumnName="Width" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CycleSet">
+      <EntityTypeMapping TypeName="IsTypeOf(TweakTestDataModel.Cycle)">
+        <MappingFragment StoreEntitySet="CycleSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Gears" ColumnName="Gears" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LockSet">
+      <EntityTypeMapping TypeName="IsTypeOf(TweakTestDataModel.Lock)">
+        <MappingFragment StoreEntitySet="LockSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Brand" ColumnName="Brand" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoomSet">
+      <EntityTypeMapping TypeName="IsTypeOf(TweakTestDataModel.Room)">
+        <MappingFragment StoreEntitySet="RoomSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PersonSet">
+      <EntityTypeMapping TypeName="IsTypeOf(TweakTestDataModel.Person)">
+        <MappingFragment StoreEntitySet="PersonSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StockSet">
+      <EntityTypeMapping TypeName="IsTypeOf(TweakTestDataModel.Stock)">
+        <MappingFragment StoreEntitySet="StockSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Ticker" ColumnName="Ticker" />
+          <ScalarProperty Name="Valor" ColumnName="Valor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PortfolioSet">
+      <EntityTypeMapping TypeName="IsTypeOf(TweakTestDataModel.Portfolio)">
+        <MappingFragment StoreEntitySet="PortfolioSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PriceSet">
+      <EntityTypeMapping TypeName="IsTypeOf(TweakTestDataModel.Price)">
+        <MappingFragment StoreEntitySet="PriceSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Bid" ColumnName="Bid" />
+          <ScalarProperty Name="Ask" ColumnName="Ask" />
+          <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="CarTire" TypeName="TweakTestDataModel.CarTire" StoreEntitySet="TireSet">
+      <EndProperty Name="Car">
+        <ScalarProperty Name="Id" ColumnName="Car_Id" />
+      </EndProperty>
+      <EndProperty Name="Tire">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="HouseDoor" TypeName="TweakTestDataModel.HouseDoor" StoreEntitySet="DoorSet">
+      <EndProperty Name="House">
+        <ScalarProperty Name="Id" ColumnName="House_Id" />
+      </EndProperty>
+      <EndProperty Name="Door">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CycleLock" TypeName="TweakTestDataModel.CycleLock" StoreEntitySet="LockSet">
+      <EndProperty Name="Cycle">
+        <ScalarProperty Name="Id" ColumnName="Cycle_Id" />
+      </EndProperty>
+      <EndProperty Name="Lock">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="HouseRoom" TypeName="TweakTestDataModel.HouseRoom" StoreEntitySet="RoomSet">
+      <EndProperty Name="House">
+        <ScalarProperty Name="Id" ColumnName="House_Id" />
+      </EndProperty>
+      <EndProperty Name="Room">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="RoomDoor" TypeName="TweakTestDataModel.RoomDoor" StoreEntitySet="DoorSet">
+      <EndProperty Name="Room">
+        <ScalarProperty Name="Id" ColumnName="Room_Id" />
+      </EndProperty>
+      <EndProperty Name="Door">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PersonHouse" TypeName="TweakTestDataModel.PersonHouse" StoreEntitySet="HouseSet">
+      <EndProperty Name="Person">
+        <ScalarProperty Name="Id" ColumnName="Owner_Id" />
+      </EndProperty>
+      <EndProperty Name="House">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PersonCar" TypeName="TweakTestDataModel.PersonCar" StoreEntitySet="CarSet">
+      <EndProperty Name="Person">
+        <ScalarProperty Name="Id" ColumnName="Owner_Id" />
+      </EndProperty>
+      <EndProperty Name="Car">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="Owner_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PersonCycle" TypeName="TweakTestDataModel.PersonCycle" StoreEntitySet="CycleSet">
+      <EndProperty Name="Person">
+        <ScalarProperty Name="Id" ColumnName="Owner_Id" />
+      </EndProperty>
+      <EndProperty Name="Cycle">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="Owner_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PersonPortfolio" TypeName="TweakTestDataModel.PersonPortfolio" StoreEntitySet="PortfolioSet">
+      <EndProperty Name="Person">
+        <ScalarProperty Name="Id" ColumnName="Person_Id" />
+      </EndProperty>
+      <EndProperty Name="Portfolio">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PortfolioStock" TypeName="TweakTestDataModel.PortfolioStock" StoreEntitySet="StockSet">
+      <EndProperty Name="Portfolio">
+        <ScalarProperty Name="Id" ColumnName="Portfolio_Id" />
+      </EndProperty>
+      <EndProperty Name="Stock">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="StockPrice" TypeName="TweakTestDataModel.StockPrice" StoreEntitySet="PriceSet">
+      <EndProperty Name="Stock">
+        <ScalarProperty Name="Id" ColumnName="Stock_Id" />
+      </EndProperty>
+      <EndProperty Name="Price">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="TweakTestEntities" ZoomLevel="74">
+        <EntityTypeShape EntityType="TweakTestDataModel.Car" Width="1.5" PointX="3.5" PointY="3.25"
+                         Height="1.9802864583333335" />
+        <EntityTypeShape EntityType="TweakTestDataModel.Tire" Width="1.5" PointX="3.5" PointY="0.5"
+                         Height="1.59568359375" />
+        <AssociationConnector Association="TweakTestDataModel.CarTire">
+          <ConnectorPoint PointX="4.25" PointY="3.25" />
+          <ConnectorPoint PointX="4.25" PointY="2.09568359375" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="TweakTestDataModel.House" Width="1.5" PointX="5.75" PointY="6.25"
+                         Height="1.9802864583333326" />
+        <EntityTypeShape EntityType="TweakTestDataModel.Door" Width="1.5" PointX="8" PointY="6.75"
+                         Height="1.9802864583333326" />
+        <AssociationConnector Association="TweakTestDataModel.HouseDoor">
+          <ConnectorPoint PointX="7.25" PointY="7.4901432291666659" />
+          <ConnectorPoint PointX="8" PointY="7.4901432291666659" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="TweakTestDataModel.Cycle" Width="1.5" PointX="5.75" PointY="0.5"
+                         Height="1.5956835937499996" />
+        <EntityTypeShape EntityType="TweakTestDataModel.Lock" Width="1.5" PointX="8" PointY="0.5"
+                         Height="1.5956835937499996" />
+        <AssociationConnector Association="TweakTestDataModel.CycleLock">
+          <ConnectorPoint PointX="7.25" PointY="1.2978417968749998" />
+          <ConnectorPoint PointX="8" PointY="1.2978417968749998" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="TweakTestDataModel.Room" Width="1.5" PointX="3.5" PointY="6.875"
+                         Height="1.7879850260416657" />
+        <AssociationConnector Association="TweakTestDataModel.HouseRoom">
+          <ConnectorPoint PointX="5.75" PointY="7.5526432291666659" />
+          <ConnectorPoint PointX="5" PointY="7.5526432291666659" />
+        </AssociationConnector>
+        <AssociationConnector Association="TweakTestDataModel.RoomDoor">
+          <ConnectorPoint PointX="5" PointY="8.4778857421875" />
+          <ConnectorPoint PointX="8" PointY="8.4778857421875" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="TweakTestDataModel.Person" Width="1.5" PointX="5.75" PointY="3.25" Height="1.9802864583333326" />
+        <AssociationConnector Association="TweakTestDataModel.PersonHouse">
+          <ConnectorPoint PointX="6.5" PointY="5.422587890625" />
+          <ConnectorPoint PointX="6.5" PointY="6.25" />
+        </AssociationConnector>
+        <AssociationConnector Association="TweakTestDataModel.PersonCar">
+          <ConnectorPoint PointX="5.75" PointY="4.2401432291666667" />
+          <ConnectorPoint PointX="5" PointY="4.2401432291666667" />
+        </AssociationConnector>
+        <AssociationConnector Association="TweakTestDataModel.PersonCycle">
+          <ConnectorPoint PointX="6.5" PointY="3.25" />
+          <ConnectorPoint PointX="6.5" PointY="2.2879850260416665" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="TweakTestDataModel.Stock" Width="1.5" PointX="10.25" PointY="3.25" Height="1.9802864583333326" />
+        <EntityTypeShape EntityType="TweakTestDataModel.Portfolio" Width="1.5" PointX="8" PointY="3.25" Height="1.5956835937499996" />
+        <AssociationConnector Association="TweakTestDataModel.PersonPortfolio">
+          <ConnectorPoint PointX="7.25" PointY="4.047841796875" />
+          <ConnectorPoint PointX="8" PointY="4.047841796875" />
+        </AssociationConnector>
+        <AssociationConnector Association="TweakTestDataModel.PortfolioStock">
+          <ConnectorPoint PointX="9.5" PointY="4.047841796875" />
+          <ConnectorPoint PointX="10.25" PointY="4.047841796875" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="TweakTestDataModel.Price" Width="1.5" PointX="12.5" PointY="3.25" Height="1.2110807291666665" />
+        <AssociationConnector Association="TweakTestDataModel.StockPrice">
+          <ConnectorPoint PointX="11.75" PointY="4.2401432291666659" />
+          <ConnectorPoint PointX="12.5" PointY="4.2401432291666659" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,1851 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.cat-financial-files.ch" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.cat-financial-files.ch" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.cat-financial-files.ch">
+      <s:element name="writeProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="valor" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="waehrung" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="waehrungsrisiko" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="preisangabe_dirty" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="garant" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lead_manager" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emittent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="anlageklasse" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="produkte_kat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="produkte_typ" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="isin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="boersenplatz" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="preisangabe" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="valuta" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="emissionspreis" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nominal" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rueckzahlung" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="anfangsfixierung" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="schlussfixierung" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="coupon_garantiert" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cp_garant" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="coupon_bedingt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="text_bed_coupon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cp_bedingt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="floater" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cp_floater" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="text_floater" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="min_coupon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="max_coupon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="text_coupon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="call_daten" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fruehz_rueckz" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="text_fruez_rueckz" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cap" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="max_rueckzahlung" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="text_max_rueckz" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="schutz" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="schutztyp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="min_rueckzahlung" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="partizipation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="partizipation_text" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="discount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="max_rendite" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bonus_level" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emittent_kurz" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="produkt_status" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="produkte_kat_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="podukte_typ_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="writeProductResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="writeProductResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="writeProductV2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="valor" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="waehrung" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="waehrungsrisiko" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="preisangabe_dirty" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="garant" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lead_manager" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emittent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="anlageklasse" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="produkte_kat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="produkte_typ" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="isin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="boersenplatz" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="preisangabe" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="valuta" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="emissionspreis" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nominal" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rueckzahlung" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="anfangsfixierung" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="schlussfixierung" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="coupon_garantiert" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cp_garant" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="coupon_bedingt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="text_bed_coupon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cp_bedingt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="floater" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cp_floater" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="text_floater" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="min_coupon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="max_coupon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="text_coupon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="call_daten" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fruehz_rueckz" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="text_fruez_rueckz" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cap" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="max_rueckzahlung" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="text_max_rueckz" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="schutz" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="schutztyp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="min_rueckzahlung" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="partizipation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="partizipation_text" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="discount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="max_rendite" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bonus_level" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emittent_kurz" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="produkt_status" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="produkte_kat_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="podukte_typ_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="emissionstyp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="symbol" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="klHandelbEinheit" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="struktur1_zusatz_text" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="struktur1_zusatz_wert" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="struktur2_zusatz_text" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="struktur2_zusatz_wert" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="struktur3_zusatz_text" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="struktur3_zusatz_wert" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name_eng" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="waehrungsrisiko_eng" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="anlageklasse_eng" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="produkte_kat_eng" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="produkte_typ_eng" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="preisangabe_eng" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cp_garant_eng" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cp_bedingt_eng" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cp_floater_eng" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="call_daten_eng" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fruehz_rueckz_eng" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="coupon_garantiert_eng" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="coupon_bedingt_eng" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="text_bed_coupon_eng" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="floater_eng" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="text_floater_eng" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="min_coupon_eng" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="max_coupon_eng" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="text_coupon_eng" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="text_fruez_rueckz_eng" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cap_eng" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="max_rueckzahlung_eng" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="text_max_rueckz_eng" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="schutz_eng" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="min_rueckzahlung_eng" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="partizipation_eng" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="partizipation_text_eng" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="discount_eng" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="max_rendite_eng" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bonus_level_eng" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="struktur1_zusatz_text_eng" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="struktur1_zusatz_wert_eng" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="struktur2_zusatz_text_eng" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="struktur2_zusatz_wert_eng" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="struktur3_zusatz_text_eng" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="struktur3_zusatz_wert_eng" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="hasEnglish" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="writeProductV2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="writeProductV2Result" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="writeBarrage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="valor" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="barriere" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="ausloeser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="beobachtung" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="settlement" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name_eng" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ausloeser_eng" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="beobachtung_eng" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="settlement_eng" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="writeBarrageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="writeBarrageResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="writeBasevalue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="valor" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="writeBasevalueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="writeBasevalueResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="writeEvent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="valor" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="beobachtungs_datum" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="event_typ" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="event_valuta_datum" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="periode_name" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="periode_start" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="periode_ende" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="beschreibung" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="event_typ_eng" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="periode_name_eng" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="beschreibung_eng" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="writeEventResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="writeEventResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteProductByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteProductByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deleteProductByIDResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteProductByValor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Valor" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteProductByValorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deleteProductByValorResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteBarrageOfProductByValor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Valor" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteBarrageOfProductByValorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deleteBarrageOfProductByValorResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteAllBarrages">
+        <s:complexType />
+      </s:element>
+      <s:element name="deleteAllBarragesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deleteAllBarragesResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteBasevaluesOfProductByValor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Valor" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteBasevaluesOfProductByValorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deleteBasevaluesOfProductByValorResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteAllBasevalues">
+        <s:complexType />
+      </s:element>
+      <s:element name="deleteAllBasevaluesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deleteAllBasevaluesResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteEventsOfProductByValor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Valor" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteEventsOfProductByValorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deleteEventsOfProductByValorResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteAllEvents">
+        <s:complexType />
+      </s:element>
+      <s:element name="deleteAllEventsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deleteAllEventsResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="writePrice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Valor" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Datetime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="Bid" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="Ask" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="writePriceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="writePriceResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deletePricesByValor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Valor" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deletePricesByValorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deletePricesByValorResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="clearDatabase">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="doDeleteFilesFromDisk" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="clearDatabaseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="clearDatabaseResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="resetSystem">
+        <s:complexType />
+      </s:element>
+      <s:element name="resetSystemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="resetSystemResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="writeEmittentenRatingWithLogo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="emittentenId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="nameBank" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ratingSp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ratingMoody" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ratingFitch" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateSp" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateMoody" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateFitch" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="kommentar" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="kommentar_eng" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="webseite" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="logoFileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="byteLogo" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="writeEmittentenRatingWithLogoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="writeEmittentenRatingWithLogoResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateEmittentenRatingForID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="emittentenId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ratingSp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ratingMoody" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ratingFitch" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateSp" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateMoody" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateFitch" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateEmittentenRatingForIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateEmittentenRatingForIDResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteEmittentenRatingForName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nameBank" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="deleteLogoFromDisk" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteEmittentenRatingForNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deleteEmittentenRatingForNameResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteEmittentenRatingForID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="emittentenId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="deleteLogoFromDisk" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteEmittentenRatingForIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deleteEmittentenRatingForIDResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteAllEmittentenRatings">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="deleteLogosFromDisk" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteAllEmittentenRatingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deleteAllEmittentenRatingsResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteAllEmittentenRatingLogosFromDisk">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="clearDBReference" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteAllEmittentenRatingLogosFromDiskResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deleteAllEmittentenRatingLogosFromDiskResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteAllEmittentenRatingLogosNotInDB">
+        <s:complexType />
+      </s:element>
+      <s:element name="deleteAllEmittentenRatingLogosNotInDBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deleteAllEmittentenRatingLogosNotInDBResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isValidFileSize">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="fileSize" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isValidFileSizeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isValidFileSizeResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getMaxFileSize">
+        <s:complexType />
+      </s:element>
+      <s:element name="getMaxFileSizeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getMaxFileSizeResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isValidExtension">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Filename" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isValidExtensionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isValidExtensionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getValidExtensions">
+        <s:complexType />
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getValidExtensionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getValidExtensionsResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="saveFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Valor" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Bezeichnung" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Dateiname" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SortOrder" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="byteFile" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="saveFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="saveFileResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteFileByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteFileByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deleteFileByIDResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteFileByServerName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteFileByServerNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deleteFileByServerNameResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteFileByOriginalName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteFileByOriginalNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deleteFileByOriginalNameResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteAllDBFiles">
+        <s:complexType />
+      </s:element>
+      <s:element name="deleteAllDBFilesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deleteAllDBFilesResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteAllFilesNotInDB">
+        <s:complexType />
+      </s:element>
+      <s:element name="deleteAllFilesNotInDBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deleteAllFilesNotInDBResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteAllFilesOfProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Valor" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteAllFilesOfProductResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deleteAllFilesOfProductResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteAllFiles">
+        <s:complexType />
+      </s:element>
+      <s:element name="deleteAllFilesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deleteAllFilesResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LoginResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLoginStatus">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetLoginStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLoginStatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isLoggedIn">
+        <s:complexType />
+      </s:element>
+      <s:element name="isLoggedInResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isLoggedInResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Logout">
+        <s:complexType />
+      </s:element>
+      <s:element name="LogoutResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LogoutResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="writeProductSoapIn">
+    <wsdl:part name="parameters" element="tns:writeProduct" />
+  </wsdl:message>
+  <wsdl:message name="writeProductSoapOut">
+    <wsdl:part name="parameters" element="tns:writeProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="writeProductV2SoapIn">
+    <wsdl:part name="parameters" element="tns:writeProductV2" />
+  </wsdl:message>
+  <wsdl:message name="writeProductV2SoapOut">
+    <wsdl:part name="parameters" element="tns:writeProductV2Response" />
+  </wsdl:message>
+  <wsdl:message name="writeBarrageSoapIn">
+    <wsdl:part name="parameters" element="tns:writeBarrage" />
+  </wsdl:message>
+  <wsdl:message name="writeBarrageSoapOut">
+    <wsdl:part name="parameters" element="tns:writeBarrageResponse" />
+  </wsdl:message>
+  <wsdl:message name="writeBasevalueSoapIn">
+    <wsdl:part name="parameters" element="tns:writeBasevalue" />
+  </wsdl:message>
+  <wsdl:message name="writeBasevalueSoapOut">
+    <wsdl:part name="parameters" element="tns:writeBasevalueResponse" />
+  </wsdl:message>
+  <wsdl:message name="writeEventSoapIn">
+    <wsdl:part name="parameters" element="tns:writeEvent" />
+  </wsdl:message>
+  <wsdl:message name="writeEventSoapOut">
+    <wsdl:part name="parameters" element="tns:writeEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteProductByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteProductByID" />
+  </wsdl:message>
+  <wsdl:message name="deleteProductByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteProductByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteProductByValorSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteProductByValor" />
+  </wsdl:message>
+  <wsdl:message name="deleteProductByValorSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteProductByValorResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteBarrageOfProductByValorSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteBarrageOfProductByValor" />
+  </wsdl:message>
+  <wsdl:message name="deleteBarrageOfProductByValorSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteBarrageOfProductByValorResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteAllBarragesSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteAllBarrages" />
+  </wsdl:message>
+  <wsdl:message name="deleteAllBarragesSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteAllBarragesResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteBasevaluesOfProductByValorSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteBasevaluesOfProductByValor" />
+  </wsdl:message>
+  <wsdl:message name="deleteBasevaluesOfProductByValorSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteBasevaluesOfProductByValorResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteAllBasevaluesSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteAllBasevalues" />
+  </wsdl:message>
+  <wsdl:message name="deleteAllBasevaluesSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteAllBasevaluesResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteEventsOfProductByValorSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteEventsOfProductByValor" />
+  </wsdl:message>
+  <wsdl:message name="deleteEventsOfProductByValorSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteEventsOfProductByValorResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteAllEventsSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteAllEvents" />
+  </wsdl:message>
+  <wsdl:message name="deleteAllEventsSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteAllEventsResponse" />
+  </wsdl:message>
+  <wsdl:message name="writePriceSoapIn">
+    <wsdl:part name="parameters" element="tns:writePrice" />
+  </wsdl:message>
+  <wsdl:message name="writePriceSoapOut">
+    <wsdl:part name="parameters" element="tns:writePriceResponse" />
+  </wsdl:message>
+  <wsdl:message name="deletePricesByValorSoapIn">
+    <wsdl:part name="parameters" element="tns:deletePricesByValor" />
+  </wsdl:message>
+  <wsdl:message name="deletePricesByValorSoapOut">
+    <wsdl:part name="parameters" element="tns:deletePricesByValorResponse" />
+  </wsdl:message>
+  <wsdl:message name="clearDatabaseSoapIn">
+    <wsdl:part name="parameters" element="tns:clearDatabase" />
+  </wsdl:message>
+  <wsdl:message name="clearDatabaseSoapOut">
+    <wsdl:part name="parameters" element="tns:clearDatabaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="resetSystemSoapIn">
+    <wsdl:part name="parameters" element="tns:resetSystem" />
+  </wsdl:message>
+  <wsdl:message name="resetSystemSoapOut">
+    <wsdl:part name="parameters" element="tns:resetSystemResponse" />
+  </wsdl:message>
+  <wsdl:message name="writeEmittentenRatingWithLogoSoapIn">
+    <wsdl:part name="parameters" element="tns:writeEmittentenRatingWithLogo" />
+  </wsdl:message>
+  <wsdl:message name="writeEmittentenRatingWithLogoSoapOut">
+    <wsdl:part name="parameters" element="tns:writeEmittentenRatingWithLogoResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateEmittentenRatingForIDSoapIn">
+    <wsdl:part name="parameters" element="tns:updateEmittentenRatingForID" />
+  </wsdl:message>
+  <wsdl:message name="updateEmittentenRatingForIDSoapOut">
+    <wsdl:part name="parameters" element="tns:updateEmittentenRatingForIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteEmittentenRatingForNameSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteEmittentenRatingForName" />
+  </wsdl:message>
+  <wsdl:message name="deleteEmittentenRatingForNameSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteEmittentenRatingForNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteEmittentenRatingForIDSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteEmittentenRatingForID" />
+  </wsdl:message>
+  <wsdl:message name="deleteEmittentenRatingForIDSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteEmittentenRatingForIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteAllEmittentenRatingsSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteAllEmittentenRatings" />
+  </wsdl:message>
+  <wsdl:message name="deleteAllEmittentenRatingsSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteAllEmittentenRatingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteAllEmittentenRatingLogosFromDiskSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteAllEmittentenRatingLogosFromDisk" />
+  </wsdl:message>
+  <wsdl:message name="deleteAllEmittentenRatingLogosFromDiskSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteAllEmittentenRatingLogosFromDiskResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteAllEmittentenRatingLogosNotInDBSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteAllEmittentenRatingLogosNotInDB" />
+  </wsdl:message>
+  <wsdl:message name="deleteAllEmittentenRatingLogosNotInDBSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteAllEmittentenRatingLogosNotInDBResponse" />
+  </wsdl:message>
+  <wsdl:message name="isValidFileSizeSoapIn">
+    <wsdl:part name="parameters" element="tns:isValidFileSize" />
+  </wsdl:message>
+  <wsdl:message name="isValidFileSizeSoapOut">
+    <wsdl:part name="parameters" element="tns:isValidFileSizeResponse" />
+  </wsdl:message>
+  <wsdl:message name="getMaxFileSizeSoapIn">
+    <wsdl:part name="parameters" element="tns:getMaxFileSize" />
+  </wsdl:message>
+  <wsdl:message name="getMaxFileSizeSoapOut">
+    <wsdl:part name="parameters" element="tns:getMaxFileSizeResponse" />
+  </wsdl:message>
+  <wsdl:message name="isValidExtensionSoapIn">
+    <wsdl:part name="parameters" element="tns:isValidExtension" />
+  </wsdl:message>
+  <wsdl:message name="isValidExtensionSoapOut">
+    <wsdl:part name="parameters" element="tns:isValidExtensionResponse" />
+  </wsdl:message>
+  <wsdl:message name="getValidExtensionsSoapIn">
+    <wsdl:part name="parameters" element="tns:getValidExtensions" />
+  </wsdl:message>
+  <wsdl:message name="getValidExtensionsSoapOut">
+    <wsdl:part name="parameters" element="tns:getValidExtensionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="saveFileSoapIn">
+    <wsdl:part name="parameters" element="tns:saveFile" />
+  </wsdl:message>
+  <wsdl:message name="saveFileSoapOut">
+    <wsdl:part name="parameters" element="tns:saveFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteFileByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteFileByID" />
+  </wsdl:message>
+  <wsdl:message name="deleteFileByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteFileByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteFileByServerNameSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteFileByServerName" />
+  </wsdl:message>
+  <wsdl:message name="deleteFileByServerNameSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteFileByServerNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteFileByOriginalNameSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteFileByOriginalName" />
+  </wsdl:message>
+  <wsdl:message name="deleteFileByOriginalNameSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteFileByOriginalNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteAllDBFilesSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteAllDBFiles" />
+  </wsdl:message>
+  <wsdl:message name="deleteAllDBFilesSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteAllDBFilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteAllFilesNotInDBSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteAllFilesNotInDB" />
+  </wsdl:message>
+  <wsdl:message name="deleteAllFilesNotInDBSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteAllFilesNotInDBResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteAllFilesOfProductSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteAllFilesOfProduct" />
+  </wsdl:message>
+  <wsdl:message name="deleteAllFilesOfProductSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteAllFilesOfProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteAllFilesSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteAllFiles" />
+  </wsdl:message>
+  <wsdl:message name="deleteAllFilesSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteAllFilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLoginStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLoginStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetLoginStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLoginStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="isLoggedInSoapIn">
+    <wsdl:part name="parameters" element="tns:isLoggedIn" />
+  </wsdl:message>
+  <wsdl:message name="isLoggedInSoapOut">
+    <wsdl:part name="parameters" element="tns:isLoggedInResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogoutSoapIn">
+    <wsdl:part name="parameters" element="tns:Logout" />
+  </wsdl:message>
+  <wsdl:message name="LogoutSoapOut">
+    <wsdl:part name="parameters" element="tns:LogoutResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ImportSoap">
+    <wsdl:operation name="writeProduct">
+      <wsdl:input message="tns:writeProductSoapIn" />
+      <wsdl:output message="tns:writeProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="writeProductV2">
+      <wsdl:input message="tns:writeProductV2SoapIn" />
+      <wsdl:output message="tns:writeProductV2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="writeBarrage">
+      <wsdl:input message="tns:writeBarrageSoapIn" />
+      <wsdl:output message="tns:writeBarrageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="writeBasevalue">
+      <wsdl:input message="tns:writeBasevalueSoapIn" />
+      <wsdl:output message="tns:writeBasevalueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="writeEvent">
+      <wsdl:input message="tns:writeEventSoapIn" />
+      <wsdl:output message="tns:writeEventSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteProductByID">
+      <wsdl:input message="tns:deleteProductByIDSoapIn" />
+      <wsdl:output message="tns:deleteProductByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteProductByValor">
+      <wsdl:input message="tns:deleteProductByValorSoapIn" />
+      <wsdl:output message="tns:deleteProductByValorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteBarrageOfProductByValor">
+      <wsdl:input message="tns:deleteBarrageOfProductByValorSoapIn" />
+      <wsdl:output message="tns:deleteBarrageOfProductByValorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteAllBarrages">
+      <wsdl:input message="tns:deleteAllBarragesSoapIn" />
+      <wsdl:output message="tns:deleteAllBarragesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteBasevaluesOfProductByValor">
+      <wsdl:input message="tns:deleteBasevaluesOfProductByValorSoapIn" />
+      <wsdl:output message="tns:deleteBasevaluesOfProductByValorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteAllBasevalues">
+      <wsdl:input message="tns:deleteAllBasevaluesSoapIn" />
+      <wsdl:output message="tns:deleteAllBasevaluesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteEventsOfProductByValor">
+      <wsdl:input message="tns:deleteEventsOfProductByValorSoapIn" />
+      <wsdl:output message="tns:deleteEventsOfProductByValorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteAllEvents">
+      <wsdl:input message="tns:deleteAllEventsSoapIn" />
+      <wsdl:output message="tns:deleteAllEventsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="writePrice">
+      <wsdl:input message="tns:writePriceSoapIn" />
+      <wsdl:output message="tns:writePriceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deletePricesByValor">
+      <wsdl:input message="tns:deletePricesByValorSoapIn" />
+      <wsdl:output message="tns:deletePricesByValorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="clearDatabase">
+      <wsdl:input message="tns:clearDatabaseSoapIn" />
+      <wsdl:output message="tns:clearDatabaseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="resetSystem">
+      <wsdl:input message="tns:resetSystemSoapIn" />
+      <wsdl:output message="tns:resetSystemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="writeEmittentenRatingWithLogo">
+      <wsdl:input message="tns:writeEmittentenRatingWithLogoSoapIn" />
+      <wsdl:output message="tns:writeEmittentenRatingWithLogoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateEmittentenRatingForID">
+      <wsdl:input message="tns:updateEmittentenRatingForIDSoapIn" />
+      <wsdl:output message="tns:updateEmittentenRatingForIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteEmittentenRatingForName">
+      <wsdl:input message="tns:deleteEmittentenRatingForNameSoapIn" />
+      <wsdl:output message="tns:deleteEmittentenRatingForNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteEmittentenRatingForID">
+      <wsdl:input message="tns:deleteEmittentenRatingForIDSoapIn" />
+      <wsdl:output message="tns:deleteEmittentenRatingForIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteAllEmittentenRatings">
+      <wsdl:input message="tns:deleteAllEmittentenRatingsSoapIn" />
+      <wsdl:output message="tns:deleteAllEmittentenRatingsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteAllEmittentenRatingLogosFromDisk">
+      <wsdl:input message="tns:deleteAllEmittentenRatingLogosFromDiskSoapIn" />
+      <wsdl:output message="tns:deleteAllEmittentenRatingLogosFromDiskSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteAllEmittentenRatingLogosNotInDB">
+      <wsdl:input message="tns:deleteAllEmittentenRatingLogosNotInDBSoapIn" />
+      <wsdl:output message="tns:deleteAllEmittentenRatingLogosNotInDBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isValidFileSize">
+      <wsdl:input message="tns:isValidFileSizeSoapIn" />
+      <wsdl:output message="tns:isValidFileSizeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getMaxFileSize">
+      <wsdl:input message="tns:getMaxFileSizeSoapIn" />
+      <wsdl:output message="tns:getMaxFileSizeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isValidExtension">
+      <wsdl:input message="tns:isValidExtensionSoapIn" />
+      <wsdl:output message="tns:isValidExtensionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getValidExtensions">
+      <wsdl:input message="tns:getValidExtensionsSoapIn" />
+      <wsdl:output message="tns:getValidExtensionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="saveFile">
+      <wsdl:input message="tns:saveFileSoapIn" />
+      <wsdl:output message="tns:saveFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteFileByID">
+      <wsdl:input message="tns:deleteFileByIDSoapIn" />
+      <wsdl:output message="tns:deleteFileByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteFileByServerName">
+      <wsdl:input message="tns:deleteFileByServerNameSoapIn" />
+      <wsdl:output message="tns:deleteFileByServerNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteFileByOriginalName">
+      <wsdl:input message="tns:deleteFileByOriginalNameSoapIn" />
+      <wsdl:output message="tns:deleteFileByOriginalNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteAllDBFiles">
+      <wsdl:input message="tns:deleteAllDBFilesSoapIn" />
+      <wsdl:output message="tns:deleteAllDBFilesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteAllFilesNotInDB">
+      <wsdl:input message="tns:deleteAllFilesNotInDBSoapIn" />
+      <wsdl:output message="tns:deleteAllFilesNotInDBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteAllFilesOfProduct">
+      <wsdl:input message="tns:deleteAllFilesOfProductSoapIn" />
+      <wsdl:output message="tns:deleteAllFilesOfProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteAllFiles">
+      <wsdl:input message="tns:deleteAllFilesSoapIn" />
+      <wsdl:output message="tns:deleteAllFilesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input message="tns:LoginSoapIn" />
+      <wsdl:output message="tns:LoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLoginStatus">
+      <wsdl:input message="tns:GetLoginStatusSoapIn" />
+      <wsdl:output message="tns:GetLoginStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isLoggedIn">
+      <wsdl:input message="tns:isLoggedInSoapIn" />
+      <wsdl:output message="tns:isLoggedInSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <wsdl:input message="tns:LogoutSoapIn" />
+      <wsdl:output message="tns:LogoutSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ImportSoap" type="tns:ImportSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="writeProduct">
+      <soap:operation soapAction="http://www.cat-financial-files.ch/writeProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="writeProductV2">
+      <soap:operation soapAction="http://www.cat-financial-files.ch/writeProductV2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="writeBarrage">
+      <soap:operation soapAction="http://www.cat-financial-files.ch/writeBarrage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="writeBasevalue">
+      <soap:operation soapAction="http://www.cat-financial-files.ch/writeBasevalue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="writeEvent">
+      <soap:operation soapAction="http://www.cat-financial-files.ch/writeEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteProductByID">
+      <soap:operation soapAction="http://www.cat-financial-files.ch/deleteProductByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteProductByValor">
+      <soap:operation soapAction="http://www.cat-financial-files.ch/deleteProductByValor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteBarrageOfProductByValor">
+      <soap:operation soapAction="http://www.cat-financial-files.ch/deleteBarrageOfProductByValor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAllBarrages">
+      <soap:operation soapAction="http://www.cat-financial-files.ch/deleteAllBarrages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteBasevaluesOfProductByValor">
+      <soap:operation soapAction="http://www.cat-financial-files.ch/deleteBasevaluesOfProductByValor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAllBasevalues">
+      <soap:operation soapAction="http://www.cat-financial-files.ch/deleteAllBasevalues" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteEventsOfProductByValor">
+      <soap:operation soapAction="http://www.cat-financial-files.ch/deleteEventsOfProductByValor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAllEvents">
+      <soap:operation soapAction="http://www.cat-financial-files.ch/deleteAllEvents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="writePrice">
+      <soap:operation soapAction="http://www.cat-financial-files.ch/writePrice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deletePricesByValor">
+      <soap:operation soapAction="http://www.cat-financial-files.ch/deletePricesByValor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clearDatabase">
+      <soap:operation soapAction="http://www.cat-financial-files.ch/clearDatabase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="resetSystem">
+      <soap:operation soapAction="http://www.cat-financial-files.ch/resetSystem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="writeEmittentenRatingWithLogo">
+      <soap:operation soapAction="http://www.cat-financial-files.ch/writeEmittentenRatingWithLogo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateEmittentenRatingForID">
+      <soap:operation soapAction="http://www.cat-financial-files.ch/updateEmittentenRatingForID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteEmittentenRatingForName">
+      <soap:operation soapAction="http://www.cat-financial-files.ch/deleteEmittentenRatingForName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteEmittentenRatingForID">
+      <soap:operation soapAction="http://www.cat-financial-files.ch/deleteEmittentenRatingForID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAllEmittentenRatings">
+      <soap:operation soapAction="http://www.cat-financial-files.ch/deleteAllEmittentenRatings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAllEmittentenRatingLogosFromDisk">
+      <soap:operation soapAction="http://www.cat-financial-files.ch/deleteAllEmittentenRatingLogosFromDisk" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAllEmittentenRatingLogosNotInDB">
+      <soap:operation soapAction="http://www.cat-financial-files.ch/deleteAllEmittentenRatingLogosNotInDB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isValidFileSize">
+      <soap:operation soapAction="http://www.cat-financial-files.ch/isValidFileSize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMaxFileSize">
+      <soap:operation soapAction="http://www.cat-financial-files.ch/getMaxFileSize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isValidExtension">
+      <soap:operation soapAction="http://www.cat-financial-files.ch/isValidExtension" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getValidExtensions">
+      <soap:operation soapAction="http://www.cat-financial-files.ch/getValidExtensions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveFile">
+      <soap:operation soapAction="http://www.cat-financial-files.ch/saveFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteFileByID">
+      <soap:operation soapAction="http://www.cat-financial-files.ch/deleteFileByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteFileByServerName">
+      <soap:operation soapAction="http://www.cat-financial-files.ch/deleteFileByServerName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteFileByOriginalName">
+      <soap:operation soapAction="http://www.cat-financial-files.ch/deleteFileByOriginalName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAllDBFiles">
+      <soap:operation soapAction="http://www.cat-financial-files.ch/deleteAllDBFiles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAllFilesNotInDB">
+      <soap:operation soapAction="http://www.cat-financial-files.ch/deleteAllFilesNotInDB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAllFilesOfProduct">
+      <soap:operation soapAction="http://www.cat-financial-files.ch/deleteAllFilesOfProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAllFiles">
+      <soap:operation soapAction="http://www.cat-financial-files.ch/deleteAllFiles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://www.cat-financial-files.ch/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLoginStatus">
+      <soap:operation soapAction="http://www.cat-financial-files.ch/GetLoginStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isLoggedIn">
+      <soap:operation soapAction="http://www.cat-financial-files.ch/isLoggedIn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <soap:operation soapAction="http://www.cat-financial-files.ch/Logout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ImportSoap12" type="tns:ImportSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="writeProduct">
+      <soap12:operation soapAction="http://www.cat-financial-files.ch/writeProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="writeProductV2">
+      <soap12:operation soapAction="http://www.cat-financial-files.ch/writeProductV2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="writeBarrage">
+      <soap12:operation soapAction="http://www.cat-financial-files.ch/writeBarrage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="writeBasevalue">
+      <soap12:operation soapAction="http://www.cat-financial-files.ch/writeBasevalue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="writeEvent">
+      <soap12:operation soapAction="http://www.cat-financial-files.ch/writeEvent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteProductByID">
+      <soap12:operation soapAction="http://www.cat-financial-files.ch/deleteProductByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteProductByValor">
+      <soap12:operation soapAction="http://www.cat-financial-files.ch/deleteProductByValor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteBarrageOfProductByValor">
+      <soap12:operation soapAction="http://www.cat-financial-files.ch/deleteBarrageOfProductByValor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAllBarrages">
+      <soap12:operation soapAction="http://www.cat-financial-files.ch/deleteAllBarrages" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteBasevaluesOfProductByValor">
+      <soap12:operation soapAction="http://www.cat-financial-files.ch/deleteBasevaluesOfProductByValor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAllBasevalues">
+      <soap12:operation soapAction="http://www.cat-financial-files.ch/deleteAllBasevalues" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteEventsOfProductByValor">
+      <soap12:operation soapAction="http://www.cat-financial-files.ch/deleteEventsOfProductByValor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAllEvents">
+      <soap12:operation soapAction="http://www.cat-financial-files.ch/deleteAllEvents" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="writePrice">
+      <soap12:operation soapAction="http://www.cat-financial-files.ch/writePrice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deletePricesByValor">
+      <soap12:operation soapAction="http://www.cat-financial-files.ch/deletePricesByValor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clearDatabase">
+      <soap12:operation soapAction="http://www.cat-financial-files.ch/clearDatabase" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="resetSystem">
+      <soap12:operation soapAction="http://www.cat-financial-files.ch/resetSystem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="writeEmittentenRatingWithLogo">
+      <soap12:operation soapAction="http://www.cat-financial-files.ch/writeEmittentenRatingWithLogo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateEmittentenRatingForID">
+      <soap12:operation soapAction="http://www.cat-financial-files.ch/updateEmittentenRatingForID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteEmittentenRatingForName">
+      <soap12:operation soapAction="http://www.cat-financial-files.ch/deleteEmittentenRatingForName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteEmittentenRatingForID">
+      <soap12:operation soapAction="http://www.cat-financial-files.ch/deleteEmittentenRatingForID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAllEmittentenRatings">
+      <soap12:operation soapAction="http://www.cat-financial-files.ch/deleteAllEmittentenRatings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAllEmittentenRatingLogosFromDisk">
+      <soap12:operation soapAction="http://www.cat-financial-files.ch/deleteAllEmittentenRatingLogosFromDisk" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAllEmittentenRatingLogosNotInDB">
+      <soap12:operation soapAction="http://www.cat-financial-files.ch/deleteAllEmittentenRatingLogosNotInDB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isValidFileSize">
+      <soap12:operation soapAction="http://www.cat-financial-files.ch/isValidFileSize" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMaxFileSize">
+      <soap12:operation soapAction="http://www.cat-financial-files.ch/getMaxFileSize" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isValidExtension">
+      <soap12:operation soapAction="http://www.cat-financial-files.ch/isValidExtension" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getValidExtensions">
+      <soap12:operation soapAction="http://www.cat-financial-files.ch/getValidExtensions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveFile">
+      <soap12:operation soapAction="http://www.cat-financial-files.ch/saveFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteFileByID">
+      <soap12:operation soapAction="http://www.cat-financial-files.ch/deleteFileByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteFileByServerName">
+      <soap12:operation soapAction="http://www.cat-financial-files.ch/deleteFileByServerName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteFileByOriginalName">
+      <soap12:operation soapAction="http://www.cat-financial-files.ch/deleteFileByOriginalName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAllDBFiles">
+      <soap12:operation soapAction="http://www.cat-financial-files.ch/deleteAllDBFiles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAllFilesNotInDB">
+      <soap12:operation soapAction="http://www.cat-financial-files.ch/deleteAllFilesNotInDB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAllFilesOfProduct">
+      <soap12:operation soapAction="http://www.cat-financial-files.ch/deleteAllFilesOfProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAllFiles">
+      <soap12:operation soapAction="http://www.cat-financial-files.ch/deleteAllFiles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://www.cat-financial-files.ch/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLoginStatus">
+      <soap12:operation soapAction="http://www.cat-financial-files.ch/GetLoginStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isLoggedIn">
+      <soap12:operation soapAction="http://www.cat-financial-files.ch/isLoggedIn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <soap12:operation soapAction="http://www.cat-financial-files.ch/Logout" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Import">
+    <wsdl:port name="ImportSoap" binding="tns:ImportSoap">
+      <soap:address location="http://www.cat-financial-files.ch/Import.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ImportSoap12" binding="tns:ImportSoap12">
+      <soap12:address location="http://www.cat-financial-files.ch/Import.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

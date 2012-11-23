@@ -1,0 +1,11 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)"
+              GeneratedClassNamespace="TweakToolkit.EntityFramework.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="EntityDataModelName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">TweakTestEntities.edmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

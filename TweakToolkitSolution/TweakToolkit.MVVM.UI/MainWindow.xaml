@@ -1,0 +1,38 @@
+﻿<Window x:Class="TweakToolkit.MVVM.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:viewModel="clr-namespace:TweakToolkit.MVVM.UI"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <viewModel:AgeViewModel x:Key="Ods" />
+
+        <ControlTemplate x:Key="validationTemplate">
+            <DockPanel>
+                <TextBlock Foreground="Red" FontSize="20">!</TextBlock>
+                <AdornedElementPlaceholder />
+            </DockPanel>
+        </ControlTemplate>
+
+        <Style x:Key="textBoxInError" TargetType="{x:Type TextBox}">
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="true">
+                    <Setter Property="ToolTip"
+                            Value="{Binding RelativeSource={x:Static RelativeSource.Self},
+                        Path=(Validation.Errors)[0].ErrorContent}" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <TextBox Name="textBox1" FontSize="15"
+         Validation.ErrorTemplate="{StaticResource validationTemplate}"
+         Style="{StaticResource textBoxInError}" Margin="438,12,12,273">
+            <TextBox.Text>
+                <Binding Path="Age" Source="{StaticResource Ods}" UpdateSourceTrigger="PropertyChanged">
+                    <!--<Binding.ValidationRules>
+                        <viewModel:AgeRangeRule Min="21" Max="130" />
+                    </Binding.ValidationRules>-->
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+    </Grid>
+</Window>

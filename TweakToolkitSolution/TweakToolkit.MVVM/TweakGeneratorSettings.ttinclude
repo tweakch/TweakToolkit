@@ -1,0 +1,5 @@
+﻿<#
+	// This should be the relative path from this template to your .edmx file
+	//string inputFile = @"C:\Users\ggl\Desktop\Strukto\StruktoManager2\StruktoManager2Solution\StruktoManager.Artefacts.Local\StruktoDataModel.edmx";
+	const string edmxFilePath = @"..\..\TweakToolkit.EntityFramework\TweakTestEntities.edmx";
+#>

@@ -1,0 +1,23 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)"
+              GeneratedClassNamespace="Tweak.Remote.Bloomberg.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Bloomberg_Field_Bid" Type="System.String" Scope="User">
+      <Value Profile="(Default)">PX_BID</Value>
+    </Setting>
+    <Setting Name="Bloomberg_Field_Ask" Type="System.String" Scope="User">
+      <Value Profile="(Default)">PX_ASK</Value>
+    </Setting>
+    <Setting Name="Bloomberg_Field_LastUpdateBid" Type="System.String" Scope="User">
+      <Value Profile="(Default)">LAST_UPDATE_BID_RT</Value>
+    </Setting>
+    <Setting Name="Bloomberg_Field_LastUpdateAsk" Type="System.String" Scope="User">
+      <Value Profile="(Default)">LAST_UPDATE_ASK_RT</Value>
+    </Setting>
+    <Setting Name="Bloomberg_Field_Time" Type="System.String" Scope="User">
+      <Value Profile="(Default)">TIME</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TweakToolkit.WCF.Test.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="TweakToolkit_WCF_Test_CatWebservice_Import" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://www.cat-financial-files.ch/Import.asmx</Value>
+    </Setting>
+    <Setting Name="Webservice_Username" Type="System.String" Scope="User">
+      <Value Profile="(Default)">CatWebserviceUser</Value>
+    </Setting>
+    <Setting Name="Webservice_Password" Type="System.String" Scope="User">
+      <Value Profile="(Default)">$#@_~|¢..aiksdfn17</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{56712A1A-E34E-4930-B767-E6F68BD78732}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TweakToolkit.EntityFramework</RootNamespace>
+    <AssemblyName>TweakToolkit.EntityFramework</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddressType.cs">
+      <DependentUpon>TweakTestEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Car.cs">
+      <DependentUpon>TweakTestEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CreatedEventArgs.cs" />
+    <Compile Include="Person.cs">
+      <DependentUpon>TweakTestEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Portfolio.cs">
+      <DependentUpon>TweakTestEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Price.cs">
+      <DependentUpon>TweakTestEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Stock.cs">
+      <DependentUpon>TweakTestEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Strategies\CreateHouseStrategy.cs" />
+    <Compile Include="CreateMessage.cs" />
+    <Compile Include="CreatingEventArgs.cs" />
+    <Compile Include="Strategies\CreationStrategies.cs" />
+    <Compile Include="Cycle.cs">
+      <DependentUpon>TweakTestEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Door.cs">
+      <DependentUpon>TweakTestEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Strategies\ExecutedEventArgs.cs" />
+    <Compile Include="Strategies\ExecutingEventArgs.cs" />
+    <Compile Include="GatewayErrorEventArgs.cs" />
+    <Compile Include="Strategies\GatewayStrategy.cs" />
+    <Compile Include="House.cs">
+      <DependentUpon>TweakTestEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Strategies\IGatewayStrategy.cs" />
+    <Compile Include="Lock.cs">
+      <DependentUpon>TweakTestEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Room.cs">
+      <DependentUpon>TweakTestEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleGatewayImpl.cs" />
+    <Compile Include="Strategies\StrategyErrorEventArgs.cs" />
+    <Compile Include="Tire.cs">
+      <DependentUpon>TweakTestEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TweakTestEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TweakTestEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TweakTestEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TweakTestEntities.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="TweakTestEntities.edmx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\TweakTestDataEntities.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="TweakTestEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>TweakTestEntities.Context.cs</LastGenOutput>
+    </None>
+    <None Include="TweakTestEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>TweakTestEntities.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TweakTestEntities.edmx.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

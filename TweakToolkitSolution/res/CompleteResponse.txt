@@ -1,0 +1,3197 @@
+ReferenceDataResponse = {
+    securityData[] = {
+        securityData = {
+            security = "XS0279749021@jpm CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 20
+            fieldData = {
+                PX_BID = 95.5642
+                PX_ASK = 95.5642
+                TIME = "11/16/2012"
+            }
+        }
+        securityData = {
+            security = "XS0332133361@hsse CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 21
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0372603711@msfi CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 22
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0049040394 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 23
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0806746789 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 24
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0412115049 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 25
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0412991423 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 26
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0413769885 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 27
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0413770115 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 28
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0416171790 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 29
+            fieldData = {
+            }
+        }
+    }
+}
+
+ReferenceDataResponse = {
+    securityData[] = {
+        securityData = {
+            security = "XS0422091396 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 30
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0429165367 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 31
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0429739989 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 32
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0430213206 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 33
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0431862050 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 34
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0431862480 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 35
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0431862720 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 36
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0436885965 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 37
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0439234476 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 38
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0103364532@efgz CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 39
+            fieldData = {
+            }
+        }
+    }
+}
+
+ReferenceDataResponse = {
+    securityData[] = {
+        securityData = {
+            security = "CH0043955266@EXCH CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 10
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "DE000MS8FQR5@DWZS CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 11
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0381367712@MSST CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 12
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0377554786@BNPA CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 13
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0049040253@EXCH CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 14
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0049040279@EXCH CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 15
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0049307520@EXCH CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 16
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0049040303@EXCH CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 17
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0046340532@EXCH CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 18
+            fieldData = {
+                TIME = "12/16/2011"
+            }
+        }
+        securityData = {
+            security = "DE000CS0PBL8@CSSS CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 19
+            fieldData = {
+            }
+        }
+    }
+}
+
+ReferenceDataResponse = {
+    securityData[] = {
+        securityData = {
+            security = "XS0353476400@HSSE CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 0
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0038772544 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 1
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = " n/a"
+            eidData[] = {
+            }
+            securityError = {
+                source = "308::bbdbd4"
+                code = 15
+                category = "BAD_SEC"
+                message = "Unknown/Invalid security [nid:308] "
+                subcategory = "INVALID_SECURITY"
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 2
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0367246179 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 3
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0367871471@BXIS CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 4
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0367871125 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 5
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0363379073 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 6
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "GB00B39GND35 n/a"
+            eidData[] = {
+            }
+            securityError = {
+                source = "308::bbdbd4"
+                code = 15
+                category = "BAD_SEC"
+                message = "Unknown/Invalid security [nid:308] "
+                subcategory = "INVALID_SECURITY"
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 7
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "DE000TB41BZ2@HSSE CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 8
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "DE000TB41BY5@HSSE CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 9
+            fieldData = {
+            }
+        }
+    }
+}
+
+ReferenceDataResponse = {
+    securityData[] = {
+        securityData = {
+            security = "CH0104514861 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 50
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "GB00B4NVX972 n/a"
+            eidData[] = {
+            }
+            securityError = {
+                source = "209::bbdbd3"
+                code = 15
+                category = "BAD_SEC"
+                message = "Unknown/Invalid security [nid:209] "
+                subcategory = "INVALID_SECURITY"
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 51
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0461087792 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 52
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0406892652@nomx CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 53
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0490463832 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 54
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0110623276 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 55
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0477862584@NMDP CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 56
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "FR0010855536@EXA CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 57
+            fieldData = {
+                PX_BID = 109.76
+                PX_ASK = 109.76
+                TIME = "11/16/2012"
+            }
+        }
+        securityData = {
+            security = "CH0109250545@EXCH CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 58
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0482923561@NMDP CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 59
+            fieldData = {
+            }
+        }
+    }
+}
+
+ReferenceDataResponse = {
+    securityData[] = {
+        securityData = {
+            security = "XS0442955638 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 40
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0100579256@EXCH CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 41
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0448307289 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 42
+            fieldData = {
+                PX_BID = 102.466
+                PX_ASK = 102.627
+                TIME = "11/16/2012"
+            }
+        }
+        securityData = {
+            security = "XS0448307016@NOMX CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 43
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0448307792@NOMX CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 44
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0105011305 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 45
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = " CORP"
+            eidData[] = {
+            }
+            securityError = {
+                source = "769::bbdbd2"
+                code = 15
+                category = "BAD_SEC"
+                message = "Unknown/Invalid security [nid:769] "
+                subcategory = "INVALID_SECURITY"
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 46
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0464455384 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 47
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "FR0010821256@EXA CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 48
+            fieldData = {
+                PX_BID = 109.04
+                PX_ASK = 109.04
+                TIME = "11/16/2012"
+            }
+        }
+        securityData = {
+            security = "FR0010821157 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 49
+            fieldData = {
+            }
+        }
+    }
+}
+
+ReferenceDataResponse = {
+    securityData[] = {
+        securityData = {
+            security = "CH0112592123 CORP"
+            eidData[] = {
+            }
+            securityError = {
+                source = "225::bbdbd6"
+                code = 15
+                category = "BAD_SEC"
+                message = "Unknown/Invalid security [nid:225] "
+                subcategory = "INVALID_SECURITY"
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 80
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0112592131 CORP"
+            eidData[] = {
+            }
+            securityError = {
+                source = "225::bbdbd6"
+                code = 15
+                category = "BAD_SEC"
+                message = "Unknown/Invalid security [nid:225] "
+                subcategory = "INVALID_SECURITY"
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 81
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0498715894 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 82
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0499310265 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 83
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "DE000DB7MHA8 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 84
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0111527773 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 85
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0507904877@SGIN CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 86
+            fieldData = {
+                PX_BID = 79.47
+                PX_ASK = 80.47
+                TIME = "11/16/2012"
+            }
+        }
+        securityData = {
+            security = "XS0545024431 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 87
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0117509023 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 88
+            fieldData = {
+                PX_BID = 63.98
+                PX_ASK = 64.47
+                TIME = "11/16/2012"
+            }
+        }
+        securityData = {
+            security = "XS0552575317 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 89
+            fieldData = {
+            }
+        }
+    }
+}
+
+ReferenceDataResponse = {
+    securityData[] = {
+        securityData = {
+            security = "XS0550603632 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 90
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0550618077 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 91
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0558035282 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 92
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS4 CORP"
+            eidData[] = {
+            }
+            securityError = {
+                source = "143::bbdbd4"
+                code = 15
+                category = "BAD_SEC"
+                message = "Unknown/Invalid security [nid:143] "
+                subcategory = "INVALID_SECURITY"
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 93
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "NL CORP"
+            eidData[] = {
+            }
+            securityError = {
+                source = "143::bbdbd4"
+                code = 15
+                category = "BAD_SEC"
+                message = "Unknown/Invalid security [nid:143] "
+                subcategory = "INVALID_SECURITY"
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 94
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "NL0 CORP"
+            eidData[] = {
+            }
+            securityError = {
+                source = "143::bbdbd4"
+                code = 15
+                category = "BAD_SEC"
+                message = "Unknown/Invalid security [nid:143] "
+                subcategory = "INVALID_SECURITY"
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 95
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0562518398 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 96
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0562245489 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 97
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0563449692 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 98
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0565868147 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 99
+            fieldData = {
+            }
+        }
+    }
+}
+
+ReferenceDataResponse = {
+    securityData[] = {
+        securityData = {
+            security = "CH0107096439 CORP"
+            eidData[] = {
+            }
+            securityError = {
+                source = "183::bbdbd4"
+                code = 15
+                category = "BAD_SEC"
+                message = "Unknown/Invalid security [nid:183] "
+                subcategory = "INVALID_SECURITY"
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 60
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0107368208 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 61
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0498716272 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 62
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "DE000DB7MTR7@DBXM CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 63
+            fieldData = {
+                PX_BID = 97.23
+                PX_ASK = 97.23
+                TIME = "11/16/2012"
+            }
+        }
+        securityData = {
+            security = "XS0498716199 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 64
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "DE000DB7MTQ9@DBXM CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 65
+            fieldData = {
+                PX_BID = 929.09
+                PX_ASK = 929.09
+                TIME = "11/16/2012"
+            }
+        }
+        securityData = {
+            security = "NL0009326214@JPM CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 66
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "NL0009326222@JPM CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 67
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "NL0009326230@JPM CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 68
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0113516774@SWEA CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 69
+            fieldData = {
+            }
+        }
+    }
+}
+
+ReferenceDataResponse = {
+    securityData[] = {
+        securityData = {
+            security = "XS0589646206@RABS CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 110
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0589648244@RABS CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 111
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0589651032@RBCD CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 112
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0119382254 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 113
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0590758024 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 114
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0479182270 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 115
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0593834939 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 116
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0594511205 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 117
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0593598609 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 118
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0598447927 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 119
+            fieldData = {
+            }
+        }
+    }
+}
+
+ReferenceDataResponse = {
+    securityData[] = {
+        securityData = {
+            security = "CH0112278509@EFGZ CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 70
+            fieldData = {
+                PX_BID = 914
+                PX_ASK = 923.5
+                TIME = "11/16/2012"
+            }
+        }
+        securityData = {
+            security = "CH0112278525 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 71
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0112278517@EFGZ CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 72
+            fieldData = {
+                PX_BID = 913.5
+                PX_ASK = 923
+                TIME = "11/16/2012"
+            }
+        }
+        securityData = {
+            security = "XS0518512263@CSSS CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 73
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0519654775@SGIN CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 74
+            fieldData = {
+                PX_BID = 102.76
+                PX_ASK = 103.76
+                TIME = "11/16/2012"
+            }
+        }
+        securityData = {
+            security = "XS0519659063@SGIN CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 75
+            fieldData = {
+                PX_BID = 103.1
+                PX_ASK = 104.1
+                TIME = "11/16/2012"
+            }
+        }
+        securityData = {
+            security = "CH0114666198@EXCH CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 76
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0113363805@SGDP CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 77
+            fieldData = {
+                PX_BID = 97.99
+                PX_ASK = 97.99
+                TIME = "11/16/2012"
+            }
+        }
+        securityData = {
+            security = "CH0115386390@EFGZ CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 78
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0115890482@EFGZ CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 79
+            fieldData = {
+                PX_BID = 2.02
+                PX_ASK = 2.04
+                TIME = "11/16/2012"
+            }
+        }
+    }
+}
+
+ReferenceDataResponse = {
+    securityData[] = {
+        securityData = {
+            security = "CH0118622775 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 120
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0602962358 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 121
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0603569988 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 122
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0125690484 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 123
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0605683241 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 124
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0608523089 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 125
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0608368097 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 126
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0613440717 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 127
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0118623146 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 128
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0479254103@GSSD CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 129
+            fieldData = {
+            }
+        }
+    }
+}
+
+ReferenceDataResponse = {
+    securityData[] = {
+        securityData = {
+            security = "CH0130538348 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 140
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0479292616 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 141
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0132520229 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 142
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0118623971 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 143
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0118623989 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 144
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0646156025@RABS CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 145
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0646156371 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 146
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0130103440 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 147
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0130103457@SGDP CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 148
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0104362238 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 149
+            fieldData = {
+            }
+        }
+    }
+}
+
+ReferenceDataResponse = {
+    securityData[] = {
+        securityData = {
+            security = "CH0102161251 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 150
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0133919248 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 151
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0657710041 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 152
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0657710124 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 153
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0130539841 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 154
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0670859494 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 155
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0670858413 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 156
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0651732801 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 157
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0137076920 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 158
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0676572927 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 159
+            fieldData = {
+            }
+        }
+    }
+}
+
+ReferenceDataResponse = {
+    securityData[] = {
+        securityData = {
+            security = "XS0565868733 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 100
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "NL0009510254@JPM CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 101
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0120643298 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 102
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0578142928 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 103
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0583507537@SGIN CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 104
+            fieldData = {
+                PX_BID = 79
+                PX_ASK = 80
+                TIME = "02/20/2012"
+            }
+        }
+        securityData = {
+            security = "CH0123071547 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 105
+            fieldData = {
+                PX_BID = 61.76
+                PX_ASK = 62.23
+                TIME = "11/16/2012"
+            }
+        }
+        securityData = {
+            security = "XS0587751008 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 106
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0588319052 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 107
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0120637308 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 108
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0123796242 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 109
+            fieldData = {
+            }
+        }
+    }
+}
+
+ReferenceDataResponse = {
+    securityData[] = {
+        securityData = {
+            security = "CH0126969945 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 130
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0118623328 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 131
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0479261579 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 132
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0479265059 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 133
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "NL0009706142 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 134
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "NL0009706159 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 135
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "NL0009706209 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 136
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0130102996 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 137
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0631001020 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 138
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0107164326 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 139
+            fieldData = {
+                PX_BID = 70
+                PX_ASK = 70.45
+                TIME = "11/16/2012"
+            }
+        }
+    }
+}
+
+ReferenceDataResponse = {
+    securityData[] = {
+        securityData = {
+            security = "CH0137077050 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 160
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0137077084 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 161
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0137077209 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 162
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0137077266 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 163
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0137077316 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 164
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0685400466 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 165
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0137077332 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 166
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0689093846 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 167
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0137077423 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 168
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0137077431 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 169
+            fieldData = {
+            }
+        }
+    }
+}
+
+ReferenceDataResponse = {
+    securityData[] = {
+        securityData = {
+            security = "CH0137077894 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 180
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0137077910 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 181
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0135872205 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 182
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0143063714 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 183
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0137077936 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 184
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0137077985 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 185
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0709599509@HSED CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 186
+            fieldData = {
+                PX_BID = 102.95
+                PX_ASK = 103.95
+                TIME = "02:06:16"
+            }
+        }
+        securityData = {
+            security = "CH0137078074 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 187
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0711116870 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 188
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0137078264 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 189
+            fieldData = {
+            }
+        }
+    }
+}
+
+ReferenceDataResponse = {
+    securityData[] = {
+        securityData = {
+            security = "CH0137077555 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 170
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0694436055 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 171
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0125723723 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 172
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0136518252 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 173
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "FR0011132372 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 174
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0699629399 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 175
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0139214859 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 176
+            fieldData = {
+                TIME = "07/18/2012"
+            }
+        }
+        securityData = {
+            security = "XS0702080168 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 177
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0702022988 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 178
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0703714724 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 179
+            fieldData = {
+            }
+        }
+    }
+}
+
+ReferenceDataResponse = {
+    securityData[] = {
+        securityData = {
+            security = "XS0744130641 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 210
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0144229942 CORP"
+            eidData[] = {
+            }
+            securityError = {
+                source = "215::bbdbd3"
+                code = 15
+                category = "BAD_SEC"
+                message = "Unknown/Invalid security [nid:215] "
+                subcategory = "INVALID_SECURITY"
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 211
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0149883552 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 212
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS074792898 CORP"
+            eidData[] = {
+            }
+            securityError = {
+                source = "215::bbdbd3"
+                code = 15
+                category = "BAD_SEC"
+                message = "Unknown/Invalid security [nid:215] "
+                subcategory = "INVALID_SECURITY"
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 213
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0752258573 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 214
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0180615442 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 215
+            fieldData = {
+                PX_BID = 103.22
+                PX_ASK = 103.97
+                TIME = "11/16/2012"
+            }
+        }
+        securityData = {
+            security = "CH0149120252 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 216
+            fieldData = {
+                PX_BID = 61.37
+                PX_ASK = 61.84
+                TIME = "11/16/2012"
+            }
+        }
+        securityData = {
+            security = "XS0755799698 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 217
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0180619899 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 218
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0144230536 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 219
+            fieldData = {
+            }
+        }
+    }
+}
+
+ReferenceDataResponse = {
+    securityData[] = {
+        securityData = {
+            security = "CH0148735266@SARA CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 220
+            fieldData = {
+                PX_BID = 109.97
+                PX_ASK = 110.52
+                TIME = "11/16/2012"
+            }
+        }
+        securityData = {
+            security = "CH0104737785 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 221
+            fieldData = {
+                TIME = "10/16/2012"
+            }
+        }
+        securityData = {
+            security = "CH0108883254 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 222
+            fieldData = {
+                PX_BID = 97.63
+                PX_ASK = 98.32
+                TIME = "11/16/2012"
+            }
+        }
+        securityData = {
+            security = "XS0769920454 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 223
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0141499746 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 224
+            fieldData = {
+                PX_BID = 105.6
+                PX_ASK = 106.1
+                TIME = "11/16/2012"
+            }
+        }
+        securityData = {
+            security = "CH0141499779 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 225
+            fieldData = {
+                PX_BID = 105.1
+                PX_ASK = 106.1
+                TIME = "11/16/2012"
+            }
+        }
+        securityData = {
+            security = "XS0770683687@HSED CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 226
+            fieldData = {
+                PX_BID = 931.84
+                PX_ASK = 941.84
+                TIME = "02:06:49"
+            }
+        }
+        securityData = {
+            security = "CH0144230957 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 227
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "NL0010066700@JPM CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 228
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0144231047 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 229
+            fieldData = {
+            }
+        }
+    }
+}
+
+ReferenceDataResponse = {
+    securityData[] = {
+        securityData = {
+            security = "XS0774943327 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 230
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0774943756 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 231
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0756503024@RBCD CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 232
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0144231229 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 233
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0182938776@EXA CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 234
+            fieldData = {
+                PX_BID = 100.64
+                PX_ASK = 100.64
+                TIME = "11/16/2012"
+            }
+        }
+        securityData = {
+            security = "XS0785613604 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 235
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0180528066 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 236
+            fieldData = {
+                PX_BID = 100.39
+                PX_ASK = 101.4
+                TIME = "11/16/2012"
+            }
+        }
+        securityData = {
+            security = "CH0184262076 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 237
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0585380602@GSSD CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 238
+            fieldData = {
+                PX_BID = 100.99
+                PX_ASK = 101.99
+                TIME = "11/16/2012"
+            }
+        }
+        securityData = {
+            security = "XS0788176070@RBCD CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 239
+            fieldData = {
+                PX_BID = 101.63
+                PX_ASK = 102.63
+                TIME = "11/16/2012"
+            }
+        }
+    }
+}
+
+ReferenceDataResponse = {
+    securityData[] = {
+        securityData = {
+            security = "CH0148735332@SARA CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 250
+            fieldData = {
+                PX_BID = 1001.79
+                PX_ASK = 1011.86
+                TIME = "11/16/2012"
+            }
+        }
+        securityData = {
+            security = "CH0187368110 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 251
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0141501947@VONT CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 252
+            fieldData = {
+                PX_BID = 99.5
+                PX_ASK = 100.5
+                TIME = "11/16/2012"
+            }
+        }
+        securityData = {
+            security = "CH0141501954@exch CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 253
+            fieldData = {
+                PX_BID = 98.9
+                PX_ASK = 99.9
+                TIME = "11/16/2012"
+            }
+        }
+        securityData = {
+            security = "GB00B8MKWW97 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 254
+            fieldData = {
+                PX_BID = 59.6
+                PX_ASK = 60.6
+                TIME = "11/16/2012"
+            }
+        }
+        securityData = {
+            security = "XS0826054289 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 255
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0826056144 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 256
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0193303010 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 257
+            fieldData = {
+                PX_BID = 98.9
+                PX_ASK = 99.9
+                TIME = "11/16/2012"
+            }
+        }
+        securityData = {
+            security = "CH0194083454 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 258
+            fieldData = {
+                PX_BID = 97.89
+                PX_ASK = 98.78
+                TIME = "11/16/2012"
+            }
+        }
+        securityData = {
+            security = "XS0826535030@RABS CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 259
+            fieldData = {
+                PX_BID = 100.34
+                PX_ASK = 101.34
+                TIME = "11/16/2012"
+            }
+        }
+    }
+}
+
+ReferenceDataResponse = {
+    securityData[] = {
+        securityData = {
+            security = "FR0011315654@EXA CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 260
+            fieldData = {
+                PX_BID = 96.33
+                PX_ASK = 96.33
+                TIME = "11/16/2012"
+            }
+        }
+        securityData = {
+            security = "CH0182602141@EFGZ CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 261
+            fieldData = {
+                PX_BID = 46253.4883
+                PX_ASK = 46718.3516
+                TIME = "11/16/2012"
+            }
+        }
+        securityData = {
+            security = "XS0827216739 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 262
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0190890969@EFGZ CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 263
+            fieldData = {
+                PX_BID = 60.75
+                PX_ASK = 61.37
+                TIME = "11/16/2012"
+            }
+        }
+        securityData = {
+            security = "FR0011315670@EXA CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 264
+            fieldData = {
+                PX_BID = 96.14
+                PX_ASK = 96.14
+                TIME = "11/16/2012"
+            }
+        }
+        securityData = {
+            security = "XS0831818264@RABS CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 265
+            fieldData = {
+                PX_BID = 96.55
+                PX_ASK = 97.55
+                TIME = "11/16/2012"
+            }
+        }
+        securityData = {
+            security = "XS0831345425 CORP"
+            eidData[] = {
+            }
+            securityError = {
+                source = "309::bbdbd4"
+                code = 15
+                category = "BAD_SEC"
+                message = "Unknown/Invalid security [nid:309] "
+                subcategory = "INVALID_SECURITY"
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 266
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0192713839@EFGZ CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 267
+            fieldData = {
+                PX_BID = 931
+                PX_ASK = 940.3
+                TIME = "11/16/2012"
+            }
+        }
+        securityData = {
+            security = "CH0193320634 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 268
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0193320659 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 269
+            fieldData = {
+            }
+        }
+    }
+}
+
+ReferenceDataResponse = {
+    securityData[] = {
+        securityData = {
+            security = "XS0848449772 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 270
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0195362873 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 271
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "DE000CZ36U01@CBED CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 272
+            fieldData = {
+                PX_BID = 60.64
+                PX_ASK = 64.64
+                TIME = "09:31:13"
+            }
+        }
+        securityData = {
+            security = "CH0199655421 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 273
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0857368418 CORP"
+            eidData[] = {
+            }
+            securityError = {
+                source = "60::bbdbd4"
+                code = 15
+                category = "BAD_SEC"
+                message = "Unknown/Invalid security [nid:60] "
+                subcategory = "INVALID_SECURITY"
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 274
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0199960300 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 275
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0687757442 CORP"
+            eidData[] = {
+            }
+            securityError = {
+                source = "60::bbdbd4"
+                code = 15
+                category = "BAD_SEC"
+                message = "Unknown/Invalid security [nid:60] "
+                subcategory = "INVALID_SECURITY"
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 276
+            fieldData = {
+            }
+        }
+    }
+}
+
+ReferenceDataResponse = {
+    securityData[] = {
+        securityData = {
+            security = "CH0137078413 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 190
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0137078108 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 191
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0721649548 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 192
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0133270394 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 193
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0137078587 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 194
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0145801798 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 195
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0140911519 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 196
+            fieldData = {
+                PX_BID = 96.95
+                PX_ASK = 97.95
+                TIME = "11/16/2012"
+            }
+        }
+        securityData = {
+            security = "CH0132188514 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 197
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0144228233@EFGZ CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 198
+            fieldData = {
+                PX_BID = 108.15
+                PX_ASK = 109.15
+                TIME = "11/16/2012"
+            }
+        }
+        securityData = {
+            security = "XS0722994000 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 199
+            fieldData = {
+            }
+        }
+    }
+}
+
+ReferenceDataResponse = {
+    securityData[] = {
+        securityData = {
+            security = "XS0727627209 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 200
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0102169742 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 201
+            fieldData = {
+                TIME = "08/15/2012"
+            }
+        }
+        securityData = {
+            security = "CH137078637 CORP"
+            eidData[] = {
+            }
+            securityError = {
+                source = "89::bbdbd4"
+                code = 15
+                category = "BAD_SEC"
+                message = "Unknown/Invalid security [nid:89] "
+                subcategory = "INVALID_SECURITY"
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 202
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0730825873 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 203
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0137078728 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 204
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0102169874 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 205
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "XS0740216386 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 206
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0146740565 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 207
+            fieldData = {
+                PX_BID = 119.92
+                PX_ASK = 120.41
+                TIME = "11/16/2012"
+            }
+        }
+        securityData = {
+            security = "CH0146739427 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 208
+            fieldData = {
+            }
+        }
+        securityData = {
+            security = "CH0145836877 CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 209
+            fieldData = {
+                PX_BID = 103.23
+                PX_ASK = 104.23
+                TIME = "08/03/2012"
+            }
+        }
+    }
+}
+
+ReferenceDataResponse = {
+    securityData[] = {
+        securityData = {
+            security = "XS0799547137@RABS CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 240
+            fieldData = {
+                PX_BID = 104.16
+                PX_ASK = 105.16
+                TIME = "11/16/2012"
+            }
+        }
+        securityData = {
+            security = "CH0189535229@UBSF CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 241
+            fieldData = {
+                PX_BID = 0.001
+                PX_ASK = 0.001
+                TIME = "11/16/2012"
+            }
+        }
+        securityData = {
+            security = "XS0806746789@HSED CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 242
+            fieldData = {
+                PX_BID = 98.82
+                PX_ASK = 99.82
+                TIME = "02:09:25"
+            }
+        }
+        securityData = {
+            security = "XS0807559454@HSED CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 243
+            fieldData = {
+                PX_BID = 98.57
+                PX_ASK = 99.57
+                TIME = "02:05:38"
+            }
+        }
+        securityData = {
+            security = "XS0807582605@RABS CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 244
+            fieldData = {
+                PX_BID = 100.19
+                PX_ASK = 101.19
+                TIME = "11/16/2012"
+            }
+        }
+        securityData = {
+            security = "XS0816364433@HSED CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 245
+            fieldData = {
+                PX_BID = 99.94
+                PX_ASK = 100.94
+                TIME = "02:09:31"
+            }
+        }
+        securityData = {
+            security = "CH0187367930@EFGZ CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 246
+            fieldData = {
+                PX_BID = 41.4
+                PX_ASK = 41.61
+                TIME = "11/16/2012"
+            }
+        }
+        securityData = {
+            security = "XS0815510812@HSED CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 247
+            fieldData = {
+                PX_BID = 101.45
+                PX_ASK = 102.45
+                TIME = "02:05:38"
+            }
+        }
+        securityData = {
+            security = "CH0188287632@CSZE CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 248
+            fieldData = {
+                PX_BID = 97.84
+                PX_ASK = 98.83
+                TIME = "23:42:18"
+            }
+        }
+        securityData = {
+            security = "CH0148735324@SARA CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 249
+            fieldData = {
+                PX_BID = 1001.79
+                PX_ASK = 1011.86
+                TIME = "11/16/2012"
+            }
+        }
+    }
+}
+

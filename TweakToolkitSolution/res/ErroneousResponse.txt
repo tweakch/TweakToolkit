@@ -1,0 +1,21 @@
+ReferenceDataResponse = {
+    securityData[] = {
+        securityData = {
+            security = " n/a"
+            eidData[] = {
+            }
+            securityError = {
+                source = "308::bbdbd4"
+                code = 15
+                category = "BAD_SEC"
+                message = "Unknown/Invalid security [nid:308] "
+                subcategory = "INVALID_SECURITY"
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 2
+            fieldData = {
+            }
+        }
+    }
+}

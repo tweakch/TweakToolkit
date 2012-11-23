@@ -1,0 +1,17 @@
+ReferenceDataResponse = {
+    securityData[] = {
+        securityData = {
+            security = "XS0279749021@jpm CORP"
+            eidData[] = {
+            }
+            fieldExceptions[] = {
+            }
+            sequenceNumber = 20
+            fieldData = {
+                PX_BID = 95.5642
+                PX_ASK = 95.5642
+                TIME = "11/16/2012"
+            }
+        }
+    }
+}
