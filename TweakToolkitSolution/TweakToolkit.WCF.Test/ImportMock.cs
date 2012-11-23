@@ -22,6 +22,11 @@ namespace TweakToolkit.WCF.Test
             return results;
         }
 
+        private object[] GetWritePriceResult()
+        {
+            return new object[]{ isLoggedIn() };
+        }
+
         private static object[] GetLogoutResult()
         {
             var results = new object[] { LogoutResult, "" };
@@ -493,7 +498,7 @@ namespace TweakToolkit.WCF.Test
 
         public object[] writePrice(int Valor, DateTime Datetime, double Bid, double Ask)
         {
-            throw new NotImplementedException();
+            return GetWritePriceResult();
         }
 
         public void writePriceAsync(int Valor, DateTime Datetime, double Bid, double Ask)
