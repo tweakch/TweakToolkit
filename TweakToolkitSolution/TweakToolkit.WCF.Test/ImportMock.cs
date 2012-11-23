@@ -25,11 +25,7 @@ namespace TweakToolkit.WCF.Test
 
         private object[] GetLoginResult()
         {
-<<<<<<< HEAD
-            var loginResult = _userNames.Equals(Settings.Default.Webservice_Username) &&
-=======
-            var loginResult = myUserName.Equals(Settings.Default.Webservice_Username) &&
->>>>>>> master
+            var loginResult = _userName.Equals(Settings.Default.Webservice_Username) &&
                           _password.Equals(Settings.Default.Webservice_Password);
 
             var results = new object[] { loginResult, "" };
@@ -913,11 +909,7 @@ namespace TweakToolkit.WCF.Test
 
         private void SetCredentials(string UserName, string Password)
         {
-<<<<<<< HEAD
-            _userNames = UserName;
-=======
-            myUserName = UserName;
->>>>>>> master
+            _userName = UserName;
             _password = Password;
         }
 
