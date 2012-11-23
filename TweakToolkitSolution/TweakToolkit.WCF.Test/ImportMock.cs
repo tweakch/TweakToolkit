@@ -7,16 +7,25 @@ namespace TweakToolkit.WCF.Test
 {
     public class ImportMock : IImport
     {
+        private string _password;
+        private string _userName;
+
         public CookieContainer CookieContainer { get; set; }
 
         #region ResultConfiguration
 
         private const bool LogoutResult = true;
 
-        private static object[] GetLoginResult(string username, string passowrd)
+        private static object[] GetLogoutResult()
         {
-            var loginResult = username.Equals(Settings.Default.Webservice_Username) &&
-                          passowrd.Equals(Settings.Default.Webservice_Password);
+            var results = new object[] { LogoutResult, "" };
+            return results;
+        }
+
+        private object[] GetLoginResult()
+        {
+            var loginResult = _userName.Equals(Settings.Default.Webservice_Username) &&
+                          _password.Equals(Settings.Default.Webservice_Password);
 
             var results = new object[] { loginResult, "" };
             return results;
@@ -24,13 +33,7 @@ namespace TweakToolkit.WCF.Test
 
         private object[] GetWritePriceResult()
         {
-            return new object[]{ isLoggedIn() };
-        }
-
-        private static object[] GetLogoutResult()
-        {
-            var results = new object[] { LogoutResult, "" };
-            return results;
+            return new object[] { isLoggedIn() };
         }
 
         #endregion ResultConfiguration
@@ -842,7 +845,7 @@ namespace TweakToolkit.WCF.Test
 
         public bool isLoggedIn()
         {
-            throw new NotImplementedException();
+            return (bool)GetLoginResult()[0];
         }
 
         public void isLoggedInAsync()
@@ -857,22 +860,25 @@ namespace TweakToolkit.WCF.Test
 
         public bool Login(string UserName, string Password)
         {
-            return (bool)GetLoginResult(UserName, Password)[0];
+            SetCredentials(UserName, Password);
+            return (bool)GetLoginResult()[0];
         }
 
         public void LoginAsync(string UserName, string Password)
         {
-            OnLoginCompleted(new LoginCompletedEventArgs(GetLoginResult(UserName, Password), null, false, null));
+            SetCredentials(UserName, Password);
+            OnLoginCompleted(new LoginCompletedEventArgs(GetLoginResult(), null, false, null));
         }
 
         public void LoginAsync(string UserName, string Password, object userState)
         {
-            OnLoginCompleted(new LoginCompletedEventArgs(GetLoginResult(UserName, Password), null, false, userState));
+            SetCredentials(UserName, Password);
+            OnLoginCompleted(new LoginCompletedEventArgs(GetLoginResult(), null, false, userState));
         }
 
         public bool Logout()
         {
-            return (bool) GetLogoutResult()[0];
+            return (bool)GetLogoutResult()[0];
         }
 
         public void LogoutAsync()
@@ -898,6 +904,12 @@ namespace TweakToolkit.WCF.Test
         public void resetSystemAsync(object userState)
         {
             throw new NotImplementedException();
+        }
+
+        private void SetCredentials(string UserName, string Password)
+        {
+            _userName = UserName;
+            _password = Password;
         }
 
         #endregion Service
