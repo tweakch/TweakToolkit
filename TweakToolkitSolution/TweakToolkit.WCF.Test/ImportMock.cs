@@ -8,7 +8,7 @@ namespace TweakToolkit.WCF.Test
     public class ImportMock : IImport
     {
         private string _password;
-        private string _userNames;
+        private string _userName;
 
         public CookieContainer CookieContainer { get; set; }
 
@@ -25,7 +25,11 @@ namespace TweakToolkit.WCF.Test
 
         private object[] GetLoginResult()
         {
+<<<<<<< HEAD
             var loginResult = _userNames.Equals(Settings.Default.Webservice_Username) &&
+=======
+            var loginResult = myUserName.Equals(Settings.Default.Webservice_Username) &&
+>>>>>>> master
                           _password.Equals(Settings.Default.Webservice_Password);
 
             var results = new object[] { loginResult, "" };
@@ -909,7 +913,11 @@ namespace TweakToolkit.WCF.Test
 
         private void SetCredentials(string UserName, string Password)
         {
+<<<<<<< HEAD
             _userNames = UserName;
+=======
+            myUserName = UserName;
+>>>>>>> master
             _password = Password;
         }
 
