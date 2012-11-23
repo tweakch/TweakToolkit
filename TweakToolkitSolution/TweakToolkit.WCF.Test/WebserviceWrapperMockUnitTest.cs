@@ -20,7 +20,6 @@ namespace TweakToolkit.WCF.Test
         [ClassCleanup]
         public static void ClassCleanup()
         {
-
             _service = null;
         }
 
