@@ -14,6 +14,7 @@ namespace TweakToolkit.WCF.Test
 
         #region ResultConfiguration
 
+        private const bool LoginStatus = true;
         private const bool LogoutResult = true;
 
         private static object[] GetLogoutResult()
