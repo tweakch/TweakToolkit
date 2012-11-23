@@ -95,5 +95,10 @@ namespace TweakToolkit.WCF.Test
 
             asyncRequestInfo.Callback(new WebserviceResult(e.Result, e.Error, e.Cancelled, asyncRequestInfo));
         }
+
+        public string GetLoginStatus()
+        {
+            return Webservice.GetLoginStatus();
+        }
     }
 }

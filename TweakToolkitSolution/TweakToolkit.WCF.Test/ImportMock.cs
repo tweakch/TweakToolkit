@@ -14,7 +14,6 @@ namespace TweakToolkit.WCF.Test
 
         #region ResultConfiguration
 
-        private const bool LoginStatus = true;
         private const bool LogoutResult = true;
 
         private static object[] GetLogoutResult()
@@ -92,6 +91,12 @@ namespace TweakToolkit.WCF.Test
         public event getValidExtensionsCompletedEventHandler getValidExtensionsCompleted;
 
         public event isLoggedInCompletedEventHandler isLoggedInCompleted;
+
+        protected virtual void OnIsLoggedInCompleted(isLoggedInCompletedEventArgs e)
+        {
+            var handler = isLoggedInCompleted;
+            if (handler != null) handler(this, e);
+        }
 
         public event isValidExtensionCompletedEventHandler isValidExtensionCompleted;
 
@@ -831,7 +836,7 @@ namespace TweakToolkit.WCF.Test
 
         public string GetLoginStatus()
         {
-            throw new NotImplementedException();
+            return isLoggedIn() ? "logged in" : "disconnected";
         }
 
         public void GetLoginStatusAsync()
@@ -851,12 +856,12 @@ namespace TweakToolkit.WCF.Test
 
         public void isLoggedInAsync()
         {
-            throw new NotImplementedException();
+            OnIsLoggedInCompleted(new isLoggedInCompletedEventArgs(GetLoginResult(), null, false, null));
         }
 
         public void isLoggedInAsync(object userState)
         {
-            throw new NotImplementedException();
+            OnIsLoggedInCompleted(new isLoggedInCompletedEventArgs(GetLoginResult(), null, false, userState));
         }
 
         public bool Login(string UserName, string Password)

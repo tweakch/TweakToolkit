@@ -10,10 +10,18 @@ namespace TweakToolkit.WCF.Test
     {
         private static IImport _service;
 
-        [TestInitialize]
+        [ClassInitialize]
         public static void TestInitialize(TestContext context)
         {
-            _service = new ImportMock { CookieContainer = new CookieContainer() };
+            _service = new Import { CookieContainer = new CookieContainer() };
+//            _service = new ImportMock { CookieContainer = new CookieContainer() };
+        }
+
+        [ClassCleanup]
+        public static void ClassCleanup()
+        {
+
+            _service = null;
         }
 
         [TestMethod]
@@ -29,6 +37,18 @@ namespace TweakToolkit.WCF.Test
             var disconnect = wrapper.Disconnect();
             Assert.AreEqual(WebserviceState.Disconnected, wrapper.WebserviceState);
             Assert.IsTrue(disconnect.Result);
+        }
+
+        [TestMethod]
+        public void GetLoginStatusTest()
+        {
+            var wrapper = new CatWebserviceWrapper(_service);
+            
+            wrapper.Connect();
+            Assert.AreEqual("Logged In", wrapper.GetLoginStatus());
+            
+            wrapper.Disconnect();
+            Assert.AreEqual("Not Logged In", wrapper.GetLoginStatus());
         }
 
         [TestMethod]
