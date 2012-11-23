@@ -3,7 +3,7 @@ using System.Net;
 using TweakToolkit.WCF.Test.CatWebservice;
 using TweakToolkit.WCF.Test.Properties;
 
-namespace TweakToolkit.WCF.Test
+namespace TweakToolkit.WCF.Test.Mocks
 {
     public class ImportMock : IImport
     {

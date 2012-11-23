@@ -1,6 +1,7 @@
 ﻿using System;
+using TweakToolkit.WCF.Test.Wrapper;
 
-namespace TweakToolkit.WCF.Test
+namespace TweakToolkit.WCF.Test.ServiceDomain
 {
     public class AsyncRequestInfo : RequestInfo
     {

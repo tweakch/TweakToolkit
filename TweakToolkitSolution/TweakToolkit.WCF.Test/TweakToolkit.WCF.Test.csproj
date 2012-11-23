@@ -49,29 +49,29 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AsyncRequestInfo.cs" />
-    <Compile Include="ICatWebserviceWrapper.cs" />
-    <Compile Include="ImportMock.cs" />
+    <Compile Include="ServiceDomain\AsyncRequestInfo.cs" />
+    <Compile Include="Wrapper\ICatWebserviceWrapper.cs" />
+    <Compile Include="Mocks\ImportMock.cs" />
+    <Compile Include="ServiceDomain\PriceDescription.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="RequestInfo.cs" />
-    <Compile Include="RequestInfoCollection.cs" />
-    <Compile Include="RequestResultCollection.cs" />
-    <Compile Include="UnavailableWebserviceWrapperMock.cs" />
+    <Compile Include="Wrapper\RequestInfo.cs" />
+    <Compile Include="Wrapper\UnavailableWebserviceWrapperMock.cs" />
     <Compile Include="Web References\CatWebservice\IImport.cs" />
-    <Compile Include="WebserviceWrapperMockUnitTest.cs" />
+    <Compile Include="ServiceDomainTests.cs" />
+    <Compile Include="WrapperTests.cs" />
     <Compile Include="Web References\CatWebservice\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
-    <Compile Include="WebserviceResult.cs" />
-    <Compile Include="WebserviceState.cs" />
-    <Compile Include="CatWebserviceWrapper.cs" />
+    <Compile Include="Wrapper\WebserviceResult.cs" />
+    <Compile Include="Wrapper\WebserviceWrapperState.cs" />
+    <Compile Include="Wrapper\CatWebserviceWrapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

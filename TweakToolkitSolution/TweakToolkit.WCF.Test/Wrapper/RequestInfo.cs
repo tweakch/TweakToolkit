@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TweakToolkit.WCF.Test
+namespace TweakToolkit.WCF.Test.Wrapper
 {
     public class RequestInfo
     {
