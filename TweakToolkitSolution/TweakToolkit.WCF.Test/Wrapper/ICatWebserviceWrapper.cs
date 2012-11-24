@@ -30,6 +30,11 @@ namespace TweakToolkit.WCF.Test.Wrapper
 
         WebserviceResult DeleteAllPricesAsync(int valor, Action<WebserviceResult> callback);
 
+        #endregion
+
+        #region Product
+
+        WebserviceResult WriteProduct(ProductDescription d);
 
 
         #endregion

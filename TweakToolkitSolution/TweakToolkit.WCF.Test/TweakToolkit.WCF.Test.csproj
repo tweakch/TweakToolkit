@@ -59,6 +59,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="ServiceDomain\ProductDescription.cs" />
     <Compile Include="Wrapper\RequestInfo.cs" />
     <Compile Include="Wrapper\UnavailableWebserviceWrapperMock.cs" />
     <Compile Include="Web References\CatWebservice\IImport.cs" />

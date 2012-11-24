@@ -7,14 +7,15 @@ namespace TweakToolkit.WCF.Test.Wrapper
         public WebserviceResult(RequestInfo userState, object[] result)
         {
             ServiceResult = result;
-            ParseException();
+            ParseResult();
             RequestInfo = userState;
         }
 
         public WebserviceResult(RequestInfo userState, object[] result, Exception exception)
         {
             ServiceResult = result;
-            ServiceException = exception;
+            ParseResult();
+            if (ServiceException == null) ServiceException = exception;
             RequestInfo = userState;
         }
 
@@ -51,7 +52,7 @@ namespace TweakToolkit.WCF.Test.Wrapper
             throw new NotImplementedException();
         }
 
-        private void ParseException()
+        private void ParseResult()
         {
             Completed = (bool)ServiceResult[0];
             if (!Completed) ServiceException = new OperationCanceledException(GetMessage());

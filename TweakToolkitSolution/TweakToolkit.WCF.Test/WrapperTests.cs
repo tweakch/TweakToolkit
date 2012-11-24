@@ -18,6 +18,18 @@ namespace TweakToolkit.WCF.Test
         #region Price Functions
 
         [TestMethod]
+        public void DeleteAllPricesForValor()
+        {
+            var wrapper = new CatWebserviceWrapper(Service);
+            var price = new PriceDescription();
+            wrapper.Connect();
+
+            var webserviceResult = wrapper.WritePrice(price);
+            Assert.IsTrue(webserviceResult.Completed, webserviceResult.ServiceMessage);
+            wrapper.DeleteAllPrices(price.Valor);
+        }
+
+        [TestMethod]
         public void WritePriceForOnlineProductTest()
         {
             var wrapper = new CatWebserviceWrapper(Service);
@@ -42,19 +54,6 @@ namespace TweakToolkit.WCF.Test
             Assert.IsFalse(webserviceResult.Completed);
             Assert.IsNotNull(webserviceResult.ServiceException);
             Assert.IsNotNull(webserviceResult.RequestInfo);
-        }
-
-        [TestMethod]
-        public void DeleteAllPricesForValor()
-        {
-            var wrapper = new CatWebserviceWrapper(Service);
-            var price = new PriceDescription();
-            wrapper.Connect();
-
-            var webserviceResult = wrapper.WritePrice(price);
-            
-            Assert.IsTrue(webserviceResult.Completed);
-            wrapper.DeleteAllPrices(price.Valor);
         }
 
         #endregion Price Functions
@@ -86,6 +85,28 @@ namespace TweakToolkit.WCF.Test
         }
 
         [TestMethod]
+        public void AsyncWebserviceResultExceptionTest()
+        {
+            var wrapper = new CatWebserviceWrapper(Service);
+            var wait = true;
+
+            wrapper.WritePriceAsync(
+                new PriceDescription(),
+                asyncResult =>
+                {
+                    Assert.IsFalse(asyncResult.Completed);
+                    Assert.IsNotNull(asyncResult.ServiceException, asyncResult.ServiceException.ToString());
+                    Assert.IsNotNull(asyncResult.ServiceMessage, asyncResult.ServiceMessage);
+                    wait = false;
+                });
+
+            while (wait)
+            {
+                Thread.Sleep(200);
+            }
+        }
+
+        [TestMethod]
         public void GetLoginStatusTest()
         {
             var wrapper = new CatWebserviceWrapper(Service);
@@ -110,6 +131,16 @@ namespace TweakToolkit.WCF.Test
             var disconnect = wrapper.Disconnect();
             Assert.AreEqual(WebserviceWrapperState.Disconnected, wrapper.WebserviceState);
             Assert.IsTrue(disconnect.Completed);
+        }
+
+        [TestMethod]
+        public void WebserviceResultExceptionTest()
+        {
+            var wrapper = new CatWebserviceWrapper(Service);
+            var result = wrapper.WritePrice(new PriceDescription());
+            Assert.IsFalse(result.Completed);
+            Assert.IsNotNull(result.ServiceException, result.ServiceException.ToString());
+            Assert.IsNotNull(result.ServiceMessage, result.ServiceMessage);
         }
 
         #endregion Service Functions

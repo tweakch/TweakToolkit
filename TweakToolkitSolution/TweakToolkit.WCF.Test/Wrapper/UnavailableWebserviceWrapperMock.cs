@@ -57,5 +57,10 @@ namespace TweakToolkit.WCF.Test.Wrapper
         {
             throw new NotImplementedException();
         }
+
+        public WebserviceResult WriteProduct(ProductDescription d)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

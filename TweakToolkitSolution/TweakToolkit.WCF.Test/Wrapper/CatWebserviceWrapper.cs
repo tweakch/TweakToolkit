@@ -39,7 +39,7 @@ namespace TweakToolkit.WCF.Test.Wrapper
         {
             var info = new RequestInfo("Connect");
             WebserviceState = WebserviceWrapperState.Connecting;
-            var login = Webservice.Login(UserName, Password);
+            bool login = Webservice.Login(UserName, Password);
             var result = new WebserviceResult(info, login);
             WebserviceState = WebserviceWrapperState.Connected;
             return result;
@@ -56,7 +56,7 @@ namespace TweakToolkit.WCF.Test.Wrapper
         {
             var info = new RequestInfo("Disconnect");
             WebserviceState = WebserviceWrapperState.Disconnecting;
-            var logout = Webservice.Logout();
+            bool logout = Webservice.Logout();
             WebserviceState = WebserviceWrapperState.Disconnected;
             return new WebserviceResult(info, logout);
         }
@@ -74,54 +74,39 @@ namespace TweakToolkit.WCF.Test.Wrapper
             return Webservice.GetLoginStatus();
         }
 
-        #region Prices
-
-        public WebserviceResult DeleteAllPrices(int valor)
+        private static void InvokeAsyncRequestCallback(AsyncRequestInfo asyncRequestInfo, object[] objects,
+                                                       Exception exception)
         {
-            var info = new RequestInfo(string.Format("DeleteAllPricesForValor: {0}", valor));
-            var deletePricesByValor = Webservice.deletePricesByValor(valor);
-            return new WebserviceResult(info, deletePricesByValor);
+            if (asyncRequestInfo == null)
+            {
+                throw new NullReferenceException("asyncRequestInfo was null.");
+            }
+            asyncRequestInfo.Callback(new WebserviceResult(asyncRequestInfo, objects, exception));
         }
 
-        public WebserviceResult DeleteAllPricesAsync(int valor, Action<WebserviceResult> callback)
+        private void InvokeAsyncRequestCallback(AsyncRequestInfo asyncRequestInfo, string result, Exception exception)
         {
-            throw new NotImplementedException();
+            InvokeAsyncRequestCallback(asyncRequestInfo, new object[] { true, result }, exception);
         }
 
-        public WebserviceResult WritePrice(PriceDescription description)
+        private void OnWebserviceOnGetLoginStatusCompleted(object service,
+                                                           GetLoginStatusCompletedEventArgs loginStatusArgs)
         {
-            var info = new RequestInfo(string.Format("WritePrice {0}", description));
-            var writePrice = Webservice.writePrice(description.Valor, description.LastUpdated, description.Bid, description.Ask);
-            return new WebserviceResult(info, writePrice);
+            InvokeAsyncRequestCallback(loginStatusArgs.UserState as AsyncRequestInfo, loginStatusArgs.Result,
+                                       loginStatusArgs.Error);
         }
 
-        public void WritePriceAsync(PriceDescription description, Action<WebserviceResult> callback)
+        private void OnWebserviceOnWritePriceCompleted(object sender, writePriceCompletedEventArgs e)
         {
-            throw new NotImplementedException();
+            InvokeAsyncRequestCallback(e.UserState as AsyncRequestInfo, e.Result, e.Error);
         }
-
-        public WebserviceResult WritePriceCollection(IEnumerable<PriceDescription> descriptions)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void WritePriceCollectionAsync(IEnumerable<PriceDescription> description, Action<WebserviceResult> callback)
-        {
-            throw new NotImplementedException();
-        }
-
-        #endregion Prices
 
         private void RegisterServiceEvents()
         {
             Webservice.LoginCompleted += WebserviceLoginCompleted;
             Webservice.LogoutCompleted += WebserviceLogoutCompleted;
-            Webservice.GetLoginStatusCompleted += Webservice_GetLoginStatusCompleted;
-        }
-
-        private void Webservice_GetLoginStatusCompleted(object sender, GetLoginStatusCompletedEventArgs e)
-        {
-            throw new NotImplementedException();
+            Webservice.GetLoginStatusCompleted += OnWebserviceOnGetLoginStatusCompleted;
+            Webservice.writePriceCompleted += OnWebserviceOnWritePriceCompleted;
         }
 
         private void WebserviceLoginCompleted(object sender, LoginCompletedEventArgs e)
@@ -129,9 +114,12 @@ namespace TweakToolkit.WCF.Test.Wrapper
             var asyncRequestInfo = e.UserState as AsyncRequestInfo;
             if (asyncRequestInfo == null) throw new NullReferenceException("asyncRequestInfo (LoginCompleted)");
 
-            if (e.Result) WebserviceState = WebserviceWrapperState.Connected;
+            bool result = e.Result;
+            if (result) WebserviceState = WebserviceWrapperState.Connected;
 
-            asyncRequestInfo.Callback(new WebserviceResult(asyncRequestInfo, e.Result, e.Error));
+            Exception exception = e.Error;
+
+            asyncRequestInfo.Callback(new WebserviceResult(asyncRequestInfo, result, exception));
         }
 
         private void WebserviceLogoutCompleted(object sender, LogoutCompletedEventArgs e)
@@ -143,5 +131,81 @@ namespace TweakToolkit.WCF.Test.Wrapper
 
             asyncRequestInfo.Callback(new WebserviceResult(asyncRequestInfo, e.Result, e.Error));
         }
+
+        #region Prices
+
+        public WebserviceResult DeleteAllPrices(int valor)
+        {
+            var info = new RequestInfo(string.Format("DeleteAllPricesForValor: {0}", valor));
+            object[] deletePricesByValor = Webservice.deletePricesByValor(valor);
+            return new WebserviceResult(info, deletePricesByValor);
+        }
+
+        public WebserviceResult DeleteAllPricesAsync(int valor, Action<WebserviceResult> callback)
+        {
+            throw new NotImplementedException();
+        }
+
+        public WebserviceResult WritePrice(PriceDescription description)
+        {
+            var info = new RequestInfo(string.Format("WritePrice {0}", description));
+            object[] writePrice = Webservice.writePrice(description.Valor, description.LastUpdated, description.Bid,
+                                                        description.Ask);
+            return new WebserviceResult(info, writePrice);
+        }
+
+        public void WritePriceAsync(PriceDescription description, Action<WebserviceResult> callback)
+        {
+            var asyncRequestInfo = new AsyncRequestInfo("WritePriceAsync", callback);
+            Webservice.writePriceAsync(description.Valor, description.LastUpdated, description.Bid, description.Ask,
+                                       asyncRequestInfo);
+        }
+
+        public WebserviceResult WritePriceCollection(IEnumerable<PriceDescription> descriptions)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void WritePriceCollectionAsync(IEnumerable<PriceDescription> description,
+                                              Action<WebserviceResult> callback)
+        {
+            throw new NotImplementedException();
+        }
+
+        public WebserviceResult WriteProduct(ProductDescription d)
+        {
+            var info = new RequestInfo(string.Format("WriteProduct {0}", d));
+
+            object[] writeProduct = Webservice.writeProductV2(d.Valor, d.Name, d.Currency, d.CurrencyRisk, d.Dirty,
+                                                              d.Guarantor, d.LeadManager, d.Issuer, d.AssetClass,
+                                                              d.ProductCat, d.ProductType, d.ISIN, d.StockExchange,
+                                                              d.Pricing, d.ValutaDate, d.EmissionPrice, d.Nominal,
+                                                              d.RedemptionDate, d.StartFixationDate, d.EndFixationDate,
+                                                              d.CouponObservation, d.CpGuaranteed,
+                                                              d.ConditionalObservation, d.Text_Bed_Coupon, d.cpbedingt,
+                                                              d.Floater, d.CPFloater, d.TextFloater, d.minCoupon,
+                                                              d.maxCoupon, d.TextCoupon, d.CallData, d.EarlyRedemption,
+                                                              d.TextEarlyRedemtpion, d.Cap, d.MaxPayback,
+                                                              d.TextMaxPayback, d.Protection, d.ProtectionType,
+                                                              d.MinPayback, d.Partizipation, d.PartizipationText,
+                                                              d.Discount, d.MaxYield, d.bonuslevel, d.issuerNameShort,
+                                                              d.ProductState, d.productKatId, d.productTypeId,
+                                                              d.EmissionType, d.Symbol, d.SmallestTradeableUnit, d.s1t,
+                                                              d.s1v, d.s2t, d.s2v, d.s3t, d.s3v, d.NameEn,
+                                                              d.CurrencyRiskEn, d.AssetClassEn, d.ProductCatEn,
+                                                              d.ProductTypeEn, d.PricingEn, d.CpGuaranteedEn,
+                                                              d.cpbedingtEn, d.CPFloaterEn, d.CallDataEn,
+                                                              d.EarlyRedemptionEn, d.CouponGuaranteed_En,
+                                                              d.couponBedingtEn, d.textBedCoupon_En, d.FloaterEn,
+                                                              d.TextFloaterEn, d.minCouponEn, d.maxCouponEn,
+                                                              d.TextCouponEn, d.TextEarlyRedemtpionEn, d.capEn,
+                                                              d.MaxPaybackEn, d.TextMaxPaybackEn, d.ProtectionEn,
+                                                              d.MinPaybackEn, d.PartizipationEn, d.PartizipationTextEn,
+                                                              d.DiscountEn, d.MaxYieldEn, d.bonuslevelEn, d.s1tEN,
+                                                              d.s1vEn, d.s2tEn, d.s2vEn, d.s3tEn, d.s3vEn, d.HasEnglish);
+            return new WebserviceResult(info, writeProduct);
+        }
+
+        #endregion Prices
     }
 }
