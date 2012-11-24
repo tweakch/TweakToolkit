@@ -21,7 +21,7 @@ namespace TweakToolkit.WCF.Test
         public void DeleteAllPricesForValor()
         {
             var wrapper = new CatWebserviceWrapper(Service);
-            var price = new PriceDescription();
+            var price = new PriceWebsiteDescription();
             wrapper.Connect();
 
             var webserviceResult = wrapper.WritePrice(price);
@@ -33,7 +33,7 @@ namespace TweakToolkit.WCF.Test
         public void WritePriceForOnlineProductTest()
         {
             var wrapper = new CatWebserviceWrapper(Service);
-            var price = new PriceDescription();
+            var price = new PriceWebsiteDescription();
             wrapper.Connect();
 
             var webserviceResult = wrapper.WritePrice(price);
@@ -46,7 +46,7 @@ namespace TweakToolkit.WCF.Test
         public void WritePriceOnDisconnectedServiceTest()
         {
             var wrapper = new CatWebserviceWrapper(Service);
-            var price = new PriceDescription();
+            var price = new PriceWebsiteDescription();
             Assert.AreEqual(WebserviceWrapperState.Disconnected, wrapper.WebserviceState);
 
             var webserviceResult = wrapper.WritePrice(price);
@@ -57,6 +57,21 @@ namespace TweakToolkit.WCF.Test
         }
 
         #endregion Price Functions
+
+        #region Product Functions
+        [TestMethod]
+        public void WriteProductWithEmptyDescription()
+        {
+            var wrapper = new CatWebserviceWrapper(Service);
+            var description = new ProductWebsiteDescription();
+            wrapper.Connect();
+
+            var webserviceResult = wrapper.WriteProduct(description);
+            Assert.IsTrue(webserviceResult.Completed, webserviceResult.ServiceMessage);
+            wrapper.DeleteAllPrices(description.Valor);
+        }
+
+        #endregion
 
         #region Service Functions
 
@@ -91,7 +106,7 @@ namespace TweakToolkit.WCF.Test
             var wait = true;
 
             wrapper.WritePriceAsync(
-                new PriceDescription(),
+                new PriceWebsiteDescription(),
                 asyncResult =>
                 {
                     Assert.IsFalse(asyncResult.Completed);
@@ -137,7 +152,7 @@ namespace TweakToolkit.WCF.Test
         public void WebserviceResultExceptionTest()
         {
             var wrapper = new CatWebserviceWrapper(Service);
-            var result = wrapper.WritePrice(new PriceDescription());
+            var result = wrapper.WritePrice(new PriceWebsiteDescription());
             Assert.IsFalse(result.Completed);
             Assert.IsNotNull(result.ServiceException, result.ServiceException.ToString());
             Assert.IsNotNull(result.ServiceMessage, result.ServiceMessage);

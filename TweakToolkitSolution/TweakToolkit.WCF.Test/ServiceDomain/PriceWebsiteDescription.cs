@@ -2,9 +2,9 @@
 
 namespace TweakToolkit.WCF.Test.ServiceDomain
 {
-    public class PriceDescription
+    public class PriceWebsiteDescription
     {
-        public PriceDescription()
+        public PriceWebsiteDescription()
         {
             Valor = 123456789;
             LastUpdated = DateTime.Now;

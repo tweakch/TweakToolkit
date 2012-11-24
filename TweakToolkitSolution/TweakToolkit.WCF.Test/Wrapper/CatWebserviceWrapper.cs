@@ -146,7 +146,7 @@ namespace TweakToolkit.WCF.Test.Wrapper
             throw new NotImplementedException();
         }
 
-        public WebserviceResult WritePrice(PriceDescription description)
+        public WebserviceResult WritePrice(PriceWebsiteDescription description)
         {
             var info = new RequestInfo(string.Format("WritePrice {0}", description));
             object[] writePrice = Webservice.writePrice(description.Valor, description.LastUpdated, description.Bid,
@@ -154,25 +154,25 @@ namespace TweakToolkit.WCF.Test.Wrapper
             return new WebserviceResult(info, writePrice);
         }
 
-        public void WritePriceAsync(PriceDescription description, Action<WebserviceResult> callback)
+        public void WritePriceAsync(PriceWebsiteDescription description, Action<WebserviceResult> callback)
         {
             var asyncRequestInfo = new AsyncRequestInfo("WritePriceAsync", callback);
             Webservice.writePriceAsync(description.Valor, description.LastUpdated, description.Bid, description.Ask,
                                        asyncRequestInfo);
         }
 
-        public WebserviceResult WritePriceCollection(IEnumerable<PriceDescription> descriptions)
+        public WebserviceResult WritePriceCollection(IEnumerable<PriceWebsiteDescription> descriptions)
         {
             throw new NotImplementedException();
         }
 
-        public void WritePriceCollectionAsync(IEnumerable<PriceDescription> description,
+        public void WritePriceCollectionAsync(IEnumerable<PriceWebsiteDescription> description,
                                               Action<WebserviceResult> callback)
         {
             throw new NotImplementedException();
         }
 
-        public WebserviceResult WriteProduct(ProductDescription d)
+        public WebserviceResult WriteProduct(ProductWebsiteDescription d)
         {
             var info = new RequestInfo(string.Format("WriteProduct {0}", d));
 
