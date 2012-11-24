@@ -39,7 +39,10 @@
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml" />
   </ItemGroup>
@@ -49,17 +52,24 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\WebsiteDataEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WebsiteDataEntities.edmx</DependentUpon>
+    </Compile>
     <Compile Include="ServiceDomain\AsyncRequestInfo.cs" />
+    <Compile Include="ServiceDomain\Emission.cs" />
+    <Compile Include="ServiceDomain\Structure.cs" />
     <Compile Include="Wrapper\ICatWebserviceWrapper.cs" />
     <Compile Include="Mocks\ImportMock.cs" />
-    <Compile Include="ServiceDomain\PriceDescription.cs" />
+    <Compile Include="ServiceDomain\PriceWebsiteDescription.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="ServiceDomain\ProductDescription.cs" />
+    <Compile Include="ServiceDomain\ProductWebsiteDescription.cs" />
     <Compile Include="Wrapper\RequestInfo.cs" />
     <Compile Include="Wrapper\UnavailableWebserviceWrapperMock.cs" />
     <Compile Include="Web References\CatWebservice\IImport.cs" />
@@ -95,6 +105,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <EntityDeploy Include="Data\WebsiteDataEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>WebsiteDataEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -113,6 +127,9 @@
       <Project>{A37F59D1-3280-43E9-875C-12902EE01BB8}</Project>
       <Name>TweakToolkit.WCF</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\WebsiteDataEntities.edmx.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

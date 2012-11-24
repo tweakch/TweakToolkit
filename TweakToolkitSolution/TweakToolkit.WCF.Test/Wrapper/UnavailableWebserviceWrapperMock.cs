@@ -28,22 +28,22 @@ namespace TweakToolkit.WCF.Test.Wrapper
             throw new NotImplementedException();
         }
 
-        public WebserviceResult WritePrice(PriceDescription description)
+        public WebserviceResult WritePrice(PriceWebsiteDescription description)
         {
             throw new NotImplementedException();
         }
 
-        public void WritePriceAsync(PriceDescription description, Action<WebserviceResult> callback)
+        public void WritePriceAsync(PriceWebsiteDescription description, Action<WebserviceResult> callback)
         {
             throw new NotImplementedException();
         }
 
-        public WebserviceResult WritePriceCollection(IEnumerable<PriceDescription> descriptions)
+        public WebserviceResult WritePriceCollection(IEnumerable<PriceWebsiteDescription> descriptions)
         {
             throw new NotImplementedException();
         }
 
-        public void WritePriceCollectionAsync(IEnumerable<PriceDescription> description, Action<WebserviceResult> callback)
+        public void WritePriceCollectionAsync(IEnumerable<PriceWebsiteDescription> description, Action<WebserviceResult> callback)
         {
             throw new NotImplementedException();
         }
@@ -58,7 +58,7 @@ namespace TweakToolkit.WCF.Test.Wrapper
             throw new NotImplementedException();
         }
 
-        public WebserviceResult WriteProduct(ProductDescription d)
+        public WebserviceResult WriteProduct(ProductWebsiteDescription d)
         {
             throw new NotImplementedException();
         }

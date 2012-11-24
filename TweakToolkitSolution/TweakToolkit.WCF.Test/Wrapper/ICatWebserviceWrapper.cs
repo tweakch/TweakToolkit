@@ -18,13 +18,13 @@ namespace TweakToolkit.WCF.Test.Wrapper
 
         #region Price
         
-        WebserviceResult WritePrice(PriceDescription description);
+        WebserviceResult WritePrice(PriceWebsiteDescription description);
 
-        void WritePriceAsync(PriceDescription description, Action<WebserviceResult> callback);
+        void WritePriceAsync(PriceWebsiteDescription description, Action<WebserviceResult> callback);
 
-        WebserviceResult WritePriceCollection(IEnumerable<PriceDescription> descriptions);
+        WebserviceResult WritePriceCollection(IEnumerable<PriceWebsiteDescription> descriptions);
 
-        void WritePriceCollectionAsync(IEnumerable<PriceDescription> description, Action<WebserviceResult> callback);
+        void WritePriceCollectionAsync(IEnumerable<PriceWebsiteDescription> description, Action<WebserviceResult> callback);
 
         WebserviceResult DeleteAllPrices(int valor);
 
@@ -34,7 +34,7 @@ namespace TweakToolkit.WCF.Test.Wrapper
 
         #region Product
 
-        WebserviceResult WriteProduct(ProductDescription d);
+        WebserviceResult WriteProduct(ProductWebsiteDescription d);
 
 
         #endregion

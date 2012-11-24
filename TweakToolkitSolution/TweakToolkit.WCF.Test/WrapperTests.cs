@@ -67,8 +67,7 @@ namespace TweakToolkit.WCF.Test
             wrapper.Connect();
 
             var webserviceResult = wrapper.WriteProduct(description);
-            Assert.IsTrue(webserviceResult.Completed, webserviceResult.ServiceMessage);
-            wrapper.DeleteAllPrices(description.Valor);
+            Assert.IsFalse(webserviceResult.Completed, webserviceResult.ServiceMessage);
         }
 
         #endregion
