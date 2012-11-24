@@ -58,8 +58,6 @@
       <DependentUpon>WebsiteDataEntities.edmx</DependentUpon>
     </Compile>
     <Compile Include="ServiceDomain\AsyncRequestInfo.cs" />
-    <Compile Include="ServiceDomain\Emission.cs" />
-    <Compile Include="ServiceDomain\Structure.cs" />
     <Compile Include="Wrapper\ICatWebserviceWrapper.cs" />
     <Compile Include="Mocks\ImportMock.cs" />
     <Compile Include="ServiceDomain\PriceWebsiteDescription.cs" />
@@ -74,7 +72,7 @@
     <Compile Include="Wrapper\UnavailableWebserviceWrapperMock.cs" />
     <Compile Include="Web References\CatWebservice\IImport.cs" />
     <Compile Include="ServiceDomainTests.cs" />
-    <Compile Include="WrapperTests.cs" />
+    <Compile Include="WebserviceWrapperMockUnitTest.cs" />
     <Compile Include="Web References\CatWebservice\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

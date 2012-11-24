@@ -327,12 +327,4 @@ namespace TweakToolkit.WCF.Test.ServiceDomain
         }
 
     }
-
-    public class BaseInformation
-    {
-    }
-
-    public class Product
-    {
-    }
 }
