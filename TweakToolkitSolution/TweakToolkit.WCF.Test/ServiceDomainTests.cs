@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using TweakToolkit.WCF.Test.Data;
+using TweakToolkit.EntityFramework.WebsiteData;
+using TweakToolkit.WCF.Test.Properties;
 using TweakToolkit.WCF.Test.ServiceDomain;
 
 namespace TweakToolkit.WCF.Test
@@ -12,8 +13,23 @@ namespace TweakToolkit.WCF.Test
         private static readonly DateTime MinimalDate = new DateTime(1900, 1, 1);
 
         [TestMethod]
+        public void BarrierDescriptionTest()
+        {
+            using (var db = new StruktoWebsiteEntities())
+            {
+                var barriers = db.GetBarrierWebsiteData(Settings.Default.TestProductValor);
+                Assert.IsTrue(barriers.Any());
+            }
+        }
+
+        [TestMethod]
         public void PriceDescriptionTest()
         {
+            using (var db = new StruktoWebsiteEntities())
+            {
+                var prices = db.GetPriceWebsiteData(Settings.Default.TestProductValor);
+                Assert.IsTrue(prices.Any());
+            }
         }
 
         [TestMethod]
@@ -21,7 +37,7 @@ namespace TweakToolkit.WCF.Test
         {
             using (var db = new StruktoWebsiteEntities())
             {
-                var productData = db.ProductWebsiteDataSet.Single(d => d.Valor==123456789);
+                var productData = db.ProductWebsiteDataSet.Single(d => d.Valor == Settings.Default.TestProductValor);
                 Assert.IsNotNull(productData, "Add a dummy product to the database");
 
                 var websiteData = new ProductWebsiteDescription(productData);
@@ -43,19 +59,19 @@ namespace TweakToolkit.WCF.Test
 
                 Assert.IsNotNull(websiteData.ValutaDate);
                 Assert.IsTrue(websiteData.ValutaDate >= MinimalDate);
-                
+
                 Assert.IsNotNull(websiteData.EmissionPrice);
                 Assert.IsNotNull(websiteData.Nominal);
-                
+
                 Assert.IsNotNull(websiteData.RedemptionDate);
                 Assert.IsTrue(websiteData.RedemptionDate >= MinimalDate);
 
                 Assert.IsNotNull(websiteData.StartFixationDate);
                 Assert.IsTrue(websiteData.StartFixationDate >= MinimalDate);
-                
+
                 Assert.IsNotNull(websiteData.EndFixationDate);
                 Assert.IsTrue(websiteData.EndFixationDate >= MinimalDate);
-                
+
                 Assert.IsNotNull(websiteData.CouponObservation);
                 Assert.IsNotNull(websiteData.CpGuaranteed);
                 Assert.IsNotNull(websiteData.ConditionalObservation);

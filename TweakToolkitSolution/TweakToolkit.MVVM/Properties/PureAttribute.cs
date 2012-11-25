@@ -13,7 +13,7 @@ namespace TweakToolkit.MVVM.Properties
     ///  {
     ///    return x*y;
     ///  }
-    /// 
+    ///
     ///  public void Foo()
     ///  {
     ///    const int a=2, b=2;

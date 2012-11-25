@@ -8,6 +8,8 @@ namespace TweakToolkit.WCF.Test.Wrapper
 {
     public class CatWebserviceWrapper : ICatWebserviceWrapper
     {
+        #region ctor
+
         public CatWebserviceWrapper(IImport service)
         {
             Webservice = service;
@@ -21,7 +23,13 @@ namespace TweakToolkit.WCF.Test.Wrapper
             Webservice = null;
         }
 
-        public WebserviceWrapperState WebserviceState { get; private set; }
+        #endregion ctor
+
+        #region Fields
+
+        #endregion Fields
+
+        #region Properties
 
         protected string Password
         {
@@ -35,7 +43,18 @@ namespace TweakToolkit.WCF.Test.Wrapper
 
         private IImport Webservice { get; set; }
 
-        public WebserviceResult Connect()
+        public bool IsConnected
+        {
+            get { return GetLoginStatus().Equals("Logged In"); }
+        }
+
+        public WebserviceWrapperState WebserviceState { get; private set; }
+
+        #endregion Properties
+
+        #region Service Methods
+
+        public IWebserviceResult Connect()
         {
             var info = new RequestInfo("Connect");
             WebserviceState = WebserviceWrapperState.Connecting;
@@ -45,14 +64,14 @@ namespace TweakToolkit.WCF.Test.Wrapper
             return result;
         }
 
-        public void ConnectAsync(Action<WebserviceResult> callback)
+        public void ConnectAsync(Action<IWebserviceResult> callback)
         {
             var requestInfo = new AsyncRequestInfo("ConnectAsnyc", callback);
             WebserviceState = WebserviceWrapperState.Connecting;
             Webservice.LoginAsync(UserName, Password, requestInfo);
         }
 
-        public WebserviceResult Disconnect()
+        public IWebserviceResult Disconnect()
         {
             var info = new RequestInfo("Disconnect");
             WebserviceState = WebserviceWrapperState.Disconnecting;
@@ -61,7 +80,7 @@ namespace TweakToolkit.WCF.Test.Wrapper
             return new WebserviceResult(info, logout);
         }
 
-        public void DisconnectAsync(Action<WebserviceResult> callback)
+        public void DisconnectAsync(Action<IWebserviceResult> callback)
         {
             var requestInfo = new AsyncRequestInfo("DisconnectAsync", callback);
             WebserviceState = WebserviceWrapperState.Disconnecting;
@@ -74,31 +93,11 @@ namespace TweakToolkit.WCF.Test.Wrapper
             return Webservice.GetLoginStatus();
         }
 
-        private static void InvokeAsyncRequestCallback(AsyncRequestInfo asyncRequestInfo, object[] objects,
-                                                       Exception exception)
-        {
-            if (asyncRequestInfo == null)
-            {
-                throw new NullReferenceException("asyncRequestInfo was null.");
-            }
-            asyncRequestInfo.Callback(new WebserviceResult(asyncRequestInfo, objects, exception));
-        }
-
-        private void InvokeAsyncRequestCallback(AsyncRequestInfo asyncRequestInfo, string result, Exception exception)
-        {
-            InvokeAsyncRequestCallback(asyncRequestInfo, new object[] { true, result }, exception);
-        }
-
         private void OnWebserviceOnGetLoginStatusCompleted(object service,
                                                            GetLoginStatusCompletedEventArgs loginStatusArgs)
         {
             InvokeAsyncRequestCallback(loginStatusArgs.UserState as AsyncRequestInfo, loginStatusArgs.Result,
                                        loginStatusArgs.Error);
-        }
-
-        private void OnWebserviceOnWritePriceCompleted(object sender, writePriceCompletedEventArgs e)
-        {
-            InvokeAsyncRequestCallback(e.UserState as AsyncRequestInfo, e.Result, e.Error);
         }
 
         private void RegisterServiceEvents()
@@ -117,9 +116,7 @@ namespace TweakToolkit.WCF.Test.Wrapper
             bool result = e.Result;
             if (result) WebserviceState = WebserviceWrapperState.Connected;
 
-            Exception exception = e.Error;
-
-            asyncRequestInfo.Callback(new WebserviceResult(asyncRequestInfo, result, exception));
+            asyncRequestInfo.Callback(new WebserviceResult(asyncRequestInfo, result));
         }
 
         private void WebserviceLogoutCompleted(object sender, LogoutCompletedEventArgs e)
@@ -129,24 +126,119 @@ namespace TweakToolkit.WCF.Test.Wrapper
 
             if (e.Result) WebserviceState = WebserviceWrapperState.Disconnected;
 
-            asyncRequestInfo.Callback(new WebserviceResult(asyncRequestInfo, e.Result, e.Error));
+            asyncRequestInfo.Callback(new WebserviceResult(asyncRequestInfo, e.Result));
         }
 
-        #region Prices
+        #endregion Service Methods
 
-        public WebserviceResult DeleteAllPrices(int valor)
+        #region Barrier Methods
+
+        public IWebserviceResult DeleteBarriers(int valor)
+        {
+            var operation = string.Format("DeleteBarriers for {0}", valor);
+            return WebserviceResult.Create(operation, Webservice.deleteBarrageOfProductByValor(valor));
+        }
+
+        public IWebserviceResult WriteBarrier(int valor, BarrierWebsiteDescription description)
+        {
+            string requestInfo = string.Format("WriteBarrier for {0}", valor);
+            return WebserviceResult.Create(requestInfo,
+                                           Webservice.writeBarrage(description.Valor, description.Name,
+                                                                   description.Barrier,
+                                                                   description.Trigger, description.Observation,
+                                                                   description.Settlement,
+                                                                   description.NameEn, description.TriggerEn,
+                                                                   description.ObservationEn,
+                                                                   description.SettlementEn));
+
+        }
+
+        public IWebserviceResult WriteBarriers(int valor, IEnumerable<BarrierWebsiteDescription> descriptions)
+        {
+            var info = new RequestInfo(string.Format("WriteBarriers for {0}", valor));
+            var result = new AggregateWebserviceResult(info);
+            foreach (BarrierWebsiteDescription description in descriptions)
+            {
+                result.Add(WriteBarrier(valor, description));
+            }
+            return result;
+        }
+
+        #endregion Barrier Methods
+
+        #region BaseValue Methods
+
+        public IWebserviceResult DeleteBaseValues(int valor)
+        {
+            string requestInfo = string.Format("DeleteEvents for {0}", valor);
+            return WebserviceResult.Create(requestInfo, Webservice.deleteBasevaluesOfProductByValor(valor));
+        }
+
+        public IWebserviceResult WriteBaseValue(int valor, BaseValueWebsiteDescription description)
+        {
+            string operation = string.Format("WriteBaseValue for {0}", valor);
+            return WebserviceResult.Create(operation, Webservice.writeBasevalue(description.Valor, description.Name));
+        }
+
+        public IWebserviceResult WriteBaseValues(int valor, IEnumerable<BaseValueWebsiteDescription> descriptions)
+        {
+            var info = new RequestInfo(string.Format("WriteBarriers for {0}", valor));
+            var result = new AggregateWebserviceResult(info);
+            foreach (BaseValueWebsiteDescription description in descriptions)
+            {
+                result.Add(WriteBaseValue(valor, description));
+            }
+            return result;
+        }
+
+        #endregion BaseValue Methods
+
+        #region Event Methods
+
+        public IWebserviceResult DeleteEvents(int valor)
+        {
+            var operation = string.Format("DeleteEvents for {0}", valor);
+            return WebserviceResult.Create(operation, Webservice.deleteEventsOfProductByValor(valor));
+        }
+
+        public IWebserviceResult WriteEvent(int valor, EventWebsiteDescription description)
+        {
+            var operation = string.Format("WriteEvent for {0}", valor);
+            return WebserviceResult.Create(operation, Webservice.writeEvent(description.Valor, description.ObservationDate, description.EventType,
+                                                 description.EventValutaDate,
+                                                 description.PeriodName, description.PeriodStart, description.PeriodEnd,
+                                                 description.Description, description.EventTypeEn,
+                                                 description.PeriodNameEn, description.DescriptionEn));
+        }
+
+        public IWebserviceResult WriteEvents(int valor, IEnumerable<EventWebsiteDescription> descriptions)
+        {
+            var info = new RequestInfo(string.Format("WriteEvents for {0}", valor));
+            var result = new AggregateWebserviceResult(info);
+            foreach (EventWebsiteDescription description in descriptions)
+            {
+                result.Add(WriteEvent(valor,description));
+            }
+            return result;
+        }
+
+        #endregion Event Methods
+
+        #region Price Methods
+
+        public IWebserviceResult DeleteAllPrices(int valor)
         {
             var info = new RequestInfo(string.Format("DeleteAllPricesForValor: {0}", valor));
             object[] deletePricesByValor = Webservice.deletePricesByValor(valor);
             return new WebserviceResult(info, deletePricesByValor);
         }
 
-        public WebserviceResult DeleteAllPricesAsync(int valor, Action<WebserviceResult> callback)
+        public IWebserviceResult DeleteAllPricesAsync(int valor, Action<IWebserviceResult> callback)
         {
             throw new NotImplementedException();
         }
 
-        public WebserviceResult WritePrice(PriceWebsiteDescription description)
+        public IWebserviceResult WritePrice(PriceWebsiteDescription description)
         {
             var info = new RequestInfo(string.Format("WritePrice {0}", description));
             object[] writePrice = Webservice.writePrice(description.Valor, description.LastUpdated, description.Bid,
@@ -154,25 +246,41 @@ namespace TweakToolkit.WCF.Test.Wrapper
             return new WebserviceResult(info, writePrice);
         }
 
-        public void WritePriceAsync(PriceWebsiteDescription description, Action<WebserviceResult> callback)
+        public void WritePriceAsync(PriceWebsiteDescription description, Action<IWebserviceResult> callback)
         {
             var asyncRequestInfo = new AsyncRequestInfo("WritePriceAsync", callback);
             Webservice.writePriceAsync(description.Valor, description.LastUpdated, description.Bid, description.Ask,
                                        asyncRequestInfo);
         }
 
-        public WebserviceResult WritePriceCollection(IEnumerable<PriceWebsiteDescription> descriptions)
+        public IWebserviceResult WritePriceCollection(IEnumerable<PriceWebsiteDescription> descriptions)
         {
             throw new NotImplementedException();
         }
 
         public void WritePriceCollectionAsync(IEnumerable<PriceWebsiteDescription> description,
-                                              Action<WebserviceResult> callback)
+                                              Action<IWebserviceResult> callback)
         {
             throw new NotImplementedException();
         }
 
-        public WebserviceResult WriteProduct(ProductWebsiteDescription d)
+        private void OnWebserviceOnWritePriceCompleted(object sender, writePriceCompletedEventArgs e)
+        {
+            InvokeAsyncRequestCallback(e.UserState as AsyncRequestInfo, e.Result, e.Error);
+        }
+
+        #endregion Price Methods
+
+        #region Product Methods
+
+        public IWebserviceResult DeleteProduct(int valor)
+        {
+            var info = new RequestInfo("Delete product " + valor);
+            object[] deleteProduct = Webservice.deleteProductByValor(valor);
+            return new WebserviceResult(info, deleteProduct);
+        }
+
+        public IWebserviceResult WriteProduct(ProductWebsiteDescription d)
         {
             var info = new RequestInfo(string.Format("WriteProduct {0}", d));
 
@@ -206,6 +314,31 @@ namespace TweakToolkit.WCF.Test.Wrapper
             return new WebserviceResult(info, writeProduct);
         }
 
-        #endregion Prices
+        #endregion Product Methods
+
+        #region Helper Methods
+
+        private static void InvokeAsyncRequestCallback(AsyncRequestInfo asyncRequestInfo, object[] objects,
+                                                       Exception exception)
+        {
+            if (exception != null)
+            {
+                throw new NotImplementedException("Unknown exception occurred.", exception);
+            }
+
+            if (asyncRequestInfo == null)
+            {
+                throw new NullReferenceException("asyncRequestInfo was null.");
+            }
+
+            asyncRequestInfo.Callback(new WebserviceResult(asyncRequestInfo, objects));
+        }
+
+        private void InvokeAsyncRequestCallback(AsyncRequestInfo asyncRequestInfo, string result, Exception exception)
+        {
+            InvokeAsyncRequestCallback(asyncRequestInfo, new object[] {true, result}, exception);
+        }
+
+        #endregion Helper Methods
     }
 }

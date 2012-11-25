@@ -22,7 +22,7 @@ namespace TweakToolkit.MVVM.Gateway
         private static object GetPropertyValue<TEntity>(TEntity entity, string propertyName, Type propertyType)
             where TEntity : class
         {
-            PropertyInfo propertyInfo = typeof (TEntity).GetProperty(propertyName, propertyType);
+            PropertyInfo propertyInfo = typeof(TEntity).GetProperty(propertyName, propertyType);
             return propertyInfo.GetValue(entity, null);
         }
 

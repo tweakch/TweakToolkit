@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Text;
-using System.Linq;
 using System.Threading;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TweakToolkit.MVVM.Model;
@@ -16,7 +14,7 @@ namespace TweakToolkit.MVVM.Test.Model
         {
             IServiceProvider provider = new TweakTestDataServiceProvider();
             var collection = new CycleModelCollection(provider);
-            
+
             while (collection.Reading)
             {
                 Thread.Sleep(200);

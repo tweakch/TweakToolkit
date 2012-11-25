@@ -11,5 +11,14 @@
     <Setting Name="Webservice_Password" Type="System.String" Scope="User">
       <Value Profile="(Default)">$#@_~|¢..aiksdfn17</Value>
     </Setting>
+    <Setting Name="TestProductValor" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">123456789</Value>
+    </Setting>
+    <Setting Name="CleanupAfterTestrun" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="InvalidValor" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

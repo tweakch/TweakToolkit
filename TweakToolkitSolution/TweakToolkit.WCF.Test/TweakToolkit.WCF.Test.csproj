@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\TweakToolkit.EntityFramework\bin\Debug\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -52,12 +55,12 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\WebsiteDataEntities.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>WebsiteDataEntities.edmx</DependentUpon>
-    </Compile>
     <Compile Include="ServiceDomain\AsyncRequestInfo.cs" />
+    <Compile Include="ServiceDomain\BarrierWebsiteDescription.cs" />
+    <Compile Include="ServiceDomain\WebsiteDescription.cs" />
+    <Compile Include="Wrapper\AggregateWebserviceResult.cs" />
+    <Compile Include="ServiceDomain\EventWebsiteDescription.cs" />
+    <Compile Include="Wrapper\BaseValueWebsiteDescription.cs" />
     <Compile Include="Wrapper\ICatWebserviceWrapper.cs" />
     <Compile Include="Mocks\ImportMock.cs" />
     <Compile Include="ServiceDomain\PriceWebsiteDescription.cs" />
@@ -68,11 +71,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="ServiceDomain\ProductWebsiteDescription.cs" />
+    <Compile Include="Wrapper\IWebserviceResult.cs" />
     <Compile Include="Wrapper\RequestInfo.cs" />
-    <Compile Include="Wrapper\UnavailableWebserviceWrapperMock.cs" />
+    <Compile Include="Wrapper\CatWebserviceWrapperMock.cs" />
     <Compile Include="Web References\CatWebservice\IImport.cs" />
     <Compile Include="ServiceDomainTests.cs" />
-    <Compile Include="WebserviceWrapperMockUnitTest.cs" />
+    <Compile Include="CatWebserviceWrapperUnitTest.cs" />
     <Compile Include="Web References\CatWebservice\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -103,10 +107,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <EntityDeploy Include="Data\WebsiteDataEntities.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>WebsiteDataEntities.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -121,13 +121,17 @@
     <None Include="Web References\CatWebservice\Import.disco" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TweakToolkit.EntityFramework\TweakToolkit.EntityFramework.csproj">
+      <Project>{56712A1A-E34E-4930-B767-E6F68BD78732}</Project>
+      <Name>TweakToolkit.EntityFramework</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TweakToolkit.WCF\TweakToolkit.WCF.csproj">
       <Project>{A37F59D1-3280-43E9-875C-12902EE01BB8}</Project>
       <Name>TweakToolkit.WCF</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Data\WebsiteDataEntities.edmx.sql" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

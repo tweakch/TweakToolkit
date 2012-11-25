@@ -132,7 +132,7 @@ namespace TweakToolkit.WCF.Test.CatWebservice
         event writeProductV2CompletedEventHandler writeProductV2Completed;
 
         /// <remarks />
-         void CancelAsync(object userState);
+        void CancelAsync(object userState);
 
         /// <remarks />
         [SoapDocumentMethod("http://www.cat-financial-files.ch/clearDatabase",

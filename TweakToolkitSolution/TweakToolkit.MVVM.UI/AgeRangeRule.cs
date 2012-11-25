@@ -31,7 +31,7 @@ namespace TweakToolkit.MVVM.UI
 
             try
             {
-                var s = (string) value;
+                var s = (string)value;
                 if (!string.IsNullOrEmpty(s))
                     age = Int32.Parse((String)value);
             }

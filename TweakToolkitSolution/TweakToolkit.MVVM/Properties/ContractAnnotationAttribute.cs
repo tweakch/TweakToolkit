@@ -43,7 +43,7 @@ namespace TweakToolkit.MVVM.Properties
     ///             <code>
     /// // A method that returns null if the parameter is null, and not null if the parameter is not null
     /// [ContractAnnotation("null => null; notnull => notnull")]
-    /// public object Transform(object data) 
+    /// public object Transform(object data)
     /// </code>
     ///         </item>
     ///         <item>
@@ -57,7 +57,8 @@ namespace TweakToolkit.MVVM.Properties
     [AttributeUsage(AttributeTargets.Method, AllowMultiple = true, Inherited = true)]
     public sealed class ContractAnnotationAttribute : Attribute
     {
-        public ContractAnnotationAttribute([NotNull] string fdt) : this(fdt, false)
+        public ContractAnnotationAttribute([NotNull] string fdt)
+            : this(fdt, false)
         {
         }
 
@@ -68,6 +69,7 @@ namespace TweakToolkit.MVVM.Properties
         }
 
         public string FDT { get; private set; }
+
         public bool ForceFullStates { get; private set; }
     }
 }

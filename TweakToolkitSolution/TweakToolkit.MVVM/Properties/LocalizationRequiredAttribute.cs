@@ -37,7 +37,8 @@ namespace TweakToolkit.MVVM.Properties
         ///     Initializes a new instance of the <see cref="LocalizationRequiredAttribute" /> class with
         ///     <see cref="Required" /> set to <see langword="true" />.
         /// </summary>
-        public LocalizationRequiredAttribute() : this(true)
+        public LocalizationRequiredAttribute()
+            : this(true)
         {
         }
 
@@ -85,7 +86,6 @@ namespace TweakToolkit.MVVM.Properties
             return base.GetHashCode();
         }
     }
-
 
     // ASP.NET MVC attributes
 

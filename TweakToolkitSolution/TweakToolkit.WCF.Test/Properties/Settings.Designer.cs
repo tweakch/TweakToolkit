@@ -56,5 +56,41 @@ namespace TweakToolkit.WCF.Test.Properties {
                 this["Webservice_Password"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("123456789")]
+        public int TestProductValor {
+            get {
+                return ((int)(this["TestProductValor"]));
+            }
+            set {
+                this["TestProductValor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool CleanupAfterTestrun {
+            get {
+                return ((bool)(this["CleanupAfterTestrun"]));
+            }
+            set {
+                this["CleanupAfterTestrun"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int InvalidValor {
+            get {
+                return ((int)(this["InvalidValor"]));
+            }
+            set {
+                this["InvalidValor"] = value;
+            }
+        }
     }
 }

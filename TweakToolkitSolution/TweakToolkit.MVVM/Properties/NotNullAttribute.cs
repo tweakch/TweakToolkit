@@ -11,7 +11,7 @@ namespace TweakToolkit.MVVM.Properties
     /// public object Foo()
     /// {
     ///   return null; // Warning: Possible 'null' assignment
-    /// } 
+    /// }
     /// </code>
     /// </example>
     [AttributeUsage(

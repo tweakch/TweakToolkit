@@ -2,7 +2,6 @@ using System;
 using System.Collections.ObjectModel;
 using TweakToolkit.MVVM.Model;
 using TweakToolkit.MVVM.Service;
-using TweakToolkit.MVVM.Test.Service;
 
 namespace TweakToolkit.MVVM.Test.Model
 {
@@ -39,7 +38,7 @@ namespace TweakToolkit.MVVM.Test.Model
 
         public void Save()
         {
-            repository.ValidateItems(new CycleModelValidator()); 
+            repository.ValidateItems(new CycleModelValidator());
             UpdateValidItems();
             repository.ClearValidItems();
         }

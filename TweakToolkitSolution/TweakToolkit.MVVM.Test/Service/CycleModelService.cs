@@ -55,7 +55,7 @@ namespace TweakToolkit.MVVM.Test.Service
         {
             if (cycle != null)
             {
-                AutoMapper.Mapper.Map(cycleModel,cycle);
+                AutoMapper.Mapper.Map(cycleModel, cycle);
             }
         }
     }

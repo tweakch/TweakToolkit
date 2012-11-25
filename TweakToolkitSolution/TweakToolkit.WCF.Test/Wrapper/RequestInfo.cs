@@ -11,6 +11,7 @@ namespace TweakToolkit.WCF.Test.Wrapper
         }
 
         public string Opearation { get; set; }
+
         public Guid RequestId { get; set; }
     }
 }

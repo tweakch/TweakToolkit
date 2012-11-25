@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Data.Entity;
 using AutoMapper;
-using TweakToolkit.MVVM.Model;
 
 namespace TweakToolkit.MVVM.Gateway
 {
@@ -11,7 +9,7 @@ namespace TweakToolkit.MVVM.Gateway
     {
         private readonly Dictionary<Type, Type> _modelTypeMap;
 
-        public EntityMappingGateway(Dictionary<Type,Type> typeMap)
+        public EntityMappingGateway(Dictionary<Type, Type> typeMap)
         {
             _modelTypeMap = typeMap;
             CreateMap();

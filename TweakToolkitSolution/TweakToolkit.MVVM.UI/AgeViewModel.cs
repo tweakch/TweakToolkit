@@ -5,6 +5,7 @@ namespace TweakToolkit.MVVM.UI
     public class AgeViewModel : NotificationObject
     {
         private int _age;
+
         public int Age
         {
             get { return _age; }

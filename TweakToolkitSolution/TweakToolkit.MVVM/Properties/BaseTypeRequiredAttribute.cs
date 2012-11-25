@@ -9,16 +9,16 @@ namespace TweakToolkit.MVVM.Properties
     /// <example>
     ///     <code>
     /// [BaseTypeRequired(typeof(IComponent)] // Specify requirement
-    /// public class ComponentAttribute : Attribute 
+    /// public class ComponentAttribute : Attribute
     /// {}
-    /// 
+    ///
     /// [Component] // ComponentAttribute requires implementing IComponent interface
     /// public class MyComponent : IComponent
     /// {}
     /// </code>
     /// </example>
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = true, Inherited = true)]
-    [BaseTypeRequired(typeof (Attribute))]
+    [BaseTypeRequired(typeof(Attribute))]
     public sealed class BaseTypeRequiredAttribute : Attribute
     {
         /// <summary>
@@ -27,7 +27,7 @@ namespace TweakToolkit.MVVM.Properties
         /// <param name="baseType">Specifies which types are required</param>
         public BaseTypeRequiredAttribute(Type baseType)
         {
-            BaseTypes = new[] {baseType};
+            BaseTypes = new[] { baseType };
         }
 
         /// <summary>

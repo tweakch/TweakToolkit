@@ -9,6 +9,7 @@ namespace TweakToolkit.MVVM.Model
         }
 
         public bool IsValid { get; set; }
+
         public string ErrorMessage { get; set; }
     }
 }

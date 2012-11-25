@@ -2,8 +2,18 @@
 
 namespace TweakToolkit.WCF.Test.Wrapper
 {
-    public class WebserviceResult
+    public class WebserviceResult : IWebserviceResult
     {
+        public static IWebserviceResult Create(string requestInfo, object[] result)
+        {
+            return new WebserviceResult(new RequestInfo(requestInfo), result);
+        }
+
+        public static IWebserviceResult Create(string requestInfo, bool result)
+        {
+            return Create(requestInfo, new object[] {result});
+        }
+
         public WebserviceResult(RequestInfo userState, object[] result)
         {
             RequestInfo = userState;
@@ -11,34 +21,20 @@ namespace TweakToolkit.WCF.Test.Wrapper
             ParseResult();
         }
 
-        //TODO: Inspect the service behaviour... Is there ever an exception on the service that requires this constructor?
-        public WebserviceResult(RequestInfo userState, object[] result, Exception exception)
-        {
-            RequestInfo = userState;
-            ServiceResult = result;
-            ParseResult();
-            if (ServiceException == null) ServiceException = exception;
-        }
-
-        public WebserviceResult(RequestInfo userState, bool result, Exception exception)
-            : this(userState, new object[] { result }, exception)
-        {
-        }
-
         public WebserviceResult(RequestInfo userState, bool result)
             : this(userState, new object[] { result })
         {
         }
 
-        public bool Completed { get; set; }
-
+        public virtual bool HasErrors {
+            get { return !(bool)ServiceResult[0]; }
+        }
+        
         public RequestInfo RequestInfo { get; set; }
+        
+        public virtual string ServiceMessage { get; private set; }
 
-        public Exception ServiceException { get; set; }
-
-        public string ServiceMessage { get; private set; }
-
-        public object[] ServiceResult { get; set; }
+        protected object[] ServiceResult { get; set; }
 
         private string GetMessage()
         {
@@ -59,14 +55,12 @@ namespace TweakToolkit.WCF.Test.Wrapper
 
         private void ParseResult()
         {
-            Completed = (bool)ServiceResult[0];
             var serviceMessage = GetMessage();
-            if (!Completed)
+            if (HasErrors)
             {
                 serviceMessage = string.Format("{0} caused an exception: {1}",
                                                RequestInfo.Opearation,
                                                serviceMessage);
-                ServiceException = new OperationCanceledException(serviceMessage);
             }
             ServiceMessage = serviceMessage;
         }

@@ -13,11 +13,11 @@ namespace TweakToolkit.MVVM.Properties
     /// {
     ///   return null;
     /// }
-    /// 
+    ///
     /// public void UseTest()
     /// {
-    ///   var p = Test(); 
-    ///   var s = p.ToString(); // Warning: Possible 'System.NullReferenceException' 
+    ///   var p = Test();
+    ///   var s = p.ToString(); // Warning: Possible 'System.NullReferenceException'
     /// }
     /// </code>
     /// </example>

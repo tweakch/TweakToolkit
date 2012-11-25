@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Globalization;
-using TweakToolkit.WCF.Test.Data;
+using TweakToolkit.EntityFramework.WebsiteData;
 
 namespace TweakToolkit.WCF.Test.ServiceDomain
 {
-    public struct ProductWebsiteDescription
+    public class ProductWebsiteDescription : WebsiteDescription
     {
         public ProductWebsiteDescription(ProductWebsiteData data, bool hasEnglish = false)
-            : this()
         {
             AssetClass = AssignString(data.AssetClass);
             AssetClassEn = AssignString(data.AssetClassEn);
@@ -21,14 +20,12 @@ namespace TweakToolkit.WCF.Test.ServiceDomain
             couponBedingtEn = AssignString(data.CouponConditionalEN);
             CouponGuaranteed_En = AssignString(data.CouponGuaranteedEN);
             CouponObservation = AssignString(data.CouponGuaranteed);
-
             cpbedingt = AssignString(data.ConditionalObservation);
             cpbedingtEn = AssignString(data.ConditionalObservationEn);
             CPFloater = AssignString(data.FloaterObservation);
             CPFloaterEn = AssignString(data.FloaterObservationEn);
             CpGuaranteed = AssignString(data.CouponObservation);
             CpGuaranteedEn = AssignString(data.CouponObservationEn);
-
             Currency = AssignString(data.Currency);
             CurrencyRisk = AssignString(data.CurrencyRisk);
             CurrencyRiskEn = AssignString(data.CurrencyRiskEn);
@@ -37,22 +34,6 @@ namespace TweakToolkit.WCF.Test.ServiceDomain
             DiscountEn = AssignString(data.DiscountEN);
             EarlyRedemption = AssignString(data.EarlyRedemption);
             EarlyRedemptionEn = AssignString(data.EarlyRedemptionEn);
-
-            if (data.Pricing.Equals("Nominal"))
-            {
-                EmissionPrice = AssignString(data.EmissionPrice + "%");
-                NumberFormatInfo numberFormat = CultureInfo.GetCultureInfo("de-CH").NumberFormat;
-                Nominal = AssignString(data.Currency + " " + data.Notional.ToString("##,##", numberFormat));
-                SmallestTradeableUnit =
-                    AssignString(data.Currency + " " + data.SmallestTradeableUnit.ToString("##,##", numberFormat));
-            }
-            else
-            {
-                EmissionPrice = AssignString(data.Currency + " " + data.EmissionPrice);
-                Nominal = AssignString(data.Notional + " Zertifikat(e)");
-                SmallestTradeableUnit = AssignString(data.SmallestTradeableUnit + " Zertifikat(e)");
-            }
-
             EmissionType = AssignString(data.EmissionTypeDescription);
             EndFixationDate = AssignDateTime(data.EndFixationDate.GetValueOrDefault());
             Floater = AssignString(data.Floater);
@@ -79,6 +60,7 @@ namespace TweakToolkit.WCF.Test.ServiceDomain
             PartizipationEn = AssignString(data.ParticipationEN);
             PartizipationText = AssignString(data.TextParticipation);
             PartizipationTextEn = AssignString(data.TextParticipationEN);
+            Pricing = AssignString(data.Pricing);
             Pricing = AssignString(data.Pricing);
             PricingEn = AssignString(data.PricingEn);
             ProductCat = AssignString(data.ProductCategory);
@@ -119,6 +101,21 @@ namespace TweakToolkit.WCF.Test.ServiceDomain
             TextMaxPaybackEn = AssignString(data.TextPaybackMaximalEN);
             Valor = AssignInteger(data.Valor);
             ValutaDate = AssignDateTime(data.ValutaDate.GetValueOrDefault());
+
+            if (Pricing.Equals("Nominal"))
+            {
+                EmissionPrice = AssignString(data.EmissionPrice + "%");
+                NumberFormatInfo numberFormat = CultureInfo.GetCultureInfo("de-CH").NumberFormat;
+                Nominal = AssignString(data.Currency + " " + data.Notional.ToString("##,##", numberFormat));
+                SmallestTradeableUnit =
+                    AssignString(data.Currency + " " + data.SmallestTradeableUnit.ToString("##,##", numberFormat));
+            }
+            else
+            {
+                EmissionPrice = AssignString(data.Currency + " " + data.EmissionPrice);
+                Nominal = AssignString(data.Notional + " Zertifikat(e)");
+                SmallestTradeableUnit = AssignString(data.SmallestTradeableUnit + " Zertifikat(e)");
+            }
         }
 
         public string AssetClass { get; private set; }
@@ -310,21 +307,5 @@ namespace TweakToolkit.WCF.Test.ServiceDomain
         public int Valor { get; private set; }
 
         public DateTime ValutaDate { get; private set; }
-
-        private static string AssignString(object obj)
-        {
-            return (string)(obj ?? string.Empty);
-        }
-
-        private static int AssignInteger(object obj)
-        {
-            return (int)(obj ?? 0);
-        }
-        
-        private static DateTime AssignDateTime(object obj)
-        {
-            return (DateTime) (obj ?? new DateTime(1900,1,1));
-        }
-
     }
 }

@@ -13,14 +13,14 @@ namespace TweakToolkit.MVVM.Properties
     /// class NoEquality
     /// {
     /// }
-    /// 
+    ///
     /// class UsesNoEquality
     /// {
     ///   public void Test()
     ///   {
     ///     var ca1 = new NoEquality();
     ///     var ca2 = new NoEquality();
-    /// 
+    ///
     ///     if (ca1 != null) // OK
     ///     {
     ///       bool condition = ca1 == ca2; // Warning

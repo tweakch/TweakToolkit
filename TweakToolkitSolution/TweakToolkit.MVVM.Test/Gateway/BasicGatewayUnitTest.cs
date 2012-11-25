@@ -8,8 +8,10 @@ using TweakToolkit.MVVM.Gateway.Exceptions;
 namespace TweakToolkit.MVVM.Test.Gateway
 {
     [TestClass]
+
     // ReSharper disable InconsistentNaming
     public class BasicGatewayUnitTest
+
     // ReSharper restore InconsistentNaming
     {
         [TestMethod]

@@ -6,37 +6,51 @@ namespace TweakToolkit.WCF.Test.Wrapper
 {
     public interface ICatWebserviceWrapper
     {
-        WebserviceWrapperState WebserviceState { get; }
-
-        WebserviceResult Connect();
-
-        void ConnectAsync(Action<WebserviceResult> callback);
-
-        WebserviceResult Disconnect();
-
-        void DisconnectAsync(Action<WebserviceResult> callback);
-
         #region Price
-        
-        WebserviceResult WritePrice(PriceWebsiteDescription description);
 
-        void WritePriceAsync(PriceWebsiteDescription description, Action<WebserviceResult> callback);
-
-        WebserviceResult WritePriceCollection(IEnumerable<PriceWebsiteDescription> descriptions);
-
-        void WritePriceCollectionAsync(IEnumerable<PriceWebsiteDescription> description, Action<WebserviceResult> callback);
-
-        WebserviceResult DeleteAllPrices(int valor);
-
-        WebserviceResult DeleteAllPricesAsync(int valor, Action<WebserviceResult> callback);
-
-        #endregion
+        #endregion Price
 
         #region Product
 
-        WebserviceResult WriteProduct(ProductWebsiteDescription d);
+        #endregion Product
 
+        WebserviceWrapperState WebserviceState { get; }
 
-        #endregion
+        bool IsConnected { get; }
+
+        IWebserviceResult Connect();
+
+        void ConnectAsync(Action<IWebserviceResult> callback);
+
+        IWebserviceResult Disconnect();
+
+        void DisconnectAsync(Action<IWebserviceResult> callback);
+
+        string GetLoginStatus();
+
+        IWebserviceResult DeleteEvents(int valor);
+
+        IWebserviceResult WriteEvents(int valor, IEnumerable<EventWebsiteDescription> descriptions);
+
+        IWebserviceResult DeleteBarriers(int valor);
+
+        IWebserviceResult WriteBarriers(int valor, IEnumerable<BarrierWebsiteDescription> descriptions);
+
+        IWebserviceResult DeleteAllPrices(int valor);
+
+        IWebserviceResult DeleteAllPricesAsync(int valor, Action<IWebserviceResult> callback);
+
+        IWebserviceResult WritePrice(PriceWebsiteDescription description);
+
+        void WritePriceAsync(PriceWebsiteDescription description, Action<IWebserviceResult> callback);
+
+        IWebserviceResult WritePriceCollection(IEnumerable<PriceWebsiteDescription> descriptions);
+
+        void WritePriceCollectionAsync(IEnumerable<PriceWebsiteDescription> description,
+                                                       Action<IWebserviceResult> callback);
+
+        IWebserviceResult DeleteProduct(int valor);
+
+        IWebserviceResult WriteProduct(ProductWebsiteDescription d);
     }
 }
