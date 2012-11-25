@@ -224,6 +224,7 @@ namespace TweakToolkit.WCF.Test
             throw new NotImplementedException();
         }
 
+        [TestMethod]
         public void WriteFileForValor()
         {
             throw new NotImplementedException();
