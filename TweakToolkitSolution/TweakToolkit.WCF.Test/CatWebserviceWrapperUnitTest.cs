@@ -61,7 +61,7 @@ namespace TweakToolkit.WCF.Test
         [TestMethod]
         public void WriteAllEventsForExistingValor()
         {
-            List<EventWebsiteDescription> descriptions = GetEventWebsiteDescriptions();
+            List<EventWebsiteDescription> descriptions = TestHelper.GetEventWebsiteDescriptions();
             Assert.AreNotEqual(0, descriptions.Count());
 
             var wrapper = new CatWebserviceWrapper(Service);
@@ -69,7 +69,7 @@ namespace TweakToolkit.WCF.Test
             Assert.IsFalse(connect.HasErrors, connect.ServiceMessage);
             Assert.IsTrue(wrapper.IsConnected);
 
-            IWebserviceResult writeProduct = wrapper.WriteProduct(GetProductWebsiteDescription());
+            IWebserviceResult writeProduct = wrapper.WriteProduct(TestHelper.GetProductWebsiteDescription());
             Assert.IsFalse(writeProduct.HasErrors);
 
             IWebserviceResult writeEvents = wrapper.WriteEvents(Settings.Default.TestProductValor, descriptions);
@@ -79,7 +79,7 @@ namespace TweakToolkit.WCF.Test
         [TestMethod]
         public void WriteAllEventsForNonExistingValor()
         {
-            List<EventWebsiteDescription> descriptions = GetEventWebsiteDescriptions();
+            List<EventWebsiteDescription> descriptions = TestHelper.GetEventWebsiteDescriptions();
             Assert.AreNotEqual(0, descriptions.Count());
 
             var wrapper = new CatWebserviceWrapper(Service);
@@ -91,18 +91,9 @@ namespace TweakToolkit.WCF.Test
             Assert.IsFalse(writeEvents.HasErrors, writeEvents.ServiceMessage);
         }
 
-        private List<EventWebsiteDescription> GetEventWebsiteDescriptions()
-        {
-            List<EventWebsiteDescription> events;
-            using (var db = new StruktoWebsiteEntities())
-            {
-                events = db.GetEventWebsiteData(Settings.Default.TestProductValor)
-                             .Select(data => new EventWebsiteDescription(data)).ToList();
-            }
-            return events;
-        }
 
-        #endregion
+
+        #endregion Event Functions
 
         #region Barrier Functions
 
@@ -133,7 +124,7 @@ namespace TweakToolkit.WCF.Test
         [TestMethod]
         public void WriteAllBarriersForExistingValor()
         {
-            List<BarrierWebsiteDescription> descriptions = GetBarrierWebsiteDescriptions();
+            List<BarrierWebsiteDescription> descriptions = TestHelper.GetBarrierWebsiteDescriptions();
             Assert.AreNotEqual(0, descriptions.Count());
 
             var wrapper = new CatWebserviceWrapper(Service);
@@ -141,7 +132,7 @@ namespace TweakToolkit.WCF.Test
             Assert.IsFalse(connect.HasErrors, connect.ServiceMessage);
             Assert.IsTrue(wrapper.IsConnected);
 
-            IWebserviceResult writeProduct = wrapper.WriteProduct(GetProductWebsiteDescription());
+            IWebserviceResult writeProduct = wrapper.WriteProduct(TestHelper.GetProductWebsiteDescription());
             Assert.IsFalse(writeProduct.HasErrors);
 
             IWebserviceResult writeBarriers = wrapper.WriteBarriers(Settings.Default.TestProductValor, descriptions);
@@ -151,7 +142,7 @@ namespace TweakToolkit.WCF.Test
         [TestMethod]
         public void WriteAllBarriersForNonExistingValor()
         {
-            List<BarrierWebsiteDescription> descriptions = GetBarrierWebsiteDescriptions();
+            List<BarrierWebsiteDescription> descriptions = TestHelper.GetBarrierWebsiteDescriptions();
             Assert.AreNotEqual(0, descriptions.Count());
 
             var wrapper = new CatWebserviceWrapper(Service);
@@ -163,16 +154,7 @@ namespace TweakToolkit.WCF.Test
             Assert.IsFalse(writeBarriers.HasErrors, writeBarriers.ServiceMessage);
         }
 
-        private List<BarrierWebsiteDescription> GetBarrierWebsiteDescriptions()
-        {
-            List<BarrierWebsiteDescription> barriers;
-            using (var db = new StruktoWebsiteEntities())
-            {
-                barriers = db.GetBarrierWebsiteData(Settings.Default.TestProductValor)
-                             .Select(data => new BarrierWebsiteDescription(data)).ToList();
-            }
-            return barriers;
-        }
+
 
         #endregion Barrier Functions
 
@@ -181,7 +163,7 @@ namespace TweakToolkit.WCF.Test
         [TestMethod]
         public void DeleteAllPricesForValor()
         {
-            PriceWebsiteDescription price = GetPriceWebsiteDescription();
+            PriceWebsiteDescription price = TestHelper.GetPriceWebsiteDescription();
 
             var wrapper = new CatWebserviceWrapper(Service);
             wrapper.Connect();
@@ -195,7 +177,7 @@ namespace TweakToolkit.WCF.Test
         public void WritePriceForOnlineProductTest()
         {
             var wrapper = new CatWebserviceWrapper(Service);
-            PriceWebsiteDescription price = GetPriceWebsiteDescription();
+            PriceWebsiteDescription price = TestHelper.GetPriceWebsiteDescription();
 
             wrapper.Connect();
 
@@ -208,7 +190,7 @@ namespace TweakToolkit.WCF.Test
         public void WritePriceOnDisconnectedServiceTest()
         {
             var wrapper = new CatWebserviceWrapper(Service);
-            PriceWebsiteDescription price = GetPriceWebsiteDescription();
+            PriceWebsiteDescription price = TestHelper.GetPriceWebsiteDescription();
             Assert.AreEqual(WebserviceWrapperState.Disconnected, wrapper.WebserviceState);
 
             IWebserviceResult webserviceResult = wrapper.WritePrice(price);
@@ -217,15 +199,6 @@ namespace TweakToolkit.WCF.Test
             Assert.IsNotNull(webserviceResult.RequestInfo);
         }
 
-        private static PriceWebsiteDescription GetPriceWebsiteDescription()
-        {
-            PriceWebsiteDescription price;
-            using (var db = new StruktoWebsiteEntities())
-            {
-                price = new PriceWebsiteDescription(db.GetPriceWebsiteData(Settings.Default.TestProductValor).Single());
-            }
-            return price;
-        }
 
         #endregion Price Functions
 
@@ -235,7 +208,7 @@ namespace TweakToolkit.WCF.Test
         public void DeleteNonExistingProductFromWebsite()
         {
             var wrapper = new CatWebserviceWrapper(Service);
-            ProductWebsiteDescription description = GetEmptyProductWebsiteDescription();
+            ProductWebsiteDescription description = TestHelper.GetEmptyProductWebsiteDescription();
             wrapper.Connect();
 
             IWebserviceResult webserviceResult = wrapper.WriteProduct(description);
@@ -245,7 +218,7 @@ namespace TweakToolkit.WCF.Test
         [TestMethod]
         public void PublishUnpublishProductWithReadData()
         {
-            ProductWebsiteDescription description = GetProductWebsiteDescription();
+            ProductWebsiteDescription description = TestHelper.GetProductWebsiteDescription();
 
             var wrapper = new CatWebserviceWrapper(Service);
             wrapper.Connect();
@@ -263,26 +236,12 @@ namespace TweakToolkit.WCF.Test
             var wrapper = new CatWebserviceWrapper(Service);
             wrapper.Connect();
 
-            IWebserviceResult webserviceResult = wrapper.WriteProduct(GetEmptyProductWebsiteDescription());
+            IWebserviceResult webserviceResult = wrapper.WriteProduct(TestHelper.GetEmptyProductWebsiteDescription());
             Assert.IsTrue(webserviceResult.HasErrors, webserviceResult.ServiceMessage);
         }
 
-        private static ProductWebsiteDescription GetEmptyProductWebsiteDescription()
-        {
-            var description = new ProductWebsiteDescription(new ProductWebsiteData());
-            return description;
-        }
 
-        private static ProductWebsiteDescription GetProductWebsiteDescription()
-        {
-            ProductWebsiteDescription description;
-            using (var db = new StruktoWebsiteEntities())
-            {
-                description =
-                    new ProductWebsiteDescription(db.ProductWebsiteDataSet.Single(p => p.Valor == Settings.Default.TestProductValor));
-            }
-            return description;
-        }
+
 
         #endregion Product Functions
 
@@ -321,7 +280,7 @@ namespace TweakToolkit.WCF.Test
             bool wait = true;
 
             wrapper.WritePriceAsync(
-                GetPriceWebsiteDescription(),
+                TestHelper.GetPriceWebsiteDescription(),
                 asyncResult =>
                 {
                     Assert.IsTrue(asyncResult.HasErrors);
@@ -368,7 +327,7 @@ namespace TweakToolkit.WCF.Test
         public void WebserviceResultExceptionTest()
         {
             var wrapper = new CatWebserviceWrapper(Service);
-            IWebserviceResult result = wrapper.WritePrice(GetPriceWebsiteDescription());
+            IWebserviceResult result = wrapper.WritePrice(TestHelper.GetPriceWebsiteDescription());
             Assert.IsTrue(result.HasErrors);
             Assert.IsNotNull(result.ServiceMessage, result.ServiceMessage);
         }

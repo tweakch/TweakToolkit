@@ -8,7 +8,8 @@ namespace TweakToolkit.WCF.Test.Wrapper
     {
         private List<IWebserviceResult> _results;
 
-        public AggregateWebserviceResult(RequestInfo info) : base(info, false)
+        public AggregateWebserviceResult(RequestInfo info)
+            : base(info, false)
         {
         }
 

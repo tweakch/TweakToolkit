@@ -11,7 +11,7 @@ namespace TweakToolkit.WCF.Test.Wrapper
 
         public static IWebserviceResult Create(string requestInfo, bool result)
         {
-            return Create(requestInfo, new object[] {result});
+            return Create(requestInfo, new object[] { result });
         }
 
         public WebserviceResult(RequestInfo userState, object[] result)
@@ -26,12 +26,13 @@ namespace TweakToolkit.WCF.Test.Wrapper
         {
         }
 
-        public virtual bool HasErrors {
+        public virtual bool HasErrors
+        {
             get { return !(bool)ServiceResult[0]; }
         }
-        
+
         public RequestInfo RequestInfo { get; set; }
-        
+
         public virtual string ServiceMessage { get; private set; }
 
         protected object[] ServiceResult { get; set; }
@@ -48,7 +49,7 @@ namespace TweakToolkit.WCF.Test.Wrapper
             }
             if (ServiceResult.Length == 3)
             {
-                return string.Format("{0}: {1}",ServiceResult[2], ServiceResult[1]);
+                return string.Format("{0}: {1}", ServiceResult[2], ServiceResult[1]);
             }
             throw new NotImplementedException();
         }

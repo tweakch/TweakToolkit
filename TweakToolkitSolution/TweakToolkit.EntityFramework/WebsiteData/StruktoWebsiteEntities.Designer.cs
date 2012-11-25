@@ -63,36 +63,6 @@ namespace TweakToolkit.EntityFramework.WebsiteData
     
         #endregion
     
-        #region ObjectSet Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<ProductWebsiteData> ProductWebsiteDataSet
-        {
-            get
-            {
-                if ((_ProductWebsiteDataSet == null))
-                {
-                    _ProductWebsiteDataSet = base.CreateObjectSet<ProductWebsiteData>("ProductWebsiteDataSet");
-                }
-                return _ProductWebsiteDataSet;
-            }
-        }
-        private ObjectSet<ProductWebsiteData> _ProductWebsiteDataSet;
-
-        #endregion
-        #region AddTo Methods
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the ProductWebsiteDataSet EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToProductWebsiteDataSet(ProductWebsiteData productWebsiteData)
-        {
-            base.AddObject("ProductWebsiteDataSet", productWebsiteData);
-        }
-
-        #endregion
         #region Function Imports
     
         /// <summary>
@@ -151,6 +121,33 @@ namespace TweakToolkit.EntityFramework.WebsiteData
     
             return base.ExecuteFunction<EventWebsiteData>("GetEventWebsiteData", valorParameter);
         }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectResult<ProductWebsiteData> GetProductWebsiteData()
+        {
+            return base.ExecuteFunction<ProductWebsiteData>("GetProductWebsiteData");
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        /// <param name="valor">No Metadata Documentation available.</param>
+        public ObjectResult<BaseValueWebsiteData> GetBaseValueWebsiteData(Nullable<global::System.Int32> valor)
+        {
+            ObjectParameter valorParameter;
+            if (valor.HasValue)
+            {
+                valorParameter = new ObjectParameter("valor", valor);
+            }
+            else
+            {
+                valorParameter = new ObjectParameter("valor", typeof(global::System.Int32));
+            }
+    
+            return base.ExecuteFunction<BaseValueWebsiteData>("GetBaseValueWebsiteData", valorParameter);
+        }
 
         #endregion
     }
@@ -158,15 +155,993 @@ namespace TweakToolkit.EntityFramework.WebsiteData
 
     #endregion
     
-    #region Entities
+    #region ComplexTypes
     
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="StruktoWebsiteDataModel", Name="ProductWebsiteData")]
-    [Serializable()]
+    [EdmComplexTypeAttribute(NamespaceName="StruktoWebsiteDataModel", Name="BarrierWebsiteData")]
     [DataContractAttribute(IsReference=true)]
-    public partial class ProductWebsiteData : EntityObject
+    [Serializable()]
+    public partial class BarrierWebsiteData : ComplexObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new BarrierWebsiteData object.
+        /// </summary>
+        /// <param name="name">Initial value of the Name property.</param>
+        /// <param name="nameEN">Initial value of the NameEN property.</param>
+        /// <param name="valor">Initial value of the Valor property.</param>
+        /// <param name="value">Initial value of the Value property.</param>
+        /// <param name="isManual">Initial value of the IsManual property.</param>
+        /// <param name="trigger">Initial value of the Trigger property.</param>
+        /// <param name="triggerEn">Initial value of the TriggerEn property.</param>
+        /// <param name="observation">Initial value of the Observation property.</param>
+        /// <param name="observationEn">Initial value of the ObservationEn property.</param>
+        /// <param name="settlement">Initial value of the Settlement property.</param>
+        /// <param name="settlementEn">Initial value of the SettlementEn property.</param>
+        public static BarrierWebsiteData CreateBarrierWebsiteData(global::System.String name, global::System.String nameEN, global::System.Int32 valor, global::System.Decimal value, global::System.Boolean isManual, global::System.String trigger, global::System.String triggerEn, global::System.String observation, global::System.String observationEn, global::System.String settlement, global::System.String settlementEn)
+        {
+            BarrierWebsiteData barrierWebsiteData = new BarrierWebsiteData();
+            barrierWebsiteData.Name = name;
+            barrierWebsiteData.NameEN = nameEN;
+            barrierWebsiteData.Valor = valor;
+            barrierWebsiteData.Value = value;
+            barrierWebsiteData.IsManual = isManual;
+            barrierWebsiteData.Trigger = trigger;
+            barrierWebsiteData.TriggerEn = triggerEn;
+            barrierWebsiteData.Observation = observation;
+            barrierWebsiteData.ObservationEn = observationEn;
+            barrierWebsiteData.Settlement = settlement;
+            barrierWebsiteData.SettlementEn = settlementEn;
+            return barrierWebsiteData;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Name
+        {
+            get
+            {
+                return _Name;
+            }
+            set
+            {
+                OnNameChanging(value);
+                ReportPropertyChanging("Name");
+                _Name = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Name");
+                OnNameChanged();
+            }
+        }
+        private global::System.String _Name;
+        partial void OnNameChanging(global::System.String value);
+        partial void OnNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String NameEN
+        {
+            get
+            {
+                return _NameEN;
+            }
+            set
+            {
+                OnNameENChanging(value);
+                ReportPropertyChanging("NameEN");
+                _NameEN = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("NameEN");
+                OnNameENChanged();
+            }
+        }
+        private global::System.String _NameEN;
+        partial void OnNameENChanging(global::System.String value);
+        partial void OnNameENChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Valor
+        {
+            get
+            {
+                return _Valor;
+            }
+            set
+            {
+                OnValorChanging(value);
+                ReportPropertyChanging("Valor");
+                _Valor = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Valor");
+                OnValorChanged();
+            }
+        }
+        private global::System.Int32 _Valor;
+        partial void OnValorChanging(global::System.Int32 value);
+        partial void OnValorChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Decimal Value
+        {
+            get
+            {
+                return _Value;
+            }
+            set
+            {
+                OnValueChanging(value);
+                ReportPropertyChanging("Value");
+                _Value = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Value");
+                OnValueChanged();
+            }
+        }
+        private global::System.Decimal _Value;
+        partial void OnValueChanging(global::System.Decimal value);
+        partial void OnValueChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean IsManual
+        {
+            get
+            {
+                return _IsManual;
+            }
+            set
+            {
+                OnIsManualChanging(value);
+                ReportPropertyChanging("IsManual");
+                _IsManual = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("IsManual");
+                OnIsManualChanged();
+            }
+        }
+        private global::System.Boolean _IsManual;
+        partial void OnIsManualChanging(global::System.Boolean value);
+        partial void OnIsManualChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Trigger
+        {
+            get
+            {
+                return _Trigger;
+            }
+            set
+            {
+                OnTriggerChanging(value);
+                ReportPropertyChanging("Trigger");
+                _Trigger = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Trigger");
+                OnTriggerChanged();
+            }
+        }
+        private global::System.String _Trigger;
+        partial void OnTriggerChanging(global::System.String value);
+        partial void OnTriggerChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String TriggerEn
+        {
+            get
+            {
+                return _TriggerEn;
+            }
+            set
+            {
+                OnTriggerEnChanging(value);
+                ReportPropertyChanging("TriggerEn");
+                _TriggerEn = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("TriggerEn");
+                OnTriggerEnChanged();
+            }
+        }
+        private global::System.String _TriggerEn;
+        partial void OnTriggerEnChanging(global::System.String value);
+        partial void OnTriggerEnChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Observation
+        {
+            get
+            {
+                return _Observation;
+            }
+            set
+            {
+                OnObservationChanging(value);
+                ReportPropertyChanging("Observation");
+                _Observation = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Observation");
+                OnObservationChanged();
+            }
+        }
+        private global::System.String _Observation;
+        partial void OnObservationChanging(global::System.String value);
+        partial void OnObservationChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String ObservationEn
+        {
+            get
+            {
+                return _ObservationEn;
+            }
+            set
+            {
+                OnObservationEnChanging(value);
+                ReportPropertyChanging("ObservationEn");
+                _ObservationEn = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("ObservationEn");
+                OnObservationEnChanged();
+            }
+        }
+        private global::System.String _ObservationEn;
+        partial void OnObservationEnChanging(global::System.String value);
+        partial void OnObservationEnChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Settlement
+        {
+            get
+            {
+                return _Settlement;
+            }
+            set
+            {
+                OnSettlementChanging(value);
+                ReportPropertyChanging("Settlement");
+                _Settlement = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Settlement");
+                OnSettlementChanged();
+            }
+        }
+        private global::System.String _Settlement;
+        partial void OnSettlementChanging(global::System.String value);
+        partial void OnSettlementChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String SettlementEn
+        {
+            get
+            {
+                return _SettlementEn;
+            }
+            set
+            {
+                OnSettlementEnChanging(value);
+                ReportPropertyChanging("SettlementEn");
+                _SettlementEn = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("SettlementEn");
+                OnSettlementEnChanged();
+            }
+        }
+        private global::System.String _SettlementEn;
+        partial void OnSettlementEnChanging(global::System.String value);
+        partial void OnSettlementEnChanged();
+
+        #endregion
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmComplexTypeAttribute(NamespaceName="StruktoWebsiteDataModel", Name="BaseValueWebsiteData")]
+    [DataContractAttribute(IsReference=true)]
+    [Serializable()]
+    public partial class BaseValueWebsiteData : ComplexObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new BaseValueWebsiteData object.
+        /// </summary>
+        /// <param name="valor">Initial value of the Valor property.</param>
+        /// <param name="name">Initial value of the Name property.</param>
+        /// <param name="bloombergTicker">Initial value of the BloombergTicker property.</param>
+        /// <param name="startValue">Initial value of the StartValue property.</param>
+        /// <param name="bloombergType">Initial value of the BloombergType property.</param>
+        /// <param name="bloombergTypeEN">Initial value of the BloombergTypeEN property.</param>
+        /// <param name="currency">Initial value of the Currency property.</param>
+        /// <param name="currencyEN">Initial value of the CurrencyEN property.</param>
+        public static BaseValueWebsiteData CreateBaseValueWebsiteData(global::System.Int32 valor, global::System.String name, global::System.String bloombergTicker, global::System.String startValue, global::System.String bloombergType, global::System.String bloombergTypeEN, global::System.String currency, global::System.String currencyEN)
+        {
+            BaseValueWebsiteData baseValueWebsiteData = new BaseValueWebsiteData();
+            baseValueWebsiteData.Valor = valor;
+            baseValueWebsiteData.Name = name;
+            baseValueWebsiteData.BloombergTicker = bloombergTicker;
+            baseValueWebsiteData.StartValue = startValue;
+            baseValueWebsiteData.BloombergType = bloombergType;
+            baseValueWebsiteData.BloombergTypeEN = bloombergTypeEN;
+            baseValueWebsiteData.Currency = currency;
+            baseValueWebsiteData.CurrencyEN = currencyEN;
+            return baseValueWebsiteData;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Valor
+        {
+            get
+            {
+                return _Valor;
+            }
+            set
+            {
+                OnValorChanging(value);
+                ReportPropertyChanging("Valor");
+                _Valor = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Valor");
+                OnValorChanged();
+            }
+        }
+        private global::System.Int32 _Valor;
+        partial void OnValorChanging(global::System.Int32 value);
+        partial void OnValorChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Name
+        {
+            get
+            {
+                return _Name;
+            }
+            set
+            {
+                OnNameChanging(value);
+                ReportPropertyChanging("Name");
+                _Name = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Name");
+                OnNameChanged();
+            }
+        }
+        private global::System.String _Name;
+        partial void OnNameChanging(global::System.String value);
+        partial void OnNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String BloombergTicker
+        {
+            get
+            {
+                return _BloombergTicker;
+            }
+            set
+            {
+                OnBloombergTickerChanging(value);
+                ReportPropertyChanging("BloombergTicker");
+                _BloombergTicker = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("BloombergTicker");
+                OnBloombergTickerChanged();
+            }
+        }
+        private global::System.String _BloombergTicker;
+        partial void OnBloombergTickerChanging(global::System.String value);
+        partial void OnBloombergTickerChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String StartValue
+        {
+            get
+            {
+                return _StartValue;
+            }
+            set
+            {
+                OnStartValueChanging(value);
+                ReportPropertyChanging("StartValue");
+                _StartValue = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("StartValue");
+                OnStartValueChanged();
+            }
+        }
+        private global::System.String _StartValue;
+        partial void OnStartValueChanging(global::System.String value);
+        partial void OnStartValueChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String BloombergType
+        {
+            get
+            {
+                return _BloombergType;
+            }
+            set
+            {
+                OnBloombergTypeChanging(value);
+                ReportPropertyChanging("BloombergType");
+                _BloombergType = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("BloombergType");
+                OnBloombergTypeChanged();
+            }
+        }
+        private global::System.String _BloombergType;
+        partial void OnBloombergTypeChanging(global::System.String value);
+        partial void OnBloombergTypeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String BloombergTypeEN
+        {
+            get
+            {
+                return _BloombergTypeEN;
+            }
+            set
+            {
+                OnBloombergTypeENChanging(value);
+                ReportPropertyChanging("BloombergTypeEN");
+                _BloombergTypeEN = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("BloombergTypeEN");
+                OnBloombergTypeENChanged();
+            }
+        }
+        private global::System.String _BloombergTypeEN;
+        partial void OnBloombergTypeENChanging(global::System.String value);
+        partial void OnBloombergTypeENChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Currency
+        {
+            get
+            {
+                return _Currency;
+            }
+            set
+            {
+                OnCurrencyChanging(value);
+                ReportPropertyChanging("Currency");
+                _Currency = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Currency");
+                OnCurrencyChanged();
+            }
+        }
+        private global::System.String _Currency;
+        partial void OnCurrencyChanging(global::System.String value);
+        partial void OnCurrencyChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String CurrencyEN
+        {
+            get
+            {
+                return _CurrencyEN;
+            }
+            set
+            {
+                OnCurrencyENChanging(value);
+                ReportPropertyChanging("CurrencyEN");
+                _CurrencyEN = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("CurrencyEN");
+                OnCurrencyENChanged();
+            }
+        }
+        private global::System.String _CurrencyEN;
+        partial void OnCurrencyENChanging(global::System.String value);
+        partial void OnCurrencyENChanged();
+
+        #endregion
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmComplexTypeAttribute(NamespaceName="StruktoWebsiteDataModel", Name="EventWebsiteData")]
+    [DataContractAttribute(IsReference=true)]
+    [Serializable()]
+    public partial class EventWebsiteData : ComplexObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new EventWebsiteData object.
+        /// </summary>
+        /// <param name="valor">Initial value of the Valor property.</param>
+        /// <param name="observationDate">Initial value of the ObservationDate property.</param>
+        /// <param name="eventValutaDate">Initial value of the EventValutaDate property.</param>
+        /// <param name="periodName">Initial value of the PeriodName property.</param>
+        /// <param name="periodStart">Initial value of the PeriodStart property.</param>
+        /// <param name="periodEnd">Initial value of the PeriodEnd property.</param>
+        /// <param name="description">Initial value of the Description property.</param>
+        /// <param name="descriptionEN">Initial value of the DescriptionEN property.</param>
+        /// <param name="periodNameEN">Initial value of the PeriodNameEN property.</param>
+        /// <param name="eventTypeName">Initial value of the EventTypeName property.</param>
+        /// <param name="eventTypeNameEN">Initial value of the EventTypeNameEN property.</param>
+        public static EventWebsiteData CreateEventWebsiteData(global::System.Int32 valor, global::System.DateTime observationDate, global::System.DateTime eventValutaDate, global::System.String periodName, global::System.DateTime periodStart, global::System.DateTime periodEnd, global::System.String description, global::System.String descriptionEN, global::System.String periodNameEN, global::System.String eventTypeName, global::System.String eventTypeNameEN)
+        {
+            EventWebsiteData eventWebsiteData = new EventWebsiteData();
+            eventWebsiteData.Valor = valor;
+            eventWebsiteData.ObservationDate = observationDate;
+            eventWebsiteData.EventValutaDate = eventValutaDate;
+            eventWebsiteData.PeriodName = periodName;
+            eventWebsiteData.PeriodStart = periodStart;
+            eventWebsiteData.PeriodEnd = periodEnd;
+            eventWebsiteData.Description = description;
+            eventWebsiteData.DescriptionEN = descriptionEN;
+            eventWebsiteData.PeriodNameEN = periodNameEN;
+            eventWebsiteData.EventTypeName = eventTypeName;
+            eventWebsiteData.EventTypeNameEN = eventTypeNameEN;
+            return eventWebsiteData;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Valor
+        {
+            get
+            {
+                return _Valor;
+            }
+            set
+            {
+                OnValorChanging(value);
+                ReportPropertyChanging("Valor");
+                _Valor = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Valor");
+                OnValorChanged();
+            }
+        }
+        private global::System.Int32 _Valor;
+        partial void OnValorChanging(global::System.Int32 value);
+        partial void OnValorChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime ObservationDate
+        {
+            get
+            {
+                return _ObservationDate;
+            }
+            set
+            {
+                OnObservationDateChanging(value);
+                ReportPropertyChanging("ObservationDate");
+                _ObservationDate = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("ObservationDate");
+                OnObservationDateChanged();
+            }
+        }
+        private global::System.DateTime _ObservationDate;
+        partial void OnObservationDateChanging(global::System.DateTime value);
+        partial void OnObservationDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime EventValutaDate
+        {
+            get
+            {
+                return _EventValutaDate;
+            }
+            set
+            {
+                OnEventValutaDateChanging(value);
+                ReportPropertyChanging("EventValutaDate");
+                _EventValutaDate = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("EventValutaDate");
+                OnEventValutaDateChanged();
+            }
+        }
+        private global::System.DateTime _EventValutaDate;
+        partial void OnEventValutaDateChanging(global::System.DateTime value);
+        partial void OnEventValutaDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String PeriodName
+        {
+            get
+            {
+                return _PeriodName;
+            }
+            set
+            {
+                OnPeriodNameChanging(value);
+                ReportPropertyChanging("PeriodName");
+                _PeriodName = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("PeriodName");
+                OnPeriodNameChanged();
+            }
+        }
+        private global::System.String _PeriodName;
+        partial void OnPeriodNameChanging(global::System.String value);
+        partial void OnPeriodNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime PeriodStart
+        {
+            get
+            {
+                return _PeriodStart;
+            }
+            set
+            {
+                OnPeriodStartChanging(value);
+                ReportPropertyChanging("PeriodStart");
+                _PeriodStart = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("PeriodStart");
+                OnPeriodStartChanged();
+            }
+        }
+        private global::System.DateTime _PeriodStart;
+        partial void OnPeriodStartChanging(global::System.DateTime value);
+        partial void OnPeriodStartChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime PeriodEnd
+        {
+            get
+            {
+                return _PeriodEnd;
+            }
+            set
+            {
+                OnPeriodEndChanging(value);
+                ReportPropertyChanging("PeriodEnd");
+                _PeriodEnd = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("PeriodEnd");
+                OnPeriodEndChanged();
+            }
+        }
+        private global::System.DateTime _PeriodEnd;
+        partial void OnPeriodEndChanging(global::System.DateTime value);
+        partial void OnPeriodEndChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Description
+        {
+            get
+            {
+                return _Description;
+            }
+            set
+            {
+                OnDescriptionChanging(value);
+                ReportPropertyChanging("Description");
+                _Description = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Description");
+                OnDescriptionChanged();
+            }
+        }
+        private global::System.String _Description;
+        partial void OnDescriptionChanging(global::System.String value);
+        partial void OnDescriptionChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String DescriptionEN
+        {
+            get
+            {
+                return _DescriptionEN;
+            }
+            set
+            {
+                OnDescriptionENChanging(value);
+                ReportPropertyChanging("DescriptionEN");
+                _DescriptionEN = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("DescriptionEN");
+                OnDescriptionENChanged();
+            }
+        }
+        private global::System.String _DescriptionEN;
+        partial void OnDescriptionENChanging(global::System.String value);
+        partial void OnDescriptionENChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String PeriodNameEN
+        {
+            get
+            {
+                return _PeriodNameEN;
+            }
+            set
+            {
+                OnPeriodNameENChanging(value);
+                ReportPropertyChanging("PeriodNameEN");
+                _PeriodNameEN = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("PeriodNameEN");
+                OnPeriodNameENChanged();
+            }
+        }
+        private global::System.String _PeriodNameEN;
+        partial void OnPeriodNameENChanging(global::System.String value);
+        partial void OnPeriodNameENChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String EventTypeName
+        {
+            get
+            {
+                return _EventTypeName;
+            }
+            set
+            {
+                OnEventTypeNameChanging(value);
+                ReportPropertyChanging("EventTypeName");
+                _EventTypeName = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("EventTypeName");
+                OnEventTypeNameChanged();
+            }
+        }
+        private global::System.String _EventTypeName;
+        partial void OnEventTypeNameChanging(global::System.String value);
+        partial void OnEventTypeNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String EventTypeNameEN
+        {
+            get
+            {
+                return _EventTypeNameEN;
+            }
+            set
+            {
+                OnEventTypeNameENChanging(value);
+                ReportPropertyChanging("EventTypeNameEN");
+                _EventTypeNameEN = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("EventTypeNameEN");
+                OnEventTypeNameENChanged();
+            }
+        }
+        private global::System.String _EventTypeNameEN;
+        partial void OnEventTypeNameENChanging(global::System.String value);
+        partial void OnEventTypeNameENChanged();
+
+        #endregion
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmComplexTypeAttribute(NamespaceName="StruktoWebsiteDataModel", Name="PriceWebsiteData")]
+    [DataContractAttribute(IsReference=true)]
+    [Serializable()]
+    public partial class PriceWebsiteData : ComplexObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new PriceWebsiteData object.
+        /// </summary>
+        /// <param name="valor">Initial value of the Valor property.</param>
+        public static PriceWebsiteData CreatePriceWebsiteData(global::System.Int32 valor)
+        {
+            PriceWebsiteData priceWebsiteData = new PriceWebsiteData();
+            priceWebsiteData.Valor = valor;
+            return priceWebsiteData;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Valor
+        {
+            get
+            {
+                return _Valor;
+            }
+            set
+            {
+                OnValorChanging(value);
+                ReportPropertyChanging("Valor");
+                _Valor = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Valor");
+                OnValorChanged();
+            }
+        }
+        private global::System.Int32 _Valor;
+        partial void OnValorChanging(global::System.Int32 value);
+        partial void OnValorChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> UpdatedOn
+        {
+            get
+            {
+                return _UpdatedOn;
+            }
+            set
+            {
+                OnUpdatedOnChanging(value);
+                ReportPropertyChanging("UpdatedOn");
+                _UpdatedOn = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("UpdatedOn");
+                OnUpdatedOnChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _UpdatedOn;
+        partial void OnUpdatedOnChanging(Nullable<global::System.DateTime> value);
+        partial void OnUpdatedOnChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Double> Bid
+        {
+            get
+            {
+                return _Bid;
+            }
+            set
+            {
+                OnBidChanging(value);
+                ReportPropertyChanging("Bid");
+                _Bid = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Bid");
+                OnBidChanged();
+            }
+        }
+        private Nullable<global::System.Double> _Bid;
+        partial void OnBidChanging(Nullable<global::System.Double> value);
+        partial void OnBidChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Double> Ask
+        {
+            get
+            {
+                return _Ask;
+            }
+            set
+            {
+                OnAskChanging(value);
+                ReportPropertyChanging("Ask");
+                _Ask = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Ask");
+                OnAskChanged();
+            }
+        }
+        private Nullable<global::System.Double> _Ask;
+        partial void OnAskChanging(Nullable<global::System.Double> value);
+        partial void OnAskChanged();
+
+        #endregion
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmComplexTypeAttribute(NamespaceName="StruktoWebsiteDataModel", Name="ProductWebsiteData")]
+    [DataContractAttribute(IsReference=true)]
+    [Serializable()]
+    public partial class ProductWebsiteData : ComplexObject
     {
         #region Factory Method
     
@@ -261,7 +1236,7 @@ namespace TweakToolkit.EntityFramework.WebsiteData
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.Int32 Valor
         {
@@ -271,14 +1246,11 @@ namespace TweakToolkit.EntityFramework.WebsiteData
             }
             set
             {
-                if (_Valor != value)
-                {
-                    OnValorChanging(value);
-                    ReportPropertyChanging("Valor");
-                    _Valor = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("Valor");
-                    OnValorChanged();
-                }
+                OnValorChanging(value);
+                ReportPropertyChanging("Valor");
+                _Valor = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Valor");
+                OnValorChanged();
             }
         }
         private global::System.Int32 _Valor;
@@ -288,7 +1260,7 @@ namespace TweakToolkit.EntityFramework.WebsiteData
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String Name
         {
@@ -298,14 +1270,11 @@ namespace TweakToolkit.EntityFramework.WebsiteData
             }
             set
             {
-                if (_Name != value)
-                {
-                    OnNameChanging(value);
-                    ReportPropertyChanging("Name");
-                    _Name = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("Name");
-                    OnNameChanged();
-                }
+                OnNameChanging(value);
+                ReportPropertyChanging("Name");
+                _Name = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Name");
+                OnNameChanged();
             }
         }
         private global::System.String _Name;
@@ -315,7 +1284,7 @@ namespace TweakToolkit.EntityFramework.WebsiteData
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String NameEN
         {
@@ -325,14 +1294,11 @@ namespace TweakToolkit.EntityFramework.WebsiteData
             }
             set
             {
-                if (_NameEN != value)
-                {
-                    OnNameENChanging(value);
-                    ReportPropertyChanging("NameEN");
-                    _NameEN = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("NameEN");
-                    OnNameENChanged();
-                }
+                OnNameENChanging(value);
+                ReportPropertyChanging("NameEN");
+                _NameEN = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("NameEN");
+                OnNameENChanged();
             }
         }
         private global::System.String _NameEN;
@@ -342,7 +1308,7 @@ namespace TweakToolkit.EntityFramework.WebsiteData
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.Boolean IsOnline
         {
@@ -352,14 +1318,11 @@ namespace TweakToolkit.EntityFramework.WebsiteData
             }
             set
             {
-                if (_IsOnline != value)
-                {
-                    OnIsOnlineChanging(value);
-                    ReportPropertyChanging("IsOnline");
-                    _IsOnline = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IsOnline");
-                    OnIsOnlineChanged();
-                }
+                OnIsOnlineChanging(value);
+                ReportPropertyChanging("IsOnline");
+                _IsOnline = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("IsOnline");
+                OnIsOnlineChanged();
             }
         }
         private global::System.Boolean _IsOnline;
@@ -369,7 +1332,7 @@ namespace TweakToolkit.EntityFramework.WebsiteData
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.Boolean IsPriceDirty
         {
@@ -379,14 +1342,11 @@ namespace TweakToolkit.EntityFramework.WebsiteData
             }
             set
             {
-                if (_IsPriceDirty != value)
-                {
-                    OnIsPriceDirtyChanging(value);
-                    ReportPropertyChanging("IsPriceDirty");
-                    _IsPriceDirty = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IsPriceDirty");
-                    OnIsPriceDirtyChanged();
-                }
+                OnIsPriceDirtyChanging(value);
+                ReportPropertyChanging("IsPriceDirty");
+                _IsPriceDirty = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("IsPriceDirty");
+                OnIsPriceDirtyChanged();
             }
         }
         private global::System.Boolean _IsPriceDirty;
@@ -396,7 +1356,7 @@ namespace TweakToolkit.EntityFramework.WebsiteData
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.Double EmissionPrice
         {
@@ -406,14 +1366,11 @@ namespace TweakToolkit.EntityFramework.WebsiteData
             }
             set
             {
-                if (_EmissionPrice != value)
-                {
-                    OnEmissionPriceChanging(value);
-                    ReportPropertyChanging("EmissionPrice");
-                    _EmissionPrice = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("EmissionPrice");
-                    OnEmissionPriceChanged();
-                }
+                OnEmissionPriceChanging(value);
+                ReportPropertyChanging("EmissionPrice");
+                _EmissionPrice = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("EmissionPrice");
+                OnEmissionPriceChanged();
             }
         }
         private global::System.Double _EmissionPrice;
@@ -423,7 +1380,7 @@ namespace TweakToolkit.EntityFramework.WebsiteData
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.Int32 Notional
         {
@@ -433,14 +1390,11 @@ namespace TweakToolkit.EntityFramework.WebsiteData
             }
             set
             {
-                if (_Notional != value)
-                {
-                    OnNotionalChanging(value);
-                    ReportPropertyChanging("Notional");
-                    _Notional = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("Notional");
-                    OnNotionalChanged();
-                }
+                OnNotionalChanging(value);
+                ReportPropertyChanging("Notional");
+                _Notional = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Notional");
+                OnNotionalChanged();
             }
         }
         private global::System.Int32 _Notional;
@@ -450,7 +1404,7 @@ namespace TweakToolkit.EntityFramework.WebsiteData
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.Int32 SmallestTradeableUnit
         {
@@ -460,14 +1414,11 @@ namespace TweakToolkit.EntityFramework.WebsiteData
             }
             set
             {
-                if (_SmallestTradeableUnit != value)
-                {
-                    OnSmallestTradeableUnitChanging(value);
-                    ReportPropertyChanging("SmallestTradeableUnit");
-                    _SmallestTradeableUnit = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("SmallestTradeableUnit");
-                    OnSmallestTradeableUnitChanged();
-                }
+                OnSmallestTradeableUnitChanging(value);
+                ReportPropertyChanging("SmallestTradeableUnit");
+                _SmallestTradeableUnit = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("SmallestTradeableUnit");
+                OnSmallestTradeableUnitChanged();
             }
         }
         private global::System.Int32 _SmallestTradeableUnit;
@@ -621,7 +1572,7 @@ namespace TweakToolkit.EntityFramework.WebsiteData
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String AssetClass
         {
@@ -631,14 +1582,11 @@ namespace TweakToolkit.EntityFramework.WebsiteData
             }
             set
             {
-                if (_AssetClass != value)
-                {
-                    OnAssetClassChanging(value);
-                    ReportPropertyChanging("AssetClass");
-                    _AssetClass = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("AssetClass");
-                    OnAssetClassChanged();
-                }
+                OnAssetClassChanging(value);
+                ReportPropertyChanging("AssetClass");
+                _AssetClass = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("AssetClass");
+                OnAssetClassChanged();
             }
         }
         private global::System.String _AssetClass;
@@ -648,7 +1596,7 @@ namespace TweakToolkit.EntityFramework.WebsiteData
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String AssetClassEn
         {
@@ -658,14 +1606,11 @@ namespace TweakToolkit.EntityFramework.WebsiteData
             }
             set
             {
-                if (_AssetClassEn != value)
-                {
-                    OnAssetClassEnChanging(value);
-                    ReportPropertyChanging("AssetClassEn");
-                    _AssetClassEn = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("AssetClassEn");
-                    OnAssetClassEnChanged();
-                }
+                OnAssetClassEnChanging(value);
+                ReportPropertyChanging("AssetClassEn");
+                _AssetClassEn = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("AssetClassEn");
+                OnAssetClassEnChanged();
             }
         }
         private global::System.String _AssetClassEn;
@@ -675,7 +1620,7 @@ namespace TweakToolkit.EntityFramework.WebsiteData
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String ProductCategory
         {
@@ -685,14 +1630,11 @@ namespace TweakToolkit.EntityFramework.WebsiteData
             }
             set
             {
-                if (_ProductCategory != value)
-                {
-                    OnProductCategoryChanging(value);
-                    ReportPropertyChanging("ProductCategory");
-                    _ProductCategory = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("ProductCategory");
-                    OnProductCategoryChanged();
-                }
+                OnProductCategoryChanging(value);
+                ReportPropertyChanging("ProductCategory");
+                _ProductCategory = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("ProductCategory");
+                OnProductCategoryChanged();
             }
         }
         private global::System.String _ProductCategory;
@@ -702,7 +1644,7 @@ namespace TweakToolkit.EntityFramework.WebsiteData
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String ProductCategoryEn
         {
@@ -712,14 +1654,11 @@ namespace TweakToolkit.EntityFramework.WebsiteData
             }
             set
             {
-                if (_ProductCategoryEn != value)
-                {
-                    OnProductCategoryEnChanging(value);
-                    ReportPropertyChanging("ProductCategoryEn");
-                    _ProductCategoryEn = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("ProductCategoryEn");
-                    OnProductCategoryEnChanged();
-                }
+                OnProductCategoryEnChanging(value);
+                ReportPropertyChanging("ProductCategoryEn");
+                _ProductCategoryEn = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("ProductCategoryEn");
+                OnProductCategoryEnChanged();
             }
         }
         private global::System.String _ProductCategoryEn;
@@ -729,7 +1668,7 @@ namespace TweakToolkit.EntityFramework.WebsiteData
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String ProductState
         {
@@ -739,14 +1678,11 @@ namespace TweakToolkit.EntityFramework.WebsiteData
             }
             set
             {
-                if (_ProductState != value)
-                {
-                    OnProductStateChanging(value);
-                    ReportPropertyChanging("ProductState");
-                    _ProductState = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("ProductState");
-                    OnProductStateChanged();
-                }
+                OnProductStateChanging(value);
+                ReportPropertyChanging("ProductState");
+                _ProductState = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("ProductState");
+                OnProductStateChanged();
             }
         }
         private global::System.String _ProductState;
@@ -756,7 +1692,7 @@ namespace TweakToolkit.EntityFramework.WebsiteData
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String ProductStateEn
         {
@@ -766,14 +1702,11 @@ namespace TweakToolkit.EntityFramework.WebsiteData
             }
             set
             {
-                if (_ProductStateEn != value)
-                {
-                    OnProductStateEnChanging(value);
-                    ReportPropertyChanging("ProductStateEn");
-                    _ProductStateEn = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("ProductStateEn");
-                    OnProductStateEnChanged();
-                }
+                OnProductStateEnChanging(value);
+                ReportPropertyChanging("ProductStateEn");
+                _ProductStateEn = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("ProductStateEn");
+                OnProductStateEnChanged();
             }
         }
         private global::System.String _ProductStateEn;
@@ -783,7 +1716,7 @@ namespace TweakToolkit.EntityFramework.WebsiteData
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String ProductType
         {
@@ -793,14 +1726,11 @@ namespace TweakToolkit.EntityFramework.WebsiteData
             }
             set
             {
-                if (_ProductType != value)
-                {
-                    OnProductTypeChanging(value);
-                    ReportPropertyChanging("ProductType");
-                    _ProductType = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("ProductType");
-                    OnProductTypeChanged();
-                }
+                OnProductTypeChanging(value);
+                ReportPropertyChanging("ProductType");
+                _ProductType = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("ProductType");
+                OnProductTypeChanged();
             }
         }
         private global::System.String _ProductType;
@@ -810,7 +1740,7 @@ namespace TweakToolkit.EntityFramework.WebsiteData
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String ProductTypeEn
         {
@@ -820,14 +1750,11 @@ namespace TweakToolkit.EntityFramework.WebsiteData
             }
             set
             {
-                if (_ProductTypeEn != value)
-                {
-                    OnProductTypeEnChanging(value);
-                    ReportPropertyChanging("ProductTypeEn");
-                    _ProductTypeEn = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("ProductTypeEn");
-                    OnProductTypeEnChanged();
-                }
+                OnProductTypeEnChanging(value);
+                ReportPropertyChanging("ProductTypeEn");
+                _ProductTypeEn = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("ProductTypeEn");
+                OnProductTypeEnChanged();
             }
         }
         private global::System.String _ProductTypeEn;
@@ -837,7 +1764,7 @@ namespace TweakToolkit.EntityFramework.WebsiteData
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String Currency
         {
@@ -847,14 +1774,11 @@ namespace TweakToolkit.EntityFramework.WebsiteData
             }
             set
             {
-                if (_Currency != value)
-                {
-                    OnCurrencyChanging(value);
-                    ReportPropertyChanging("Currency");
-                    _Currency = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("Currency");
-                    OnCurrencyChanged();
-                }
+                OnCurrencyChanging(value);
+                ReportPropertyChanging("Currency");
+                _Currency = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Currency");
+                OnCurrencyChanged();
             }
         }
         private global::System.String _Currency;
@@ -864,7 +1788,7 @@ namespace TweakToolkit.EntityFramework.WebsiteData
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String CurrencyRisk
         {
@@ -874,14 +1798,11 @@ namespace TweakToolkit.EntityFramework.WebsiteData
             }
             set
             {
-                if (_CurrencyRisk != value)
-                {
-                    OnCurrencyRiskChanging(value);
-                    ReportPropertyChanging("CurrencyRisk");
-                    _CurrencyRisk = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("CurrencyRisk");
-                    OnCurrencyRiskChanged();
-                }
+                OnCurrencyRiskChanging(value);
+                ReportPropertyChanging("CurrencyRisk");
+                _CurrencyRisk = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("CurrencyRisk");
+                OnCurrencyRiskChanged();
             }
         }
         private global::System.String _CurrencyRisk;
@@ -891,7 +1812,7 @@ namespace TweakToolkit.EntityFramework.WebsiteData
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String CurrencyRiskEn
         {
@@ -901,14 +1822,11 @@ namespace TweakToolkit.EntityFramework.WebsiteData
             }
             set
             {
-                if (_CurrencyRiskEn != value)
-                {
-                    OnCurrencyRiskEnChanging(value);
-                    ReportPropertyChanging("CurrencyRiskEn");
-                    _CurrencyRiskEn = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("CurrencyRiskEn");
-                    OnCurrencyRiskEnChanged();
-                }
+                OnCurrencyRiskEnChanging(value);
+                ReportPropertyChanging("CurrencyRiskEn");
+                _CurrencyRiskEn = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("CurrencyRiskEn");
+                OnCurrencyRiskEnChanged();
             }
         }
         private global::System.String _CurrencyRiskEn;
@@ -918,7 +1836,7 @@ namespace TweakToolkit.EntityFramework.WebsiteData
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String Pricing
         {
@@ -928,14 +1846,11 @@ namespace TweakToolkit.EntityFramework.WebsiteData
             }
             set
             {
-                if (_Pricing != value)
-                {
-                    OnPricingChanging(value);
-                    ReportPropertyChanging("Pricing");
-                    _Pricing = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("Pricing");
-                    OnPricingChanged();
-                }
+                OnPricingChanging(value);
+                ReportPropertyChanging("Pricing");
+                _Pricing = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Pricing");
+                OnPricingChanged();
             }
         }
         private global::System.String _Pricing;
@@ -945,7 +1860,7 @@ namespace TweakToolkit.EntityFramework.WebsiteData
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String PricingEn
         {
@@ -955,14 +1870,11 @@ namespace TweakToolkit.EntityFramework.WebsiteData
             }
             set
             {
-                if (_PricingEn != value)
-                {
-                    OnPricingEnChanging(value);
-                    ReportPropertyChanging("PricingEn");
-                    _PricingEn = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("PricingEn");
-                    OnPricingEnChanged();
-                }
+                OnPricingEnChanging(value);
+                ReportPropertyChanging("PricingEn");
+                _PricingEn = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("PricingEn");
+                OnPricingEnChanged();
             }
         }
         private global::System.String _PricingEn;
@@ -1068,7 +1980,7 @@ namespace TweakToolkit.EntityFramework.WebsiteData
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.Boolean HasEndFixation
         {
@@ -1078,14 +1990,11 @@ namespace TweakToolkit.EntityFramework.WebsiteData
             }
             set
             {
-                if (_HasEndFixation != value)
-                {
-                    OnHasEndFixationChanging(value);
-                    ReportPropertyChanging("HasEndFixation");
-                    _HasEndFixation = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("HasEndFixation");
-                    OnHasEndFixationChanged();
-                }
+                OnHasEndFixationChanging(value);
+                ReportPropertyChanging("HasEndFixation");
+                _HasEndFixation = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("HasEndFixation");
+                OnHasEndFixationChanged();
             }
         }
         private global::System.Boolean _HasEndFixation;
@@ -1095,7 +2004,7 @@ namespace TweakToolkit.EntityFramework.WebsiteData
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String CouponObservation
         {
@@ -1105,14 +2014,11 @@ namespace TweakToolkit.EntityFramework.WebsiteData
             }
             set
             {
-                if (_CouponObservation != value)
-                {
-                    OnCouponObservationChanging(value);
-                    ReportPropertyChanging("CouponObservation");
-                    _CouponObservation = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("CouponObservation");
-                    OnCouponObservationChanged();
-                }
+                OnCouponObservationChanging(value);
+                ReportPropertyChanging("CouponObservation");
+                _CouponObservation = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("CouponObservation");
+                OnCouponObservationChanged();
             }
         }
         private global::System.String _CouponObservation;
@@ -1122,7 +2028,7 @@ namespace TweakToolkit.EntityFramework.WebsiteData
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String CouponObservationEn
         {
@@ -1132,14 +2038,11 @@ namespace TweakToolkit.EntityFramework.WebsiteData
             }
             set
             {
-                if (_CouponObservationEn != value)
-                {
-                    OnCouponObservationEnChanging(value);
-                    ReportPropertyChanging("CouponObservationEn");
-                    _CouponObservationEn = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("CouponObservationEn");
-                    OnCouponObservationEnChanged();
-                }
+                OnCouponObservationEnChanging(value);
+                ReportPropertyChanging("CouponObservationEn");
+                _CouponObservationEn = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("CouponObservationEn");
+                OnCouponObservationEnChanged();
             }
         }
         private global::System.String _CouponObservationEn;
@@ -1149,7 +2052,7 @@ namespace TweakToolkit.EntityFramework.WebsiteData
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String ConditionalObservation
         {
@@ -1159,14 +2062,11 @@ namespace TweakToolkit.EntityFramework.WebsiteData
             }
             set
             {
-                if (_ConditionalObservation != value)
-                {
-                    OnConditionalObservationChanging(value);
-                    ReportPropertyChanging("ConditionalObservation");
-                    _ConditionalObservation = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("ConditionalObservation");
-                    OnConditionalObservationChanged();
-                }
+                OnConditionalObservationChanging(value);
+                ReportPropertyChanging("ConditionalObservation");
+                _ConditionalObservation = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("ConditionalObservation");
+                OnConditionalObservationChanged();
             }
         }
         private global::System.String _ConditionalObservation;
@@ -1176,7 +2076,7 @@ namespace TweakToolkit.EntityFramework.WebsiteData
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String ConditionalObservationEn
         {
@@ -1186,14 +2086,11 @@ namespace TweakToolkit.EntityFramework.WebsiteData
             }
             set
             {
-                if (_ConditionalObservationEn != value)
-                {
-                    OnConditionalObservationEnChanging(value);
-                    ReportPropertyChanging("ConditionalObservationEn");
-                    _ConditionalObservationEn = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("ConditionalObservationEn");
-                    OnConditionalObservationEnChanged();
-                }
+                OnConditionalObservationEnChanging(value);
+                ReportPropertyChanging("ConditionalObservationEn");
+                _ConditionalObservationEn = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("ConditionalObservationEn");
+                OnConditionalObservationEnChanged();
             }
         }
         private global::System.String _ConditionalObservationEn;
@@ -1203,7 +2100,7 @@ namespace TweakToolkit.EntityFramework.WebsiteData
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String FloaterObservation
         {
@@ -1213,14 +2110,11 @@ namespace TweakToolkit.EntityFramework.WebsiteData
             }
             set
             {
-                if (_FloaterObservation != value)
-                {
-                    OnFloaterObservationChanging(value);
-                    ReportPropertyChanging("FloaterObservation");
-                    _FloaterObservation = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("FloaterObservation");
-                    OnFloaterObservationChanged();
-                }
+                OnFloaterObservationChanging(value);
+                ReportPropertyChanging("FloaterObservation");
+                _FloaterObservation = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("FloaterObservation");
+                OnFloaterObservationChanged();
             }
         }
         private global::System.String _FloaterObservation;
@@ -1230,7 +2124,7 @@ namespace TweakToolkit.EntityFramework.WebsiteData
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String FloaterObservationEn
         {
@@ -1240,14 +2134,11 @@ namespace TweakToolkit.EntityFramework.WebsiteData
             }
             set
             {
-                if (_FloaterObservationEn != value)
-                {
-                    OnFloaterObservationEnChanging(value);
-                    ReportPropertyChanging("FloaterObservationEn");
-                    _FloaterObservationEn = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("FloaterObservationEn");
-                    OnFloaterObservationEnChanged();
-                }
+                OnFloaterObservationEnChanging(value);
+                ReportPropertyChanging("FloaterObservationEn");
+                _FloaterObservationEn = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("FloaterObservationEn");
+                OnFloaterObservationEnChanged();
             }
         }
         private global::System.String _FloaterObservationEn;
@@ -1257,7 +2148,7 @@ namespace TweakToolkit.EntityFramework.WebsiteData
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String ProtectionType
         {
@@ -1267,14 +2158,11 @@ namespace TweakToolkit.EntityFramework.WebsiteData
             }
             set
             {
-                if (_ProtectionType != value)
-                {
-                    OnProtectionTypeChanging(value);
-                    ReportPropertyChanging("ProtectionType");
-                    _ProtectionType = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("ProtectionType");
-                    OnProtectionTypeChanged();
-                }
+                OnProtectionTypeChanging(value);
+                ReportPropertyChanging("ProtectionType");
+                _ProtectionType = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("ProtectionType");
+                OnProtectionTypeChanged();
             }
         }
         private global::System.String _ProtectionType;
@@ -1284,7 +2172,7 @@ namespace TweakToolkit.EntityFramework.WebsiteData
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String CallData
         {
@@ -1294,14 +2182,11 @@ namespace TweakToolkit.EntityFramework.WebsiteData
             }
             set
             {
-                if (_CallData != value)
-                {
-                    OnCallDataChanging(value);
-                    ReportPropertyChanging("CallData");
-                    _CallData = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("CallData");
-                    OnCallDataChanged();
-                }
+                OnCallDataChanging(value);
+                ReportPropertyChanging("CallData");
+                _CallData = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("CallData");
+                OnCallDataChanged();
             }
         }
         private global::System.String _CallData;
@@ -1311,7 +2196,7 @@ namespace TweakToolkit.EntityFramework.WebsiteData
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String CallDataEn
         {
@@ -1321,14 +2206,11 @@ namespace TweakToolkit.EntityFramework.WebsiteData
             }
             set
             {
-                if (_CallDataEn != value)
-                {
-                    OnCallDataEnChanging(value);
-                    ReportPropertyChanging("CallDataEn");
-                    _CallDataEn = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("CallDataEn");
-                    OnCallDataEnChanged();
-                }
+                OnCallDataEnChanging(value);
+                ReportPropertyChanging("CallDataEn");
+                _CallDataEn = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("CallDataEn");
+                OnCallDataEnChanged();
             }
         }
         private global::System.String _CallDataEn;
@@ -1338,7 +2220,7 @@ namespace TweakToolkit.EntityFramework.WebsiteData
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String EarlyRedemption
         {
@@ -1348,14 +2230,11 @@ namespace TweakToolkit.EntityFramework.WebsiteData
             }
             set
             {
-                if (_EarlyRedemption != value)
-                {
-                    OnEarlyRedemptionChanging(value);
-                    ReportPropertyChanging("EarlyRedemption");
-                    _EarlyRedemption = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("EarlyRedemption");
-                    OnEarlyRedemptionChanged();
-                }
+                OnEarlyRedemptionChanging(value);
+                ReportPropertyChanging("EarlyRedemption");
+                _EarlyRedemption = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("EarlyRedemption");
+                OnEarlyRedemptionChanged();
             }
         }
         private global::System.String _EarlyRedemption;
@@ -1365,7 +2244,7 @@ namespace TweakToolkit.EntityFramework.WebsiteData
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String EarlyRedemptionEn
         {
@@ -1375,14 +2254,11 @@ namespace TweakToolkit.EntityFramework.WebsiteData
             }
             set
             {
-                if (_EarlyRedemptionEn != value)
-                {
-                    OnEarlyRedemptionEnChanging(value);
-                    ReportPropertyChanging("EarlyRedemptionEn");
-                    _EarlyRedemptionEn = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("EarlyRedemptionEn");
-                    OnEarlyRedemptionEnChanged();
-                }
+                OnEarlyRedemptionEnChanging(value);
+                ReportPropertyChanging("EarlyRedemptionEn");
+                _EarlyRedemptionEn = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("EarlyRedemptionEn");
+                OnEarlyRedemptionEnChanged();
             }
         }
         private global::System.String _EarlyRedemptionEn;
@@ -1392,7 +2268,7 @@ namespace TweakToolkit.EntityFramework.WebsiteData
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String ISIN
         {
@@ -1402,14 +2278,11 @@ namespace TweakToolkit.EntityFramework.WebsiteData
             }
             set
             {
-                if (_ISIN != value)
-                {
-                    OnISINChanging(value);
-                    ReportPropertyChanging("ISIN");
-                    _ISIN = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("ISIN");
-                    OnISINChanged();
-                }
+                OnISINChanging(value);
+                ReportPropertyChanging("ISIN");
+                _ISIN = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("ISIN");
+                OnISINChanged();
             }
         }
         private global::System.String _ISIN;
@@ -1419,7 +2292,7 @@ namespace TweakToolkit.EntityFramework.WebsiteData
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String StockExchange
         {
@@ -1429,14 +2302,11 @@ namespace TweakToolkit.EntityFramework.WebsiteData
             }
             set
             {
-                if (_StockExchange != value)
-                {
-                    OnStockExchangeChanging(value);
-                    ReportPropertyChanging("StockExchange");
-                    _StockExchange = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("StockExchange");
-                    OnStockExchangeChanged();
-                }
+                OnStockExchangeChanging(value);
+                ReportPropertyChanging("StockExchange");
+                _StockExchange = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("StockExchange");
+                OnStockExchangeChanged();
             }
         }
         private global::System.String _StockExchange;
@@ -1926,7 +2796,7 @@ namespace TweakToolkit.EntityFramework.WebsiteData
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.Int32 ProductTypeValue
         {
@@ -1936,14 +2806,11 @@ namespace TweakToolkit.EntityFramework.WebsiteData
             }
             set
             {
-                if (_ProductTypeValue != value)
-                {
-                    OnProductTypeValueChanging(value);
-                    ReportPropertyChanging("ProductTypeValue");
-                    _ProductTypeValue = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("ProductTypeValue");
-                    OnProductTypeValueChanged();
-                }
+                OnProductTypeValueChanging(value);
+                ReportPropertyChanging("ProductTypeValue");
+                _ProductTypeValue = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("ProductTypeValue");
+                OnProductTypeValueChanged();
             }
         }
         private global::System.Int32 _ProductTypeValue;
@@ -1953,7 +2820,7 @@ namespace TweakToolkit.EntityFramework.WebsiteData
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String EmissionTypeDescription
         {
@@ -1963,14 +2830,11 @@ namespace TweakToolkit.EntityFramework.WebsiteData
             }
             set
             {
-                if (_EmissionTypeDescription != value)
-                {
-                    OnEmissionTypeDescriptionChanging(value);
-                    ReportPropertyChanging("EmissionTypeDescription");
-                    _EmissionTypeDescription = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("EmissionTypeDescription");
-                    OnEmissionTypeDescriptionChanged();
-                }
+                OnEmissionTypeDescriptionChanging(value);
+                ReportPropertyChanging("EmissionTypeDescription");
+                _EmissionTypeDescription = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("EmissionTypeDescription");
+                OnEmissionTypeDescriptionChanged();
             }
         }
         private global::System.String _EmissionTypeDescription;
@@ -1980,7 +2844,7 @@ namespace TweakToolkit.EntityFramework.WebsiteData
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String Symbol
         {
@@ -1990,14 +2854,11 @@ namespace TweakToolkit.EntityFramework.WebsiteData
             }
             set
             {
-                if (_Symbol != value)
-                {
-                    OnSymbolChanging(value);
-                    ReportPropertyChanging("Symbol");
-                    _Symbol = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("Symbol");
-                    OnSymbolChanged();
-                }
+                OnSymbolChanging(value);
+                ReportPropertyChanging("Symbol");
+                _Symbol = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Symbol");
+                OnSymbolChanged();
             }
         }
         private global::System.String _Symbol;
@@ -2747,755 +3608,6 @@ namespace TweakToolkit.EntityFramework.WebsiteData
         private global::System.String _Additional3ValueEN;
         partial void OnAdditional3ValueENChanging(global::System.String value);
         partial void OnAdditional3ValueENChanged();
-
-        #endregion
-    
-    }
-
-    #endregion
-    #region ComplexTypes
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmComplexTypeAttribute(NamespaceName="StruktoWebsiteDataModel", Name="BarrierWebsiteData")]
-    [DataContractAttribute(IsReference=true)]
-    [Serializable()]
-    public partial class BarrierWebsiteData : ComplexObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new BarrierWebsiteData object.
-        /// </summary>
-        /// <param name="name">Initial value of the Name property.</param>
-        /// <param name="nameEN">Initial value of the NameEN property.</param>
-        /// <param name="valor">Initial value of the Valor property.</param>
-        /// <param name="value">Initial value of the Value property.</param>
-        /// <param name="isManual">Initial value of the IsManual property.</param>
-        /// <param name="trigger">Initial value of the Trigger property.</param>
-        /// <param name="triggerEn">Initial value of the TriggerEn property.</param>
-        /// <param name="observation">Initial value of the Observation property.</param>
-        /// <param name="observationEn">Initial value of the ObservationEn property.</param>
-        /// <param name="settlement">Initial value of the Settlement property.</param>
-        /// <param name="settlementEn">Initial value of the SettlementEn property.</param>
-        public static BarrierWebsiteData CreateBarrierWebsiteData(global::System.String name, global::System.String nameEN, global::System.Int32 valor, global::System.Decimal value, global::System.Boolean isManual, global::System.String trigger, global::System.String triggerEn, global::System.String observation, global::System.String observationEn, global::System.String settlement, global::System.String settlementEn)
-        {
-            BarrierWebsiteData barrierWebsiteData = new BarrierWebsiteData();
-            barrierWebsiteData.Name = name;
-            barrierWebsiteData.NameEN = nameEN;
-            barrierWebsiteData.Valor = valor;
-            barrierWebsiteData.Value = value;
-            barrierWebsiteData.IsManual = isManual;
-            barrierWebsiteData.Trigger = trigger;
-            barrierWebsiteData.TriggerEn = triggerEn;
-            barrierWebsiteData.Observation = observation;
-            barrierWebsiteData.ObservationEn = observationEn;
-            barrierWebsiteData.Settlement = settlement;
-            barrierWebsiteData.SettlementEn = settlementEn;
-            return barrierWebsiteData;
-        }
-
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String Name
-        {
-            get
-            {
-                return _Name;
-            }
-            set
-            {
-                OnNameChanging(value);
-                ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("Name");
-                OnNameChanged();
-            }
-        }
-        private global::System.String _Name;
-        partial void OnNameChanging(global::System.String value);
-        partial void OnNameChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String NameEN
-        {
-            get
-            {
-                return _NameEN;
-            }
-            set
-            {
-                OnNameENChanging(value);
-                ReportPropertyChanging("NameEN");
-                _NameEN = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("NameEN");
-                OnNameENChanged();
-            }
-        }
-        private global::System.String _NameEN;
-        partial void OnNameENChanging(global::System.String value);
-        partial void OnNameENChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 Valor
-        {
-            get
-            {
-                return _Valor;
-            }
-            set
-            {
-                OnValorChanging(value);
-                ReportPropertyChanging("Valor");
-                _Valor = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("Valor");
-                OnValorChanged();
-            }
-        }
-        private global::System.Int32 _Valor;
-        partial void OnValorChanging(global::System.Int32 value);
-        partial void OnValorChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Decimal Value
-        {
-            get
-            {
-                return _Value;
-            }
-            set
-            {
-                OnValueChanging(value);
-                ReportPropertyChanging("Value");
-                _Value = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("Value");
-                OnValueChanged();
-            }
-        }
-        private global::System.Decimal _Value;
-        partial void OnValueChanging(global::System.Decimal value);
-        partial void OnValueChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Boolean IsManual
-        {
-            get
-            {
-                return _IsManual;
-            }
-            set
-            {
-                OnIsManualChanging(value);
-                ReportPropertyChanging("IsManual");
-                _IsManual = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("IsManual");
-                OnIsManualChanged();
-            }
-        }
-        private global::System.Boolean _IsManual;
-        partial void OnIsManualChanging(global::System.Boolean value);
-        partial void OnIsManualChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String Trigger
-        {
-            get
-            {
-                return _Trigger;
-            }
-            set
-            {
-                OnTriggerChanging(value);
-                ReportPropertyChanging("Trigger");
-                _Trigger = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("Trigger");
-                OnTriggerChanged();
-            }
-        }
-        private global::System.String _Trigger;
-        partial void OnTriggerChanging(global::System.String value);
-        partial void OnTriggerChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String TriggerEn
-        {
-            get
-            {
-                return _TriggerEn;
-            }
-            set
-            {
-                OnTriggerEnChanging(value);
-                ReportPropertyChanging("TriggerEn");
-                _TriggerEn = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("TriggerEn");
-                OnTriggerEnChanged();
-            }
-        }
-        private global::System.String _TriggerEn;
-        partial void OnTriggerEnChanging(global::System.String value);
-        partial void OnTriggerEnChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String Observation
-        {
-            get
-            {
-                return _Observation;
-            }
-            set
-            {
-                OnObservationChanging(value);
-                ReportPropertyChanging("Observation");
-                _Observation = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("Observation");
-                OnObservationChanged();
-            }
-        }
-        private global::System.String _Observation;
-        partial void OnObservationChanging(global::System.String value);
-        partial void OnObservationChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String ObservationEn
-        {
-            get
-            {
-                return _ObservationEn;
-            }
-            set
-            {
-                OnObservationEnChanging(value);
-                ReportPropertyChanging("ObservationEn");
-                _ObservationEn = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("ObservationEn");
-                OnObservationEnChanged();
-            }
-        }
-        private global::System.String _ObservationEn;
-        partial void OnObservationEnChanging(global::System.String value);
-        partial void OnObservationEnChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String Settlement
-        {
-            get
-            {
-                return _Settlement;
-            }
-            set
-            {
-                OnSettlementChanging(value);
-                ReportPropertyChanging("Settlement");
-                _Settlement = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("Settlement");
-                OnSettlementChanged();
-            }
-        }
-        private global::System.String _Settlement;
-        partial void OnSettlementChanging(global::System.String value);
-        partial void OnSettlementChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String SettlementEn
-        {
-            get
-            {
-                return _SettlementEn;
-            }
-            set
-            {
-                OnSettlementEnChanging(value);
-                ReportPropertyChanging("SettlementEn");
-                _SettlementEn = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("SettlementEn");
-                OnSettlementEnChanged();
-            }
-        }
-        private global::System.String _SettlementEn;
-        partial void OnSettlementEnChanging(global::System.String value);
-        partial void OnSettlementEnChanged();
-
-        #endregion
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmComplexTypeAttribute(NamespaceName="StruktoWebsiteDataModel", Name="EventWebsiteData")]
-    [DataContractAttribute(IsReference=true)]
-    [Serializable()]
-    public partial class EventWebsiteData : ComplexObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new EventWebsiteData object.
-        /// </summary>
-        /// <param name="valor">Initial value of the Valor property.</param>
-        /// <param name="observationDate">Initial value of the ObservationDate property.</param>
-        /// <param name="eventValutaDate">Initial value of the EventValutaDate property.</param>
-        /// <param name="periodName">Initial value of the PeriodName property.</param>
-        /// <param name="periodStart">Initial value of the PeriodStart property.</param>
-        /// <param name="periodEnd">Initial value of the PeriodEnd property.</param>
-        /// <param name="description">Initial value of the Description property.</param>
-        /// <param name="descriptionEN">Initial value of the DescriptionEN property.</param>
-        /// <param name="periodNameEN">Initial value of the PeriodNameEN property.</param>
-        /// <param name="eventTypeName">Initial value of the EventTypeName property.</param>
-        /// <param name="eventTypeNameEN">Initial value of the EventTypeNameEN property.</param>
-        public static EventWebsiteData CreateEventWebsiteData(global::System.Int32 valor, global::System.DateTime observationDate, global::System.DateTime eventValutaDate, global::System.String periodName, global::System.DateTime periodStart, global::System.DateTime periodEnd, global::System.String description, global::System.String descriptionEN, global::System.String periodNameEN, global::System.String eventTypeName, global::System.String eventTypeNameEN)
-        {
-            EventWebsiteData eventWebsiteData = new EventWebsiteData();
-            eventWebsiteData.Valor = valor;
-            eventWebsiteData.ObservationDate = observationDate;
-            eventWebsiteData.EventValutaDate = eventValutaDate;
-            eventWebsiteData.PeriodName = periodName;
-            eventWebsiteData.PeriodStart = periodStart;
-            eventWebsiteData.PeriodEnd = periodEnd;
-            eventWebsiteData.Description = description;
-            eventWebsiteData.DescriptionEN = descriptionEN;
-            eventWebsiteData.PeriodNameEN = periodNameEN;
-            eventWebsiteData.EventTypeName = eventTypeName;
-            eventWebsiteData.EventTypeNameEN = eventTypeNameEN;
-            return eventWebsiteData;
-        }
-
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 Valor
-        {
-            get
-            {
-                return _Valor;
-            }
-            set
-            {
-                OnValorChanging(value);
-                ReportPropertyChanging("Valor");
-                _Valor = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("Valor");
-                OnValorChanged();
-            }
-        }
-        private global::System.Int32 _Valor;
-        partial void OnValorChanging(global::System.Int32 value);
-        partial void OnValorChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime ObservationDate
-        {
-            get
-            {
-                return _ObservationDate;
-            }
-            set
-            {
-                OnObservationDateChanging(value);
-                ReportPropertyChanging("ObservationDate");
-                _ObservationDate = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("ObservationDate");
-                OnObservationDateChanged();
-            }
-        }
-        private global::System.DateTime _ObservationDate;
-        partial void OnObservationDateChanging(global::System.DateTime value);
-        partial void OnObservationDateChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime EventValutaDate
-        {
-            get
-            {
-                return _EventValutaDate;
-            }
-            set
-            {
-                OnEventValutaDateChanging(value);
-                ReportPropertyChanging("EventValutaDate");
-                _EventValutaDate = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("EventValutaDate");
-                OnEventValutaDateChanged();
-            }
-        }
-        private global::System.DateTime _EventValutaDate;
-        partial void OnEventValutaDateChanging(global::System.DateTime value);
-        partial void OnEventValutaDateChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String PeriodName
-        {
-            get
-            {
-                return _PeriodName;
-            }
-            set
-            {
-                OnPeriodNameChanging(value);
-                ReportPropertyChanging("PeriodName");
-                _PeriodName = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("PeriodName");
-                OnPeriodNameChanged();
-            }
-        }
-        private global::System.String _PeriodName;
-        partial void OnPeriodNameChanging(global::System.String value);
-        partial void OnPeriodNameChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime PeriodStart
-        {
-            get
-            {
-                return _PeriodStart;
-            }
-            set
-            {
-                OnPeriodStartChanging(value);
-                ReportPropertyChanging("PeriodStart");
-                _PeriodStart = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("PeriodStart");
-                OnPeriodStartChanged();
-            }
-        }
-        private global::System.DateTime _PeriodStart;
-        partial void OnPeriodStartChanging(global::System.DateTime value);
-        partial void OnPeriodStartChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime PeriodEnd
-        {
-            get
-            {
-                return _PeriodEnd;
-            }
-            set
-            {
-                OnPeriodEndChanging(value);
-                ReportPropertyChanging("PeriodEnd");
-                _PeriodEnd = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("PeriodEnd");
-                OnPeriodEndChanged();
-            }
-        }
-        private global::System.DateTime _PeriodEnd;
-        partial void OnPeriodEndChanging(global::System.DateTime value);
-        partial void OnPeriodEndChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String Description
-        {
-            get
-            {
-                return _Description;
-            }
-            set
-            {
-                OnDescriptionChanging(value);
-                ReportPropertyChanging("Description");
-                _Description = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("Description");
-                OnDescriptionChanged();
-            }
-        }
-        private global::System.String _Description;
-        partial void OnDescriptionChanging(global::System.String value);
-        partial void OnDescriptionChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String DescriptionEN
-        {
-            get
-            {
-                return _DescriptionEN;
-            }
-            set
-            {
-                OnDescriptionENChanging(value);
-                ReportPropertyChanging("DescriptionEN");
-                _DescriptionEN = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("DescriptionEN");
-                OnDescriptionENChanged();
-            }
-        }
-        private global::System.String _DescriptionEN;
-        partial void OnDescriptionENChanging(global::System.String value);
-        partial void OnDescriptionENChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String PeriodNameEN
-        {
-            get
-            {
-                return _PeriodNameEN;
-            }
-            set
-            {
-                OnPeriodNameENChanging(value);
-                ReportPropertyChanging("PeriodNameEN");
-                _PeriodNameEN = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("PeriodNameEN");
-                OnPeriodNameENChanged();
-            }
-        }
-        private global::System.String _PeriodNameEN;
-        partial void OnPeriodNameENChanging(global::System.String value);
-        partial void OnPeriodNameENChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String EventTypeName
-        {
-            get
-            {
-                return _EventTypeName;
-            }
-            set
-            {
-                OnEventTypeNameChanging(value);
-                ReportPropertyChanging("EventTypeName");
-                _EventTypeName = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("EventTypeName");
-                OnEventTypeNameChanged();
-            }
-        }
-        private global::System.String _EventTypeName;
-        partial void OnEventTypeNameChanging(global::System.String value);
-        partial void OnEventTypeNameChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String EventTypeNameEN
-        {
-            get
-            {
-                return _EventTypeNameEN;
-            }
-            set
-            {
-                OnEventTypeNameENChanging(value);
-                ReportPropertyChanging("EventTypeNameEN");
-                _EventTypeNameEN = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("EventTypeNameEN");
-                OnEventTypeNameENChanged();
-            }
-        }
-        private global::System.String _EventTypeNameEN;
-        partial void OnEventTypeNameENChanging(global::System.String value);
-        partial void OnEventTypeNameENChanged();
-
-        #endregion
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmComplexTypeAttribute(NamespaceName="StruktoWebsiteDataModel", Name="PriceWebsiteData")]
-    [DataContractAttribute(IsReference=true)]
-    [Serializable()]
-    public partial class PriceWebsiteData : ComplexObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new PriceWebsiteData object.
-        /// </summary>
-        /// <param name="valor">Initial value of the Valor property.</param>
-        public static PriceWebsiteData CreatePriceWebsiteData(global::System.Int32 valor)
-        {
-            PriceWebsiteData priceWebsiteData = new PriceWebsiteData();
-            priceWebsiteData.Valor = valor;
-            return priceWebsiteData;
-        }
-
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 Valor
-        {
-            get
-            {
-                return _Valor;
-            }
-            set
-            {
-                OnValorChanging(value);
-                ReportPropertyChanging("Valor");
-                _Valor = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("Valor");
-                OnValorChanged();
-            }
-        }
-        private global::System.Int32 _Valor;
-        partial void OnValorChanging(global::System.Int32 value);
-        partial void OnValorChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.DateTime> UpdatedOn
-        {
-            get
-            {
-                return _UpdatedOn;
-            }
-            set
-            {
-                OnUpdatedOnChanging(value);
-                ReportPropertyChanging("UpdatedOn");
-                _UpdatedOn = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("UpdatedOn");
-                OnUpdatedOnChanged();
-            }
-        }
-        private Nullable<global::System.DateTime> _UpdatedOn;
-        partial void OnUpdatedOnChanging(Nullable<global::System.DateTime> value);
-        partial void OnUpdatedOnChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Double> Bid
-        {
-            get
-            {
-                return _Bid;
-            }
-            set
-            {
-                OnBidChanging(value);
-                ReportPropertyChanging("Bid");
-                _Bid = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("Bid");
-                OnBidChanged();
-            }
-        }
-        private Nullable<global::System.Double> _Bid;
-        partial void OnBidChanging(Nullable<global::System.Double> value);
-        partial void OnBidChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Double> Ask
-        {
-            get
-            {
-                return _Ask;
-            }
-            set
-            {
-                OnAskChanging(value);
-                ReportPropertyChanging("Ask");
-                _Ask = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("Ask");
-                OnAskChanged();
-            }
-        }
-        private Nullable<global::System.Double> _Ask;
-        partial void OnAskChanging(Nullable<global::System.Double> value);
-        partial void OnAskChanged();
 
         #endregion
     }

@@ -12,7 +12,7 @@ namespace TweakToolkit.WCF.Test.Wrapper
 
         public IWebserviceResult Connect()
         {
-            return new WebserviceResult(new RequestInfo("Connect"), new object[]{false});
+            return new WebserviceResult(new RequestInfo("Connect"), new object[] { false });
         }
 
         public void ConnectAsync(Action<IWebserviceResult> callback)

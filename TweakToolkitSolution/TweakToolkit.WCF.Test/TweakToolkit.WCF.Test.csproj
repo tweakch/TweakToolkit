@@ -58,6 +58,7 @@
     <Compile Include="ServiceDomain\AsyncRequestInfo.cs" />
     <Compile Include="ServiceDomain\BarrierWebsiteDescription.cs" />
     <Compile Include="ServiceDomain\WebsiteDescription.cs" />
+    <Compile Include="TestHelper.cs" />
     <Compile Include="Wrapper\AggregateWebserviceResult.cs" />
     <Compile Include="ServiceDomain\EventWebsiteDescription.cs" />
     <Compile Include="Wrapper\BaseValueWebsiteDescription.cs" />

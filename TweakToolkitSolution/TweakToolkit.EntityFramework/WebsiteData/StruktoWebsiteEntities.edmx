@@ -5,257 +5,12 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="StruktoWebsiteDataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
-        <EntityContainer Name="StruktoWebsiteDataModelStoreContainer">
-          <EntitySet Name="cat_ProductsForWebsite" EntityType="StruktoWebsiteDataModel.Store.cat_ProductsForWebsite" store:Type="Views" store:Schema="dbo" store:Name="cat_ProductsForWebsite">
-            <DefiningQuery>SELECT 
-      [cat_ProductsForWebsite].[Valor] AS [Valor], 
-      [cat_ProductsForWebsite].[Name] AS [Name], 
-      [cat_ProductsForWebsite].[NameEN] AS [NameEN], 
-      [cat_ProductsForWebsite].[IsOnline] AS [IsOnline], 
-      [cat_ProductsForWebsite].[IsPriceDirty] AS [IsPriceDirty], 
-      [cat_ProductsForWebsite].[EmissionPrice] AS [EmissionPrice], 
-      [cat_ProductsForWebsite].[Notional] AS [Notional], 
-      [cat_ProductsForWebsite].[SmallestTradeableUnit] AS [SmallestTradeableUnit], 
-      [cat_ProductsForWebsite].[Guarantor] AS [Guarantor], 
-      [cat_ProductsForWebsite].[GuarantorShort] AS [GuarantorShort], 
-      [cat_ProductsForWebsite].[Issuer] AS [Issuer], 
-      [cat_ProductsForWebsite].[IssuerShort] AS [IssuerShort], 
-      [cat_ProductsForWebsite].[LeadManager] AS [LeadManager], 
-      [cat_ProductsForWebsite].[LeadManagerShort] AS [LeadManagerShort], 
-      [cat_ProductsForWebsite].[AssetClass] AS [AssetClass], 
-      [cat_ProductsForWebsite].[AssetClassEn] AS [AssetClassEn], 
-      [cat_ProductsForWebsite].[ProductCategory] AS [ProductCategory], 
-      [cat_ProductsForWebsite].[ProductCategoryEn] AS [ProductCategoryEn], 
-      [cat_ProductsForWebsite].[ProductState] AS [ProductState], 
-      [cat_ProductsForWebsite].[ProductStateEn] AS [ProductStateEn], 
-      [cat_ProductsForWebsite].[ProductType] AS [ProductType], 
-      [cat_ProductsForWebsite].[ProductTypeEn] AS [ProductTypeEn], 
-      [cat_ProductsForWebsite].[Currency] AS [Currency], 
-      [cat_ProductsForWebsite].[CurrencyRisk] AS [CurrencyRisk], 
-      [cat_ProductsForWebsite].[CurrencyRiskEn] AS [CurrencyRiskEn], 
-      [cat_ProductsForWebsite].[Pricing] AS [Pricing], 
-      [cat_ProductsForWebsite].[PricingEn] AS [PricingEn], 
-      [cat_ProductsForWebsite].[ValutaDate] AS [ValutaDate], 
-      [cat_ProductsForWebsite].[RedemptionDate] AS [RedemptionDate], 
-      [cat_ProductsForWebsite].[StartFixationDate] AS [StartFixationDate], 
-      [cat_ProductsForWebsite].[EndFixationDate] AS [EndFixationDate], 
-      [cat_ProductsForWebsite].[HasEndFixation] AS [HasEndFixation], 
-      [cat_ProductsForWebsite].[CouponObservation] AS [CouponObservation], 
-      [cat_ProductsForWebsite].[CouponObservationEn] AS [CouponObservationEn], 
-      [cat_ProductsForWebsite].[ConditionalObservation] AS [ConditionalObservation], 
-      [cat_ProductsForWebsite].[ConditionalObservationEn] AS [ConditionalObservationEn], 
-      [cat_ProductsForWebsite].[FloaterObservation] AS [FloaterObservation], 
-      [cat_ProductsForWebsite].[FloaterObservationEn] AS [FloaterObservationEn], 
-      [cat_ProductsForWebsite].[ProtectionType] AS [ProtectionType], 
-      [cat_ProductsForWebsite].[CallData] AS [CallData], 
-      [cat_ProductsForWebsite].[CallDataEn] AS [CallDataEn], 
-      [cat_ProductsForWebsite].[EarlyRedemption] AS [EarlyRedemption], 
-      [cat_ProductsForWebsite].[EarlyRedemptionEn] AS [EarlyRedemptionEn], 
-      [cat_ProductsForWebsite].[ISIN] AS [ISIN], 
-      [cat_ProductsForWebsite].[StockExchange] AS [StockExchange], 
-      [cat_ProductsForWebsite].[CouponGuaranteed] AS [CouponGuaranteed], 
-      [cat_ProductsForWebsite].[CouponConditional] AS [CouponConditional], 
-      [cat_ProductsForWebsite].[TextCouponConditional] AS [TextCouponConditional], 
-      [cat_ProductsForWebsite].[Floater] AS [Floater], 
-      [cat_ProductsForWebsite].[TextFloater] AS [TextFloater], 
-      [cat_ProductsForWebsite].[CouponMinimal] AS [CouponMinimal], 
-      [cat_ProductsForWebsite].[CouponMaximal] AS [CouponMaximal], 
-      [cat_ProductsForWebsite].[TextCoupon] AS [TextCoupon], 
-      [cat_ProductsForWebsite].[TextEarlyRedemption] AS [TextEarlyRedemption], 
-      [cat_ProductsForWebsite].[Cap] AS [Cap], 
-      [cat_ProductsForWebsite].[PaybackMaximal] AS [PaybackMaximal], 
-      [cat_ProductsForWebsite].[TextPaybackMaximal] AS [TextPaybackMaximal], 
-      [cat_ProductsForWebsite].[Protection] AS [Protection], 
-      [cat_ProductsForWebsite].[PaybackMinimal] AS [PaybackMinimal], 
-      [cat_ProductsForWebsite].[Participation] AS [Participation], 
-      [cat_ProductsForWebsite].[TextParticipation] AS [TextParticipation], 
-      [cat_ProductsForWebsite].[Discount] AS [Discount], 
-      [cat_ProductsForWebsite].[MaxYield] AS [MaxYield], 
-      [cat_ProductsForWebsite].[BonusLevel] AS [BonusLevel], 
-      [cat_ProductsForWebsite].[ProductCategoryValue] AS [ProductCategoryValue], 
-      [cat_ProductsForWebsite].[ProductTypeValue] AS [ProductTypeValue], 
-      [cat_ProductsForWebsite].[EmissionTypeDescription] AS [EmissionTypeDescription], 
-      [cat_ProductsForWebsite].[Symbol] AS [Symbol], 
-      [cat_ProductsForWebsite].[Additional1Text] AS [Additional1Text], 
-      [cat_ProductsForWebsite].[Additional1Value] AS [Additional1Value], 
-      [cat_ProductsForWebsite].[Additional2Text] AS [Additional2Text], 
-      [cat_ProductsForWebsite].[Additional2Value] AS [Additional2Value], 
-      [cat_ProductsForWebsite].[Additional3Text] AS [Additional3Text], 
-      [cat_ProductsForWebsite].[Additional3Value] AS [Additional3Value], 
-      [cat_ProductsForWebsite].[CouponGuaranteedEN] AS [CouponGuaranteedEN], 
-      [cat_ProductsForWebsite].[CouponConditionalEN] AS [CouponConditionalEN], 
-      [cat_ProductsForWebsite].[FloaterEN] AS [FloaterEN], 
-      [cat_ProductsForWebsite].[TextFloaterEN] AS [TextFloaterEN], 
-      [cat_ProductsForWebsite].[CouponMinimalEN] AS [CouponMinimalEN], 
-      [cat_ProductsForWebsite].[CouponMaximalEN] AS [CouponMaximalEN], 
-      [cat_ProductsForWebsite].[TextCouponEN] AS [TextCouponEN], 
-      [cat_ProductsForWebsite].[TextEarlyRedemptionEN] AS [TextEarlyRedemptionEN], 
-      [cat_ProductsForWebsite].[CapEN] AS [CapEN], 
-      [cat_ProductsForWebsite].[MaxYieldEN] AS [MaxYieldEN], 
-      [cat_ProductsForWebsite].[TextPaybackMaximalEN] AS [TextPaybackMaximalEN], 
-      [cat_ProductsForWebsite].[ProtectionEN] AS [ProtectionEN], 
-      [cat_ProductsForWebsite].[ParticipationEN] AS [ParticipationEN], 
-      [cat_ProductsForWebsite].[TextParticipationEN] AS [TextParticipationEN], 
-      [cat_ProductsForWebsite].[DiscountEN] AS [DiscountEN], 
-      [cat_ProductsForWebsite].[BonusLevelEN] AS [BonusLevelEN], 
-      [cat_ProductsForWebsite].[PaybackMaximaEN] AS [PaybackMaximaEN], 
-      [cat_ProductsForWebsite].[TextCouponConditionalEN] AS [TextCouponConditionalEN], 
-      [cat_ProductsForWebsite].[PaybackMinimalEN] AS [PaybackMinimalEN], 
-      [cat_ProductsForWebsite].[Additional1TextEN] AS [Additional1TextEN], 
-      [cat_ProductsForWebsite].[Additional1ValueEN] AS [Additional1ValueEN], 
-      [cat_ProductsForWebsite].[Additional2TextEN] AS [Additional2TextEN], 
-      [cat_ProductsForWebsite].[Additional2ValueEN] AS [Additional2ValueEN], 
-      [cat_ProductsForWebsite].[Additional3TextEN] AS [Additional3TextEN], 
-      [cat_ProductsForWebsite].[Additional3ValueEN] AS [Additional3ValueEN]
-      FROM [dbo].[cat_ProductsForWebsite] AS [cat_ProductsForWebsite]</DefiningQuery>
-          </EntitySet>
-        </EntityContainer>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'struktoData.dbo.cat_ProductsForWebsite' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
-        <EntityType Name="cat_ProductsForWebsite">
-          <Key>
-            <PropertyRef Name="Valor" />
-            <PropertyRef Name="Name" />
-            <PropertyRef Name="NameEN" />
-            <PropertyRef Name="IsOnline" />
-            <PropertyRef Name="IsPriceDirty" />
-            <PropertyRef Name="EmissionPrice" />
-            <PropertyRef Name="Notional" />
-            <PropertyRef Name="SmallestTradeableUnit" />
-            <PropertyRef Name="AssetClass" />
-            <PropertyRef Name="AssetClassEn" />
-            <PropertyRef Name="ProductCategory" />
-            <PropertyRef Name="ProductCategoryEn" />
-            <PropertyRef Name="ProductState" />
-            <PropertyRef Name="ProductStateEn" />
-            <PropertyRef Name="ProductType" />
-            <PropertyRef Name="ProductTypeEn" />
-            <PropertyRef Name="Currency" />
-            <PropertyRef Name="CurrencyRisk" />
-            <PropertyRef Name="CurrencyRiskEn" />
-            <PropertyRef Name="Pricing" />
-            <PropertyRef Name="PricingEn" />
-            <PropertyRef Name="HasEndFixation" />
-            <PropertyRef Name="CouponObservation" />
-            <PropertyRef Name="CouponObservationEn" />
-            <PropertyRef Name="ConditionalObservation" />
-            <PropertyRef Name="ConditionalObservationEn" />
-            <PropertyRef Name="FloaterObservation" />
-            <PropertyRef Name="FloaterObservationEn" />
-            <PropertyRef Name="ProtectionType" />
-            <PropertyRef Name="CallData" />
-            <PropertyRef Name="CallDataEn" />
-            <PropertyRef Name="EarlyRedemption" />
-            <PropertyRef Name="EarlyRedemptionEn" />
-            <PropertyRef Name="ISIN" />
-            <PropertyRef Name="StockExchange" />
-            <PropertyRef Name="ProductTypeValue" />
-            <PropertyRef Name="EmissionTypeDescription" />
-            <PropertyRef Name="Symbol" />
-          </Key>
-          <Property Name="Valor" Type="int" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="120" />
-          <Property Name="NameEN" Type="nvarchar" Nullable="false" MaxLength="120" />
-          <Property Name="IsOnline" Type="bit" Nullable="false" />
-          <Property Name="IsPriceDirty" Type="bit" Nullable="false" />
-          <Property Name="EmissionPrice" Type="float" Nullable="false" />
-          <Property Name="Notional" Type="int" Nullable="false" />
-          <Property Name="SmallestTradeableUnit" Type="int" Nullable="false" />
-          <Property Name="Guarantor" Type="nvarchar(max)" />
-          <Property Name="GuarantorShort" Type="nvarchar(max)" />
-          <Property Name="Issuer" Type="nvarchar(max)" />
-          <Property Name="IssuerShort" Type="nvarchar(max)" />
-          <Property Name="LeadManager" Type="nvarchar(max)" />
-          <Property Name="LeadManagerShort" Type="nvarchar(max)" />
-          <Property Name="AssetClass" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="AssetClassEn" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="ProductCategory" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="ProductCategoryEn" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="ProductState" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="ProductStateEn" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="ProductType" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="ProductTypeEn" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="Currency" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="CurrencyRisk" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="CurrencyRiskEn" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="Pricing" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="PricingEn" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="ValutaDate" Type="datetime" />
-          <Property Name="RedemptionDate" Type="datetime" />
-          <Property Name="StartFixationDate" Type="datetime" />
-          <Property Name="EndFixationDate" Type="datetime" />
-          <Property Name="HasEndFixation" Type="bit" Nullable="false" />
-          <Property Name="CouponObservation" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="CouponObservationEn" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="ConditionalObservation" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="ConditionalObservationEn" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="FloaterObservation" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="FloaterObservationEn" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="ProtectionType" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="CallData" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="CallDataEn" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="EarlyRedemption" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="EarlyRedemptionEn" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="ISIN" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="StockExchange" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="CouponGuaranteed" Type="nvarchar(max)" />
-          <Property Name="CouponConditional" Type="nvarchar(max)" />
-          <Property Name="TextCouponConditional" Type="nvarchar(max)" />
-          <Property Name="Floater" Type="nvarchar(max)" />
-          <Property Name="TextFloater" Type="nvarchar(max)" />
-          <Property Name="CouponMinimal" Type="nvarchar(max)" />
-          <Property Name="CouponMaximal" Type="nvarchar(max)" />
-          <Property Name="TextCoupon" Type="nvarchar(max)" />
-          <Property Name="TextEarlyRedemption" Type="nvarchar(max)" />
-          <Property Name="Cap" Type="nvarchar(max)" />
-          <Property Name="PaybackMaximal" Type="nvarchar(max)" />
-          <Property Name="TextPaybackMaximal" Type="nvarchar(max)" />
-          <Property Name="Protection" Type="nvarchar(max)" />
-          <Property Name="PaybackMinimal" Type="nvarchar(max)" />
-          <Property Name="Participation" Type="nvarchar(max)" />
-          <Property Name="TextParticipation" Type="nvarchar(max)" />
-          <Property Name="Discount" Type="nvarchar(max)" />
-          <Property Name="MaxYield" Type="nvarchar(max)" />
-          <Property Name="BonusLevel" Type="nvarchar(max)" />
-          <Property Name="ProductCategoryValue" Type="int" />
-          <Property Name="ProductTypeValue" Type="int" Nullable="false" />
-          <Property Name="EmissionTypeDescription" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Symbol" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Additional1Text" Type="nvarchar(max)" />
-          <Property Name="Additional1Value" Type="nvarchar(max)" />
-          <Property Name="Additional2Text" Type="nvarchar(max)" />
-          <Property Name="Additional2Value" Type="nvarchar(max)" />
-          <Property Name="Additional3Text" Type="nvarchar(max)" />
-          <Property Name="Additional3Value" Type="nvarchar(max)" />
-          <Property Name="CouponGuaranteedEN" Type="nvarchar(max)" />
-          <Property Name="CouponConditionalEN" Type="nvarchar(max)" />
-          <Property Name="FloaterEN" Type="nvarchar(max)" />
-          <Property Name="TextFloaterEN" Type="nvarchar(max)" />
-          <Property Name="CouponMinimalEN" Type="nvarchar(max)" />
-          <Property Name="CouponMaximalEN" Type="nvarchar(max)" />
-          <Property Name="TextCouponEN" Type="nvarchar(max)" />
-          <Property Name="TextEarlyRedemptionEN" Type="nvarchar(max)" />
-          <Property Name="CapEN" Type="nvarchar(max)" />
-          <Property Name="MaxYieldEN" Type="nvarchar(max)" />
-          <Property Name="TextPaybackMaximalEN" Type="nvarchar(max)" />
-          <Property Name="ProtectionEN" Type="nvarchar(max)" />
-          <Property Name="ParticipationEN" Type="nvarchar(max)" />
-          <Property Name="TextParticipationEN" Type="nvarchar(max)" />
-          <Property Name="DiscountEN" Type="nvarchar(max)" />
-          <Property Name="BonusLevelEN" Type="nvarchar(max)" />
-          <Property Name="PaybackMaximaEN" Type="nvarchar(max)" />
-          <Property Name="TextCouponConditionalEN" Type="nvarchar(max)" />
-          <Property Name="PaybackMinimalEN" Type="nvarchar(max)" />
-          <Property Name="Additional1TextEN" Type="nvarchar(max)" />
-          <Property Name="Additional1ValueEN" Type="nvarchar(max)" />
-          <Property Name="Additional2TextEN" Type="nvarchar(max)" />
-          <Property Name="Additional2ValueEN" Type="nvarchar(max)" />
-          <Property Name="Additional3TextEN" Type="nvarchar(max)" />
-          <Property Name="Additional3ValueEN" Type="nvarchar(max)" />
-        </EntityType>
+        <EntityContainer Name="StruktoWebsiteDataModelStoreContainer" />
         <Function Name="pGetBarriersOfProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Valor" Type="int" Mode="In" />
+        </Function>
+        <Function Name="pGetBaseValueOfProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="valor" Type="int" Mode="In" />
         </Function>
         <Function Name="pGetEventsOfProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="valor" Type="int" Mode="In" />
@@ -263,12 +18,12 @@
         <Function Name="pGetPriceOfProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Valor" Type="int" Mode="In" />
         </Function>
+        <Function Name="pGetProductData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="StruktoWebsiteDataModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
         <EntityContainer Name="StruktoWebsiteEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="ProductWebsiteDataSet" EntityType="StruktoWebsiteDataModel.ProductWebsiteData" />
           <FunctionImport Name="GetBarrierWebsiteData" ReturnType="Collection(StruktoWebsiteDataModel.BarrierWebsiteData)">
           <Parameter Name="Valor" Mode="In" Type="Int32" />
           </FunctionImport>
@@ -276,150 +31,13 @@
           <Parameter Name="Valor" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetEventWebsiteData" ReturnType="Collection(StruktoWebsiteDataModel.EventWebsiteData)">
+          <Parameter Name="valor" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetProductWebsiteData" ReturnType="Collection(StruktoWebsiteDataModel.ProductWebsiteData)" />
+          <FunctionImport Name="GetBaseValueWebsiteData" ReturnType="Collection(StruktoWebsiteDataModel.BaseValueWebsiteData)">
             <Parameter Name="valor" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
-        <EntityType Name="ProductWebsiteData">
-          <Key>
-            <PropertyRef Name="Valor" />
-            <PropertyRef Name="Name" />
-            <PropertyRef Name="NameEN" />
-            <PropertyRef Name="IsOnline" />
-            <PropertyRef Name="IsPriceDirty" />
-            <PropertyRef Name="EmissionPrice" />
-            <PropertyRef Name="Notional" />
-            <PropertyRef Name="SmallestTradeableUnit" />
-            <PropertyRef Name="AssetClass" />
-            <PropertyRef Name="AssetClassEn" />
-            <PropertyRef Name="ProductCategory" />
-            <PropertyRef Name="ProductCategoryEn" />
-            <PropertyRef Name="ProductState" />
-            <PropertyRef Name="ProductStateEn" />
-            <PropertyRef Name="ProductType" />
-            <PropertyRef Name="ProductTypeEn" />
-            <PropertyRef Name="Currency" />
-            <PropertyRef Name="CurrencyRisk" />
-            <PropertyRef Name="CurrencyRiskEn" />
-            <PropertyRef Name="Pricing" />
-            <PropertyRef Name="PricingEn" />
-            <PropertyRef Name="HasEndFixation" />
-            <PropertyRef Name="CouponObservation" />
-            <PropertyRef Name="CouponObservationEn" />
-            <PropertyRef Name="ConditionalObservation" />
-            <PropertyRef Name="ConditionalObservationEn" />
-            <PropertyRef Name="FloaterObservation" />
-            <PropertyRef Name="FloaterObservationEn" />
-            <PropertyRef Name="ProtectionType" />
-            <PropertyRef Name="CallData" />
-            <PropertyRef Name="CallDataEn" />
-            <PropertyRef Name="EarlyRedemption" />
-            <PropertyRef Name="EarlyRedemptionEn" />
-            <PropertyRef Name="ISIN" />
-            <PropertyRef Name="StockExchange" />
-            <PropertyRef Name="ProductTypeValue" />
-            <PropertyRef Name="EmissionTypeDescription" />
-            <PropertyRef Name="Symbol" />
-          </Key>
-          <Property Name="Valor" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="120" Unicode="true" FixedLength="false" />
-          <Property Name="NameEN" Type="String" Nullable="false" MaxLength="120" Unicode="true" FixedLength="false" />
-          <Property Name="IsOnline" Type="Boolean" Nullable="false" />
-          <Property Name="IsPriceDirty" Type="Boolean" Nullable="false" />
-          <Property Name="EmissionPrice" Type="Double" Nullable="false" />
-          <Property Name="Notional" Type="Int32" Nullable="false" />
-          <Property Name="SmallestTradeableUnit" Type="Int32" Nullable="false" />
-          <Property Name="Guarantor" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="GuarantorShort" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Issuer" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="IssuerShort" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="LeadManager" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="LeadManagerShort" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="AssetClass" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="AssetClassEn" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="ProductCategory" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="ProductCategoryEn" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="ProductState" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="ProductStateEn" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="ProductType" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="ProductTypeEn" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="Currency" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="CurrencyRisk" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="CurrencyRiskEn" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="Pricing" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="PricingEn" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="ValutaDate" Type="DateTime" />
-          <Property Name="RedemptionDate" Type="DateTime" />
-          <Property Name="StartFixationDate" Type="DateTime" />
-          <Property Name="EndFixationDate" Type="DateTime" />
-          <Property Name="HasEndFixation" Type="Boolean" Nullable="false" />
-          <Property Name="CouponObservation" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="CouponObservationEn" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="ConditionalObservation" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="ConditionalObservationEn" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="FloaterObservation" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="FloaterObservationEn" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="ProtectionType" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="CallData" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="CallDataEn" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="EarlyRedemption" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="EarlyRedemptionEn" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="ISIN" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="StockExchange" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="CouponGuaranteed" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="CouponConditional" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="TextCouponConditional" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Floater" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="TextFloater" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="CouponMinimal" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="CouponMaximal" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="TextCoupon" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="TextEarlyRedemption" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Cap" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="PaybackMaximal" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="TextPaybackMaximal" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Protection" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="PaybackMinimal" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Participation" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="TextParticipation" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Discount" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="MaxYield" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="BonusLevel" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="ProductCategoryValue" Type="Int32" />
-          <Property Name="ProductTypeValue" Type="Int32" Nullable="false" />
-          <Property Name="EmissionTypeDescription" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Symbol" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Additional1Text" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Additional1Value" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Additional2Text" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Additional2Value" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Additional3Text" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Additional3Value" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="CouponGuaranteedEN" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="CouponConditionalEN" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="FloaterEN" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="TextFloaterEN" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="CouponMinimalEN" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="CouponMaximalEN" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="TextCouponEN" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="TextEarlyRedemptionEN" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="CapEN" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="MaxYieldEN" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="TextPaybackMaximalEN" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="ProtectionEN" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="ParticipationEN" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="TextParticipationEN" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="DiscountEN" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="BonusLevelEN" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="PaybackMaximaEN" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="TextCouponConditionalEN" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="PaybackMinimalEN" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Additional1TextEN" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Additional1ValueEN" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Additional2TextEN" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Additional2ValueEN" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Additional3TextEN" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Additional3ValueEN" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-        </EntityType>
         <ComplexType Name="BarrierWebsiteData">
           <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
           <Property Type="String" Name="NameEN" Nullable="false" MaxLength="50" />
@@ -452,113 +70,123 @@
           <Property Type="String" Name="EventTypeName" Nullable="false" />
           <Property Type="String" Name="EventTypeNameEN" Nullable="false" />
         </ComplexType>
+        <ComplexType Name="ProductWebsiteData">
+          <Property Type="Int32" Name="Valor" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="120" />
+          <Property Type="String" Name="NameEN" Nullable="false" MaxLength="120" />
+          <Property Type="Boolean" Name="IsOnline" Nullable="false" />
+          <Property Type="Boolean" Name="IsPriceDirty" Nullable="false" />
+          <Property Type="Double" Name="EmissionPrice" Nullable="false" />
+          <Property Type="Int32" Name="Notional" Nullable="false" />
+          <Property Type="Int32" Name="SmallestTradeableUnit" Nullable="false" />
+          <Property Type="String" Name="Guarantor" Nullable="true" />
+          <Property Type="String" Name="GuarantorShort" Nullable="true" />
+          <Property Type="String" Name="Issuer" Nullable="true" />
+          <Property Type="String" Name="IssuerShort" Nullable="true" />
+          <Property Type="String" Name="LeadManager" Nullable="true" />
+          <Property Type="String" Name="LeadManagerShort" Nullable="true" />
+          <Property Type="String" Name="AssetClass" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="AssetClassEn" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="ProductCategory" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="ProductCategoryEn" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="ProductState" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="ProductStateEn" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="ProductType" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="ProductTypeEn" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Currency" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="CurrencyRisk" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="CurrencyRiskEn" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Pricing" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="PricingEn" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="ValutaDate" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="RedemptionDate" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="StartFixationDate" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="EndFixationDate" Nullable="true" Precision="23" />
+          <Property Type="Boolean" Name="HasEndFixation" Nullable="false" />
+          <Property Type="String" Name="CouponObservation" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="CouponObservationEn" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="ConditionalObservation" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="ConditionalObservationEn" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="FloaterObservation" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="FloaterObservationEn" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="ProtectionType" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="CallData" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="CallDataEn" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="EarlyRedemption" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="EarlyRedemptionEn" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="ISIN" Nullable="false" />
+          <Property Type="String" Name="StockExchange" Nullable="false" />
+          <Property Type="String" Name="CouponGuaranteed" Nullable="true" />
+          <Property Type="String" Name="CouponConditional" Nullable="true" />
+          <Property Type="String" Name="TextCouponConditional" Nullable="true" />
+          <Property Type="String" Name="Floater" Nullable="true" />
+          <Property Type="String" Name="TextFloater" Nullable="true" />
+          <Property Type="String" Name="CouponMinimal" Nullable="true" />
+          <Property Type="String" Name="CouponMaximal" Nullable="true" />
+          <Property Type="String" Name="TextCoupon" Nullable="true" />
+          <Property Type="String" Name="TextEarlyRedemption" Nullable="true" />
+          <Property Type="String" Name="Cap" Nullable="true" />
+          <Property Type="String" Name="PaybackMaximal" Nullable="true" />
+          <Property Type="String" Name="TextPaybackMaximal" Nullable="true" />
+          <Property Type="String" Name="Protection" Nullable="true" />
+          <Property Type="String" Name="PaybackMinimal" Nullable="true" />
+          <Property Type="String" Name="Participation" Nullable="true" />
+          <Property Type="String" Name="TextParticipation" Nullable="true" />
+          <Property Type="String" Name="Discount" Nullable="true" />
+          <Property Type="String" Name="MaxYield" Nullable="true" />
+          <Property Type="String" Name="BonusLevel" Nullable="true" />
+          <Property Type="Int32" Name="ProductCategoryValue" Nullable="true" />
+          <Property Type="Int32" Name="ProductTypeValue" Nullable="false" />
+          <Property Type="String" Name="EmissionTypeDescription" Nullable="false" />
+          <Property Type="String" Name="Symbol" Nullable="false" />
+          <Property Type="String" Name="Additional1Text" Nullable="true" />
+          <Property Type="String" Name="Additional1Value" Nullable="true" />
+          <Property Type="String" Name="Additional2Text" Nullable="true" />
+          <Property Type="String" Name="Additional2Value" Nullable="true" />
+          <Property Type="String" Name="Additional3Text" Nullable="true" />
+          <Property Type="String" Name="Additional3Value" Nullable="true" />
+          <Property Type="String" Name="CouponGuaranteedEN" Nullable="true" />
+          <Property Type="String" Name="CouponConditionalEN" Nullable="true" />
+          <Property Type="String" Name="FloaterEN" Nullable="true" />
+          <Property Type="String" Name="TextFloaterEN" Nullable="true" />
+          <Property Type="String" Name="CouponMinimalEN" Nullable="true" />
+          <Property Type="String" Name="CouponMaximalEN" Nullable="true" />
+          <Property Type="String" Name="TextCouponEN" Nullable="true" />
+          <Property Type="String" Name="TextEarlyRedemptionEN" Nullable="true" />
+          <Property Type="String" Name="CapEN" Nullable="true" />
+          <Property Type="String" Name="MaxYieldEN" Nullable="true" />
+          <Property Type="String" Name="TextPaybackMaximalEN" Nullable="true" />
+          <Property Type="String" Name="ProtectionEN" Nullable="true" />
+          <Property Type="String" Name="ParticipationEN" Nullable="true" />
+          <Property Type="String" Name="TextParticipationEN" Nullable="true" />
+          <Property Type="String" Name="DiscountEN" Nullable="true" />
+          <Property Type="String" Name="BonusLevelEN" Nullable="true" />
+          <Property Type="String" Name="PaybackMaximaEN" Nullable="true" />
+          <Property Type="String" Name="TextCouponConditionalEN" Nullable="true" />
+          <Property Type="String" Name="PaybackMinimalEN" Nullable="true" />
+          <Property Type="String" Name="Additional1TextEN" Nullable="true" />
+          <Property Type="String" Name="Additional1ValueEN" Nullable="true" />
+          <Property Type="String" Name="Additional2TextEN" Nullable="true" />
+          <Property Type="String" Name="Additional2ValueEN" Nullable="true" />
+          <Property Type="String" Name="Additional3TextEN" Nullable="true" />
+          <Property Type="String" Name="Additional3ValueEN" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="BaseValueWebsiteData">
+          <Property Type="Int32" Name="Valor" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="String" Name="BloombergTicker" Nullable="false" />
+          <Property Type="String" Name="StartValue" Nullable="false" />
+          <Property Type="String" Name="BloombergType" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="BloombergTypeEN" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Currency" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="CurrencyEN" Nullable="false" MaxLength="50" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="StruktoWebsiteDataModelStoreContainer" CdmEntityContainer="StruktoWebsiteEntities">
-          <EntitySetMapping Name="ProductWebsiteDataSet"><EntityTypeMapping TypeName="StruktoWebsiteDataModel.ProductWebsiteData"><MappingFragment StoreEntitySet="cat_ProductsForWebsite">
-            <ScalarProperty Name="Valor" ColumnName="Valor" />
-            <ScalarProperty Name="Name" ColumnName="Name" />
-            <ScalarProperty Name="NameEN" ColumnName="NameEN" />
-            <ScalarProperty Name="IsOnline" ColumnName="IsOnline" />
-            <ScalarProperty Name="IsPriceDirty" ColumnName="IsPriceDirty" />
-            <ScalarProperty Name="EmissionPrice" ColumnName="EmissionPrice" />
-            <ScalarProperty Name="Notional" ColumnName="Notional" />
-            <ScalarProperty Name="SmallestTradeableUnit" ColumnName="SmallestTradeableUnit" />
-            <ScalarProperty Name="Guarantor" ColumnName="Guarantor" />
-            <ScalarProperty Name="GuarantorShort" ColumnName="GuarantorShort" />
-            <ScalarProperty Name="Issuer" ColumnName="Issuer" />
-            <ScalarProperty Name="IssuerShort" ColumnName="IssuerShort" />
-            <ScalarProperty Name="LeadManager" ColumnName="LeadManager" />
-            <ScalarProperty Name="LeadManagerShort" ColumnName="LeadManagerShort" />
-            <ScalarProperty Name="AssetClass" ColumnName="AssetClass" />
-            <ScalarProperty Name="AssetClassEn" ColumnName="AssetClassEn" />
-            <ScalarProperty Name="ProductCategory" ColumnName="ProductCategory" />
-            <ScalarProperty Name="ProductCategoryEn" ColumnName="ProductCategoryEn" />
-            <ScalarProperty Name="ProductState" ColumnName="ProductState" />
-            <ScalarProperty Name="ProductStateEn" ColumnName="ProductStateEn" />
-            <ScalarProperty Name="ProductType" ColumnName="ProductType" />
-            <ScalarProperty Name="ProductTypeEn" ColumnName="ProductTypeEn" />
-            <ScalarProperty Name="Currency" ColumnName="Currency" />
-            <ScalarProperty Name="CurrencyRisk" ColumnName="CurrencyRisk" />
-            <ScalarProperty Name="CurrencyRiskEn" ColumnName="CurrencyRiskEn" />
-            <ScalarProperty Name="Pricing" ColumnName="Pricing" />
-            <ScalarProperty Name="PricingEn" ColumnName="PricingEn" />
-            <ScalarProperty Name="ValutaDate" ColumnName="ValutaDate" />
-            <ScalarProperty Name="RedemptionDate" ColumnName="RedemptionDate" />
-            <ScalarProperty Name="StartFixationDate" ColumnName="StartFixationDate" />
-            <ScalarProperty Name="EndFixationDate" ColumnName="EndFixationDate" />
-            <ScalarProperty Name="HasEndFixation" ColumnName="HasEndFixation" />
-            <ScalarProperty Name="CouponObservation" ColumnName="CouponObservation" />
-            <ScalarProperty Name="CouponObservationEn" ColumnName="CouponObservationEn" />
-            <ScalarProperty Name="ConditionalObservation" ColumnName="ConditionalObservation" />
-            <ScalarProperty Name="ConditionalObservationEn" ColumnName="ConditionalObservationEn" />
-            <ScalarProperty Name="FloaterObservation" ColumnName="FloaterObservation" />
-            <ScalarProperty Name="FloaterObservationEn" ColumnName="FloaterObservationEn" />
-            <ScalarProperty Name="ProtectionType" ColumnName="ProtectionType" />
-            <ScalarProperty Name="CallData" ColumnName="CallData" />
-            <ScalarProperty Name="CallDataEn" ColumnName="CallDataEn" />
-            <ScalarProperty Name="EarlyRedemption" ColumnName="EarlyRedemption" />
-            <ScalarProperty Name="EarlyRedemptionEn" ColumnName="EarlyRedemptionEn" />
-            <ScalarProperty Name="ISIN" ColumnName="ISIN" />
-            <ScalarProperty Name="StockExchange" ColumnName="StockExchange" />
-            <ScalarProperty Name="CouponGuaranteed" ColumnName="CouponGuaranteed" />
-            <ScalarProperty Name="CouponConditional" ColumnName="CouponConditional" />
-            <ScalarProperty Name="TextCouponConditional" ColumnName="TextCouponConditional" />
-            <ScalarProperty Name="Floater" ColumnName="Floater" />
-            <ScalarProperty Name="TextFloater" ColumnName="TextFloater" />
-            <ScalarProperty Name="CouponMinimal" ColumnName="CouponMinimal" />
-            <ScalarProperty Name="CouponMaximal" ColumnName="CouponMaximal" />
-            <ScalarProperty Name="TextCoupon" ColumnName="TextCoupon" />
-            <ScalarProperty Name="TextEarlyRedemption" ColumnName="TextEarlyRedemption" />
-            <ScalarProperty Name="Cap" ColumnName="Cap" />
-            <ScalarProperty Name="PaybackMaximal" ColumnName="PaybackMaximal" />
-            <ScalarProperty Name="TextPaybackMaximal" ColumnName="TextPaybackMaximal" />
-            <ScalarProperty Name="Protection" ColumnName="Protection" />
-            <ScalarProperty Name="PaybackMinimal" ColumnName="PaybackMinimal" />
-            <ScalarProperty Name="Participation" ColumnName="Participation" />
-            <ScalarProperty Name="TextParticipation" ColumnName="TextParticipation" />
-            <ScalarProperty Name="Discount" ColumnName="Discount" />
-            <ScalarProperty Name="MaxYield" ColumnName="MaxYield" />
-            <ScalarProperty Name="BonusLevel" ColumnName="BonusLevel" />
-            <ScalarProperty Name="ProductCategoryValue" ColumnName="ProductCategoryValue" />
-            <ScalarProperty Name="ProductTypeValue" ColumnName="ProductTypeValue" />
-            <ScalarProperty Name="EmissionTypeDescription" ColumnName="EmissionTypeDescription" />
-            <ScalarProperty Name="Symbol" ColumnName="Symbol" />
-            <ScalarProperty Name="Additional1Text" ColumnName="Additional1Text" />
-            <ScalarProperty Name="Additional1Value" ColumnName="Additional1Value" />
-            <ScalarProperty Name="Additional2Text" ColumnName="Additional2Text" />
-            <ScalarProperty Name="Additional2Value" ColumnName="Additional2Value" />
-            <ScalarProperty Name="Additional3Text" ColumnName="Additional3Text" />
-            <ScalarProperty Name="Additional3Value" ColumnName="Additional3Value" />
-            <ScalarProperty Name="CouponGuaranteedEN" ColumnName="CouponGuaranteedEN" />
-            <ScalarProperty Name="CouponConditionalEN" ColumnName="CouponConditionalEN" />
-            <ScalarProperty Name="FloaterEN" ColumnName="FloaterEN" />
-            <ScalarProperty Name="TextFloaterEN" ColumnName="TextFloaterEN" />
-            <ScalarProperty Name="CouponMinimalEN" ColumnName="CouponMinimalEN" />
-            <ScalarProperty Name="CouponMaximalEN" ColumnName="CouponMaximalEN" />
-            <ScalarProperty Name="TextCouponEN" ColumnName="TextCouponEN" />
-            <ScalarProperty Name="TextEarlyRedemptionEN" ColumnName="TextEarlyRedemptionEN" />
-            <ScalarProperty Name="CapEN" ColumnName="CapEN" />
-            <ScalarProperty Name="MaxYieldEN" ColumnName="MaxYieldEN" />
-            <ScalarProperty Name="TextPaybackMaximalEN" ColumnName="TextPaybackMaximalEN" />
-            <ScalarProperty Name="ProtectionEN" ColumnName="ProtectionEN" />
-            <ScalarProperty Name="ParticipationEN" ColumnName="ParticipationEN" />
-            <ScalarProperty Name="TextParticipationEN" ColumnName="TextParticipationEN" />
-            <ScalarProperty Name="DiscountEN" ColumnName="DiscountEN" />
-            <ScalarProperty Name="BonusLevelEN" ColumnName="BonusLevelEN" />
-            <ScalarProperty Name="PaybackMaximaEN" ColumnName="PaybackMaximaEN" />
-            <ScalarProperty Name="TextCouponConditionalEN" ColumnName="TextCouponConditionalEN" />
-            <ScalarProperty Name="PaybackMinimalEN" ColumnName="PaybackMinimalEN" />
-            <ScalarProperty Name="Additional1TextEN" ColumnName="Additional1TextEN" />
-            <ScalarProperty Name="Additional1ValueEN" ColumnName="Additional1ValueEN" />
-            <ScalarProperty Name="Additional2TextEN" ColumnName="Additional2TextEN" />
-            <ScalarProperty Name="Additional2ValueEN" ColumnName="Additional2ValueEN" />
-            <ScalarProperty Name="Additional3TextEN" ColumnName="Additional3TextEN" />
-            <ScalarProperty Name="Additional3ValueEN" ColumnName="Additional3ValueEN" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <FunctionImportMapping FunctionImportName="GetBarrierWebsiteData" FunctionName="StruktoWebsiteDataModel.Store.pGetBarriersOfProduct">
             <ResultMapping>
               <ComplexTypeMapping TypeName="StruktoWebsiteDataModel.BarrierWebsiteData">
@@ -603,6 +231,125 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetProductWebsiteData" FunctionName="StruktoWebsiteDataModel.Store.pGetProductData">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="StruktoWebsiteDataModel.ProductWebsiteData">
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="NameEN" ColumnName="NameEN" />
+                <ScalarProperty Name="IsOnline" ColumnName="IsOnline" />
+                <ScalarProperty Name="IsPriceDirty" ColumnName="IsPriceDirty" />
+                <ScalarProperty Name="EmissionPrice" ColumnName="EmissionPrice" />
+                <ScalarProperty Name="Notional" ColumnName="Notional" />
+                <ScalarProperty Name="SmallestTradeableUnit" ColumnName="SmallestTradeableUnit" />
+                <ScalarProperty Name="Guarantor" ColumnName="Guarantor" />
+                <ScalarProperty Name="GuarantorShort" ColumnName="GuarantorShort" />
+                <ScalarProperty Name="Issuer" ColumnName="Issuer" />
+                <ScalarProperty Name="IssuerShort" ColumnName="IssuerShort" />
+                <ScalarProperty Name="LeadManager" ColumnName="LeadManager" />
+                <ScalarProperty Name="LeadManagerShort" ColumnName="LeadManagerShort" />
+                <ScalarProperty Name="AssetClass" ColumnName="AssetClass" />
+                <ScalarProperty Name="AssetClassEn" ColumnName="AssetClassEn" />
+                <ScalarProperty Name="ProductCategory" ColumnName="ProductCategory" />
+                <ScalarProperty Name="ProductCategoryEn" ColumnName="ProductCategoryEn" />
+                <ScalarProperty Name="ProductState" ColumnName="ProductState" />
+                <ScalarProperty Name="ProductStateEn" ColumnName="ProductStateEn" />
+                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+                <ScalarProperty Name="ProductTypeEn" ColumnName="ProductTypeEn" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="CurrencyRisk" ColumnName="CurrencyRisk" />
+                <ScalarProperty Name="CurrencyRiskEn" ColumnName="CurrencyRiskEn" />
+                <ScalarProperty Name="Pricing" ColumnName="Pricing" />
+                <ScalarProperty Name="PricingEn" ColumnName="PricingEn" />
+                <ScalarProperty Name="ValutaDate" ColumnName="ValutaDate" />
+                <ScalarProperty Name="RedemptionDate" ColumnName="RedemptionDate" />
+                <ScalarProperty Name="StartFixationDate" ColumnName="StartFixationDate" />
+                <ScalarProperty Name="EndFixationDate" ColumnName="EndFixationDate" />
+                <ScalarProperty Name="HasEndFixation" ColumnName="HasEndFixation" />
+                <ScalarProperty Name="CouponObservation" ColumnName="CouponObservation" />
+                <ScalarProperty Name="CouponObservationEn" ColumnName="CouponObservationEn" />
+                <ScalarProperty Name="ConditionalObservation" ColumnName="ConditionalObservation" />
+                <ScalarProperty Name="ConditionalObservationEn" ColumnName="ConditionalObservationEn" />
+                <ScalarProperty Name="FloaterObservation" ColumnName="FloaterObservation" />
+                <ScalarProperty Name="FloaterObservationEn" ColumnName="FloaterObservationEn" />
+                <ScalarProperty Name="ProtectionType" ColumnName="ProtectionType" />
+                <ScalarProperty Name="CallData" ColumnName="CallData" />
+                <ScalarProperty Name="CallDataEn" ColumnName="CallDataEn" />
+                <ScalarProperty Name="EarlyRedemption" ColumnName="EarlyRedemption" />
+                <ScalarProperty Name="EarlyRedemptionEn" ColumnName="EarlyRedemptionEn" />
+                <ScalarProperty Name="ISIN" ColumnName="ISIN" />
+                <ScalarProperty Name="StockExchange" ColumnName="StockExchange" />
+                <ScalarProperty Name="CouponGuaranteed" ColumnName="CouponGuaranteed" />
+                <ScalarProperty Name="CouponConditional" ColumnName="CouponConditional" />
+                <ScalarProperty Name="TextCouponConditional" ColumnName="TextCouponConditional" />
+                <ScalarProperty Name="Floater" ColumnName="Floater" />
+                <ScalarProperty Name="TextFloater" ColumnName="TextFloater" />
+                <ScalarProperty Name="CouponMinimal" ColumnName="CouponMinimal" />
+                <ScalarProperty Name="CouponMaximal" ColumnName="CouponMaximal" />
+                <ScalarProperty Name="TextCoupon" ColumnName="TextCoupon" />
+                <ScalarProperty Name="TextEarlyRedemption" ColumnName="TextEarlyRedemption" />
+                <ScalarProperty Name="Cap" ColumnName="Cap" />
+                <ScalarProperty Name="PaybackMaximal" ColumnName="PaybackMaximal" />
+                <ScalarProperty Name="TextPaybackMaximal" ColumnName="TextPaybackMaximal" />
+                <ScalarProperty Name="Protection" ColumnName="Protection" />
+                <ScalarProperty Name="PaybackMinimal" ColumnName="PaybackMinimal" />
+                <ScalarProperty Name="Participation" ColumnName="Participation" />
+                <ScalarProperty Name="TextParticipation" ColumnName="TextParticipation" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="MaxYield" ColumnName="MaxYield" />
+                <ScalarProperty Name="BonusLevel" ColumnName="BonusLevel" />
+                <ScalarProperty Name="ProductCategoryValue" ColumnName="ProductCategoryValue" />
+                <ScalarProperty Name="ProductTypeValue" ColumnName="ProductTypeValue" />
+                <ScalarProperty Name="EmissionTypeDescription" ColumnName="EmissionTypeDescription" />
+                <ScalarProperty Name="Symbol" ColumnName="Symbol" />
+                <ScalarProperty Name="Additional1Text" ColumnName="Additional1Text" />
+                <ScalarProperty Name="Additional1Value" ColumnName="Additional1Value" />
+                <ScalarProperty Name="Additional2Text" ColumnName="Additional2Text" />
+                <ScalarProperty Name="Additional2Value" ColumnName="Additional2Value" />
+                <ScalarProperty Name="Additional3Text" ColumnName="Additional3Text" />
+                <ScalarProperty Name="Additional3Value" ColumnName="Additional3Value" />
+                <ScalarProperty Name="CouponGuaranteedEN" ColumnName="CouponGuaranteedEN" />
+                <ScalarProperty Name="CouponConditionalEN" ColumnName="CouponConditionalEN" />
+                <ScalarProperty Name="FloaterEN" ColumnName="FloaterEN" />
+                <ScalarProperty Name="TextFloaterEN" ColumnName="TextFloaterEN" />
+                <ScalarProperty Name="CouponMinimalEN" ColumnName="CouponMinimalEN" />
+                <ScalarProperty Name="CouponMaximalEN" ColumnName="CouponMaximalEN" />
+                <ScalarProperty Name="TextCouponEN" ColumnName="TextCouponEN" />
+                <ScalarProperty Name="TextEarlyRedemptionEN" ColumnName="TextEarlyRedemptionEN" />
+                <ScalarProperty Name="CapEN" ColumnName="CapEN" />
+                <ScalarProperty Name="MaxYieldEN" ColumnName="MaxYieldEN" />
+                <ScalarProperty Name="TextPaybackMaximalEN" ColumnName="TextPaybackMaximalEN" />
+                <ScalarProperty Name="ProtectionEN" ColumnName="ProtectionEN" />
+                <ScalarProperty Name="ParticipationEN" ColumnName="ParticipationEN" />
+                <ScalarProperty Name="TextParticipationEN" ColumnName="TextParticipationEN" />
+                <ScalarProperty Name="DiscountEN" ColumnName="DiscountEN" />
+                <ScalarProperty Name="BonusLevelEN" ColumnName="BonusLevelEN" />
+                <ScalarProperty Name="PaybackMaximaEN" ColumnName="PaybackMaximaEN" />
+                <ScalarProperty Name="TextCouponConditionalEN" ColumnName="TextCouponConditionalEN" />
+                <ScalarProperty Name="PaybackMinimalEN" ColumnName="PaybackMinimalEN" />
+                <ScalarProperty Name="Additional1TextEN" ColumnName="Additional1TextEN" />
+                <ScalarProperty Name="Additional1ValueEN" ColumnName="Additional1ValueEN" />
+                <ScalarProperty Name="Additional2TextEN" ColumnName="Additional2TextEN" />
+                <ScalarProperty Name="Additional2ValueEN" ColumnName="Additional2ValueEN" />
+                <ScalarProperty Name="Additional3TextEN" ColumnName="Additional3TextEN" />
+                <ScalarProperty Name="Additional3ValueEN" ColumnName="Additional3ValueEN" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetBaseValueWebsiteData" FunctionName="StruktoWebsiteDataModel.Store.pGetBaseValueOfProduct">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="StruktoWebsiteDataModel.BaseValueWebsiteData">
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="BloombergTicker" ColumnName="BloombergTicker" />
+                <ScalarProperty Name="StartValue" ColumnName="StartValue" />
+                <ScalarProperty Name="BloombergType" ColumnName="BloombergType" />
+                <ScalarProperty Name="BloombergTypeEN" ColumnName="BloombergTypeEN" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="CurrencyEN" ColumnName="CurrencyEN" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -624,7 +371,6 @@
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
       <Diagram Name="StruktoWebsiteEntities" ZoomLevel="29">
-        <EntityTypeShape EntityType="StruktoWebsiteDataModel.ProductWebsiteData" Width="1.5" PointX="0.75" PointY="0.75" Height="20.056621093750003" IsExpanded="true" />
       </Diagram>
     </Diagrams>
   </Designer>

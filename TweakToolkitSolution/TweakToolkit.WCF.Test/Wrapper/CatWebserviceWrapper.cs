@@ -150,7 +150,6 @@ namespace TweakToolkit.WCF.Test.Wrapper
                                                                    description.NameEn, description.TriggerEn,
                                                                    description.ObservationEn,
                                                                    description.SettlementEn));
-
         }
 
         public IWebserviceResult WriteBarriers(int valor, IEnumerable<BarrierWebsiteDescription> descriptions)
@@ -217,7 +216,7 @@ namespace TweakToolkit.WCF.Test.Wrapper
             var result = new AggregateWebserviceResult(info);
             foreach (EventWebsiteDescription description in descriptions)
             {
-                result.Add(WriteEvent(valor,description));
+                result.Add(WriteEvent(valor, description));
             }
             return result;
         }
@@ -336,7 +335,7 @@ namespace TweakToolkit.WCF.Test.Wrapper
 
         private void InvokeAsyncRequestCallback(AsyncRequestInfo asyncRequestInfo, string result, Exception exception)
         {
-            InvokeAsyncRequestCallback(asyncRequestInfo, new object[] {true, result}, exception);
+            InvokeAsyncRequestCallback(asyncRequestInfo, new object[] { true, result }, exception);
         }
 
         #endregion Helper Methods
