@@ -6,9 +6,9 @@ namespace TweakToolkit.WCF.Test.Wrapper
 {
     public class CatWebserviceWrapperMock : ICatWebserviceWrapper
     {
-        public WebserviceWrapperState WebserviceState { get; private set; }
-
         public bool IsConnected { get; private set; }
+
+        public WebserviceWrapperState WebserviceState { get; private set; }
 
         public IWebserviceResult Connect()
         {
@@ -16,6 +16,41 @@ namespace TweakToolkit.WCF.Test.Wrapper
         }
 
         public void ConnectAsync(Action<IWebserviceResult> callback)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IWebserviceResult DeleteAllPrices(int valor)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IWebserviceResult DeleteAllPricesAsync(int valor, Action<IWebserviceResult> callback)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IWebserviceResult DeleteBarriers(int valor)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IWebserviceResult DeleteBaseValues(int valor)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IWebserviceResult DeleteEvents(int valor)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IWebserviceResult DeleteFile(string fileName)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IWebserviceResult DeleteProduct(int valor)
         {
             throw new NotImplementedException();
         }
@@ -35,7 +70,32 @@ namespace TweakToolkit.WCF.Test.Wrapper
             throw new NotImplementedException();
         }
 
-        public IWebserviceResult DeleteEvents(int valor)
+        public IWebserviceResult SaveFile(int valor, FileWebsiteDescription description)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IWebserviceResult WriteBarrier(int valor, BarrierWebsiteDescription description)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IWebserviceResult WriteBarriers(int valor, IEnumerable<BarrierWebsiteDescription> descriptions)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IWebserviceResult WriteBaseValue(int valor, BaseValueWebsiteDescription description)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IWebserviceResult WriteBaseValues(int valor, IEnumerable<BaseValueWebsiteDescription> descriptions)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IWebserviceResult WriteEvent(int valor, EventWebsiteDescription description)
         {
             throw new NotImplementedException();
         }
@@ -45,12 +105,7 @@ namespace TweakToolkit.WCF.Test.Wrapper
             throw new NotImplementedException();
         }
 
-        public IWebserviceResult DeleteBarriers(int valor)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IWebserviceResult WriteBarriers(int valor, IEnumerable<BarrierWebsiteDescription> descriptions)
+        public IWebserviceResult WriteIssuerRating(int issuerId, IssuerRatingWebsiteDescription description)
         {
             throw new NotImplementedException();
         }
@@ -71,21 +126,6 @@ namespace TweakToolkit.WCF.Test.Wrapper
         }
 
         public void WritePriceCollectionAsync(IEnumerable<PriceWebsiteDescription> description, Action<IWebserviceResult> callback)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IWebserviceResult DeleteProduct(int valor)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IWebserviceResult DeleteAllPrices(int valor)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IWebserviceResult DeleteAllPricesAsync(int valor, Action<IWebserviceResult> callback)
         {
             throw new NotImplementedException();
         }

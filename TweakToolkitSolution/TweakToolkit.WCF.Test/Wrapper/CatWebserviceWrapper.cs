@@ -25,6 +25,48 @@ namespace TweakToolkit.WCF.Test.Wrapper
 
         #endregion ctor
 
+        #region IssuerRating Methods
+
+        public IWebserviceResult WriteIssuerRating(int issuerId, IssuerRatingWebsiteDescription description)
+        {
+            return WebserviceResult.Create("WriteIssuerRating",
+                                           Webservice.writeEmittentenRatingWithLogo(description.IssuerId,
+                                                                                    description.Bank,
+                                                                                    description.RatingSP,
+                                                                                    description.RatingMoody,
+                                                                                    description.RatingFitch,
+                                                                                    description.DateSP,
+                                                                                    description.DateMoody,
+                                                                                    description.DateFitch,
+                                                                                    description.Comment,
+                                                                                    description.CommentEN,
+                                                                                    description.Website,
+                                                                                    description.LogoFileName,
+                                                                                    description.ByteLogo));
+        }
+
+        #endregion IssuerRating Methods
+
+        #region File Methods
+
+        public IWebserviceResult DeleteFile(string fileName)
+        {
+            string info = string.Format("DeleteFile {0}", fileName);
+            return WebserviceResult.Create(info, Webservice.deleteFileByOriginalName(fileName));
+        }
+
+        public IWebserviceResult SaveFile(int valor, FileWebsiteDescription description)
+        {
+            string requestInfo = string.Format("SaveFile for {0}", valor);
+            return WebserviceResult.Create(
+                requestInfo,
+                Webservice.saveFile(description.Valor, description.Description, description.FileName,
+                                    description.SortOrder,
+                                    description.ByteFile));
+        }
+
+        #endregion File Methods
+
         #region Fields
 
         #endregion Fields
@@ -135,8 +177,19 @@ namespace TweakToolkit.WCF.Test.Wrapper
 
         public IWebserviceResult DeleteBarriers(int valor)
         {
-            var operation = string.Format("DeleteBarriers for {0}", valor);
+            string operation = string.Format("DeleteBarriers for {0}", valor);
             return WebserviceResult.Create(operation, Webservice.deleteBarrageOfProductByValor(valor));
+        }
+
+        public IWebserviceResult WriteBarriers(int valor, IEnumerable<BarrierWebsiteDescription> descriptions)
+        {
+            var info = new RequestInfo(string.Format("WriteBarriers for {0}", valor));
+            var result = new AggregateWebserviceResult(info);
+            foreach (BarrierWebsiteDescription description in descriptions)
+            {
+                result.Add(WriteBarrier(valor, description));
+            }
+            return result;
         }
 
         public IWebserviceResult WriteBarrier(int valor, BarrierWebsiteDescription description)
@@ -150,17 +203,6 @@ namespace TweakToolkit.WCF.Test.Wrapper
                                                                    description.NameEn, description.TriggerEn,
                                                                    description.ObservationEn,
                                                                    description.SettlementEn));
-        }
-
-        public IWebserviceResult WriteBarriers(int valor, IEnumerable<BarrierWebsiteDescription> descriptions)
-        {
-            var info = new RequestInfo(string.Format("WriteBarriers for {0}", valor));
-            var result = new AggregateWebserviceResult(info);
-            foreach (BarrierWebsiteDescription description in descriptions)
-            {
-                result.Add(WriteBarrier(valor, description));
-            }
-            return result;
         }
 
         #endregion Barrier Methods
@@ -196,18 +238,8 @@ namespace TweakToolkit.WCF.Test.Wrapper
 
         public IWebserviceResult DeleteEvents(int valor)
         {
-            var operation = string.Format("DeleteEvents for {0}", valor);
+            string operation = string.Format("DeleteEvents for {0}", valor);
             return WebserviceResult.Create(operation, Webservice.deleteEventsOfProductByValor(valor));
-        }
-
-        public IWebserviceResult WriteEvent(int valor, EventWebsiteDescription description)
-        {
-            var operation = string.Format("WriteEvent for {0}", valor);
-            return WebserviceResult.Create(operation, Webservice.writeEvent(description.Valor, description.ObservationDate, description.EventType,
-                                                 description.EventValutaDate,
-                                                 description.PeriodName, description.PeriodStart, description.PeriodEnd,
-                                                 description.Description, description.EventTypeEn,
-                                                 description.PeriodNameEn, description.DescriptionEn));
         }
 
         public IWebserviceResult WriteEvents(int valor, IEnumerable<EventWebsiteDescription> descriptions)
@@ -219,6 +251,19 @@ namespace TweakToolkit.WCF.Test.Wrapper
                 result.Add(WriteEvent(valor, description));
             }
             return result;
+        }
+
+        public IWebserviceResult WriteEvent(int valor, EventWebsiteDescription description)
+        {
+            string operation = string.Format("WriteEvent for {0}", valor);
+            return WebserviceResult.Create(operation,
+                                           Webservice.writeEvent(description.Valor, description.ObservationDate,
+                                                                 description.EventType,
+                                                                 description.EventValutaDate,
+                                                                 description.PeriodName, description.PeriodStart,
+                                                                 description.PeriodEnd,
+                                                                 description.Description, description.EventTypeEn,
+                                                                 description.PeriodNameEn, description.DescriptionEn));
         }
 
         #endregion Event Methods
@@ -335,7 +380,7 @@ namespace TweakToolkit.WCF.Test.Wrapper
 
         private void InvokeAsyncRequestCallback(AsyncRequestInfo asyncRequestInfo, string result, Exception exception)
         {
-            InvokeAsyncRequestCallback(asyncRequestInfo, new object[] { true, result }, exception);
+            InvokeAsyncRequestCallback(asyncRequestInfo, new object[] {true, result}, exception);
         }
 
         #endregion Helper Methods

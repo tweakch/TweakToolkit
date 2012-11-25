@@ -6,21 +6,27 @@ namespace TweakToolkit.WCF.Test.Wrapper
 {
     public interface ICatWebserviceWrapper
     {
-        #region Price
-
-        #endregion Price
-
-        #region Product
-
-        #endregion Product
+        bool IsConnected { get; }
 
         WebserviceWrapperState WebserviceState { get; }
-
-        bool IsConnected { get; }
 
         IWebserviceResult Connect();
 
         void ConnectAsync(Action<IWebserviceResult> callback);
+
+        IWebserviceResult DeleteAllPrices(int valor);
+
+        IWebserviceResult DeleteAllPricesAsync(int valor, Action<IWebserviceResult> callback);
+
+        IWebserviceResult DeleteBarriers(int valor);
+
+        IWebserviceResult DeleteBaseValues(int valor);
+
+        IWebserviceResult DeleteEvents(int valor);
+
+        IWebserviceResult DeleteFile(string fileName);
+
+        IWebserviceResult DeleteProduct(int valor);
 
         IWebserviceResult Disconnect();
 
@@ -28,17 +34,21 @@ namespace TweakToolkit.WCF.Test.Wrapper
 
         string GetLoginStatus();
 
-        IWebserviceResult DeleteEvents(int valor);
+        IWebserviceResult SaveFile(int valor, FileWebsiteDescription description);
 
-        IWebserviceResult WriteEvents(int valor, IEnumerable<EventWebsiteDescription> descriptions);
-
-        IWebserviceResult DeleteBarriers(int valor);
+        IWebserviceResult WriteBarrier(int valor, BarrierWebsiteDescription description);
 
         IWebserviceResult WriteBarriers(int valor, IEnumerable<BarrierWebsiteDescription> descriptions);
 
-        IWebserviceResult DeleteAllPrices(int valor);
+        IWebserviceResult WriteBaseValue(int valor, BaseValueWebsiteDescription description);
 
-        IWebserviceResult DeleteAllPricesAsync(int valor, Action<IWebserviceResult> callback);
+        IWebserviceResult WriteBaseValues(int valor, IEnumerable<BaseValueWebsiteDescription> descriptions);
+
+        IWebserviceResult WriteEvent(int valor, EventWebsiteDescription description);
+
+        IWebserviceResult WriteEvents(int valor, IEnumerable<EventWebsiteDescription> descriptions);
+
+        IWebserviceResult WriteIssuerRating(int issuerId, IssuerRatingWebsiteDescription description);
 
         IWebserviceResult WritePrice(PriceWebsiteDescription description);
 
@@ -48,8 +58,6 @@ namespace TweakToolkit.WCF.Test.Wrapper
 
         void WritePriceCollectionAsync(IEnumerable<PriceWebsiteDescription> description,
                                                        Action<IWebserviceResult> callback);
-
-        IWebserviceResult DeleteProduct(int valor);
 
         IWebserviceResult WriteProduct(ProductWebsiteDescription d);
     }

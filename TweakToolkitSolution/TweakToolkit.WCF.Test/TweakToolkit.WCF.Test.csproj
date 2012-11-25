@@ -61,7 +61,8 @@
     <Compile Include="TestHelper.cs" />
     <Compile Include="Wrapper\AggregateWebserviceResult.cs" />
     <Compile Include="ServiceDomain\EventWebsiteDescription.cs" />
-    <Compile Include="Wrapper\BaseValueWebsiteDescription.cs" />
+    <Compile Include="ServiceDomain\BaseValueWebsiteDescription.cs" />
+    <Compile Include="ServiceDomain\FileWebsiteDescription.cs" />
     <Compile Include="Wrapper\ICatWebserviceWrapper.cs" />
     <Compile Include="Mocks\ImportMock.cs" />
     <Compile Include="ServiceDomain\PriceWebsiteDescription.cs" />
@@ -72,6 +73,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="ServiceDomain\ProductWebsiteDescription.cs" />
+    <Compile Include="ServiceDomain\IssuerRatingWebsiteDescription.cs" />
     <Compile Include="Wrapper\IWebserviceResult.cs" />
     <Compile Include="Wrapper\RequestInfo.cs" />
     <Compile Include="Wrapper\CatWebserviceWrapperMock.cs" />

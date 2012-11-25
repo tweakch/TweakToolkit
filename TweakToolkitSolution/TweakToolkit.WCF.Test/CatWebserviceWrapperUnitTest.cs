@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading;
@@ -31,69 +32,6 @@ namespace TweakToolkit.WCF.Test
 
             wrapper.Disconnect();
         }
-
-        #region Event Functions
-
-        [TestMethod]
-        public void DeleteAllEventsForExistingValor()
-        {
-            var wrapper = new CatWebserviceWrapper(Service);
-            IWebserviceResult connect = wrapper.Connect();
-            Assert.IsFalse(connect.HasErrors, connect.ServiceMessage);
-            Assert.IsTrue(wrapper.IsConnected);
-
-            IWebserviceResult deleteEvents = wrapper.DeleteEvents(Settings.Default.TestProductValor);
-            Assert.IsFalse(deleteEvents.HasErrors);
-        }
-
-        [TestMethod]
-        public void DeleteAllEventsForNonExistingValor()
-        {
-            var wrapper = new CatWebserviceWrapper(Service);
-            IWebserviceResult connect = wrapper.Connect();
-            Assert.IsFalse(connect.HasErrors, connect.ServiceMessage);
-            Assert.IsTrue(wrapper.IsConnected);
-
-            IWebserviceResult deleteEvents = wrapper.DeleteEvents(Settings.Default.InvalidValor);
-            Assert.IsTrue(deleteEvents.HasErrors);
-        }
-
-        [TestMethod]
-        public void WriteAllEventsForExistingValor()
-        {
-            List<EventWebsiteDescription> descriptions = TestHelper.GetEventWebsiteDescriptions();
-            Assert.AreNotEqual(0, descriptions.Count());
-
-            var wrapper = new CatWebserviceWrapper(Service);
-            IWebserviceResult connect = wrapper.Connect();
-            Assert.IsFalse(connect.HasErrors, connect.ServiceMessage);
-            Assert.IsTrue(wrapper.IsConnected);
-
-            IWebserviceResult writeProduct = wrapper.WriteProduct(TestHelper.GetProductWebsiteDescription());
-            Assert.IsFalse(writeProduct.HasErrors);
-
-            IWebserviceResult writeEvents = wrapper.WriteEvents(Settings.Default.TestProductValor, descriptions);
-            Assert.IsFalse(writeEvents.HasErrors, writeEvents.ServiceMessage);
-        }
-
-        [TestMethod]
-        public void WriteAllEventsForNonExistingValor()
-        {
-            List<EventWebsiteDescription> descriptions = TestHelper.GetEventWebsiteDescriptions();
-            Assert.AreNotEqual(0, descriptions.Count());
-
-            var wrapper = new CatWebserviceWrapper(Service);
-            IWebserviceResult connect = wrapper.Connect();
-            Assert.IsFalse(connect.HasErrors, connect.ServiceMessage);
-            Assert.IsTrue(wrapper.IsConnected);
-
-            IWebserviceResult writeEvents = wrapper.WriteEvents(Settings.Default.InvalidValor, descriptions);
-            Assert.IsFalse(writeEvents.HasErrors, writeEvents.ServiceMessage);
-        }
-
-
-
-        #endregion Event Functions
 
         #region Barrier Functions
 
@@ -154,11 +92,155 @@ namespace TweakToolkit.WCF.Test
             Assert.IsFalse(writeBarriers.HasErrors, writeBarriers.ServiceMessage);
         }
 
-
-
         #endregion Barrier Functions
 
+        #region BaseValue Functions
+
+        [TestMethod]
+        public void DeleteAllBaseValuesForExistingValor()
+        {
+            var wrapper = new CatWebserviceWrapper(Service);
+            IWebserviceResult connect = wrapper.Connect();
+            Assert.IsFalse(connect.HasErrors, connect.ServiceMessage);
+            Assert.IsTrue(wrapper.IsConnected);
+
+            IWebserviceResult deleteBaseValues = wrapper.DeleteBaseValues(Settings.Default.TestProductValor);
+            Assert.IsFalse(deleteBaseValues.HasErrors);
+        }
+
+        [TestMethod]
+        public void DeleteAllBaseValuesForNonExistingValor()
+        {
+            var wrapper = new CatWebserviceWrapper(Service);
+            IWebserviceResult connect = wrapper.Connect();
+            Assert.IsFalse(connect.HasErrors, connect.ServiceMessage);
+            Assert.IsTrue(wrapper.IsConnected);
+
+            IWebserviceResult deleteBaseValues = wrapper.DeleteBaseValues(Settings.Default.InvalidValor);
+            Assert.IsTrue(deleteBaseValues.HasErrors);
+        }
+
+        [TestMethod]
+        public void WriteAllBaseValuesForExistingValor()
+        {
+            List<BaseValueWebsiteDescription> descriptions = TestHelper.GetBaseValueWebsiteDescriptions();
+            Assert.AreNotEqual(0, descriptions.Count());
+
+            var wrapper = new CatWebserviceWrapper(Service);
+            IWebserviceResult connect = wrapper.Connect();
+            Assert.IsFalse(connect.HasErrors, connect.ServiceMessage);
+            Assert.IsTrue(wrapper.IsConnected);
+
+            IWebserviceResult writeProduct = wrapper.WriteProduct(TestHelper.GetProductWebsiteDescription());
+            Assert.IsFalse(writeProduct.HasErrors);
+
+            IWebserviceResult writeBaseValues = wrapper.WriteBaseValues(Settings.Default.TestProductValor, descriptions);
+            Assert.IsFalse(writeBaseValues.HasErrors, writeBaseValues.ServiceMessage);
+        }
+
+        [TestMethod]
+        public void WriteAllBaseValuesForNonExistingValor()
+        {
+            List<BaseValueWebsiteDescription> descriptions = TestHelper.GetBaseValueWebsiteDescriptions();
+            Assert.AreNotEqual(0, descriptions.Count());
+
+            var wrapper = new CatWebserviceWrapper(Service);
+            IWebserviceResult connect = wrapper.Connect();
+            Assert.IsFalse(connect.HasErrors, connect.ServiceMessage);
+            Assert.IsTrue(wrapper.IsConnected);
+
+            IWebserviceResult writeBaseValues = wrapper.WriteBaseValues(Settings.Default.InvalidValor, descriptions);
+            Assert.IsFalse(writeBaseValues.HasErrors, writeBaseValues.ServiceMessage);
+        }
+
+        #endregion BaseValue Functions
+
+        #region Event Functions
+
+        [TestMethod]
+        public void DeleteAllEventsForExistingValor()
+        {
+            var wrapper = new CatWebserviceWrapper(Service);
+            IWebserviceResult connect = wrapper.Connect();
+            Assert.IsFalse(connect.HasErrors, connect.ServiceMessage);
+            Assert.IsTrue(wrapper.IsConnected);
+
+            IWebserviceResult deleteEvents = wrapper.DeleteEvents(Settings.Default.TestProductValor);
+            Assert.IsFalse(deleteEvents.HasErrors);
+        }
+
+        [TestMethod]
+        public void DeleteAllEventsForNonExistingValor()
+        {
+            var wrapper = new CatWebserviceWrapper(Service);
+            IWebserviceResult connect = wrapper.Connect();
+            Assert.IsFalse(connect.HasErrors, connect.ServiceMessage);
+            Assert.IsTrue(wrapper.IsConnected);
+
+            IWebserviceResult deleteEvents = wrapper.DeleteEvents(Settings.Default.InvalidValor);
+            Assert.IsTrue(deleteEvents.HasErrors);
+        }
+
+        [TestMethod]
+        public void WriteAllEventsForExistingValor()
+        {
+            List<EventWebsiteDescription> descriptions = TestHelper.GetEventWebsiteDescriptions();
+            Assert.AreNotEqual(0, descriptions.Count());
+
+            var wrapper = new CatWebserviceWrapper(Service);
+            IWebserviceResult connect = wrapper.Connect();
+            Assert.IsFalse(connect.HasErrors, connect.ServiceMessage);
+            Assert.IsTrue(wrapper.IsConnected);
+
+            IWebserviceResult writeProduct = wrapper.WriteProduct(TestHelper.GetProductWebsiteDescription());
+            Assert.IsFalse(writeProduct.HasErrors);
+
+            IWebserviceResult writeEvents = wrapper.WriteEvents(Settings.Default.TestProductValor, descriptions);
+            Assert.IsFalse(writeEvents.HasErrors, writeEvents.ServiceMessage);
+        }
+
+        [TestMethod]
+        public void WriteAllEventsForNonExistingValor()
+        {
+            List<EventWebsiteDescription> descriptions = TestHelper.GetEventWebsiteDescriptions();
+            Assert.AreNotEqual(0, descriptions.Count());
+
+            var wrapper = new CatWebserviceWrapper(Service);
+            IWebserviceResult connect = wrapper.Connect();
+            Assert.IsFalse(connect.HasErrors, connect.ServiceMessage);
+            Assert.IsTrue(wrapper.IsConnected);
+
+            IWebserviceResult writeEvents = wrapper.WriteEvents(Settings.Default.InvalidValor, descriptions);
+            Assert.IsFalse(writeEvents.HasErrors, writeEvents.ServiceMessage);
+        }
+
+        #endregion Event Functions
+
+        #region File Functions
+
+        [TestMethod]
+        public void DeleteFileForValor()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void WriteFileForValor()
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion File Functions
+
         #region Price Functions
+
+        [TestMethod]
+        public void DeleteAllPrices()
+        {
+            throw new NotImplementedException();
+            using (var db = new StruktoWebsiteEntities())
+            {
+            }
+        }
 
         [TestMethod]
         public void DeleteAllPricesForValor()
@@ -199,7 +281,6 @@ namespace TweakToolkit.WCF.Test
             Assert.IsNotNull(webserviceResult.RequestInfo);
         }
 
-
         #endregion Price Functions
 
         #region Product Functions
@@ -239,9 +320,6 @@ namespace TweakToolkit.WCF.Test
             IWebserviceResult webserviceResult = wrapper.WriteProduct(TestHelper.GetEmptyProductWebsiteDescription());
             Assert.IsTrue(webserviceResult.HasErrors, webserviceResult.ServiceMessage);
         }
-
-
-
 
         #endregion Product Functions
 
