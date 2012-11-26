@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TweakToolkit.Bloomberg.Domain;
 
@@ -7,6 +8,29 @@ namespace TweakToolkit.Bloomberg.Test
     [TestClass]
     public class ReferenceDataFixture
     {
+        [TestMethod]
+        public void RequestTest()
+        {
+            string field = "PX_BID";
+            string security = "DE000CZ36U01@CBED CORP";
+            var handler = new BloombergReferenceDataHandler();
+            handler.AddField(field);
+            handler.AddSecurity(security);
+            bool waiting = true;
+            handler.SendRequestAsync((response) =>
+                                         {
+                                             var data = response.Securities[security];
+                                             Assert.IsNotNull(data);
+                                             var bid = data.Fields[field];
+                                             Assert.IsNotNull(bid);
+                                             waiting = false;
+                                         });
+            while (waiting)
+            {
+                Thread.Sleep(200);
+            }
+        }
+
         [TestMethod]
         public void RequestInfoTest()
         {

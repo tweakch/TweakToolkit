@@ -48,6 +48,10 @@
     <Compile Include="BidAskRequestHandler.cs" />
     <Compile Include="BidAskResponse.cs" />
     <Compile Include="BloombergReferenceDataHandler.cs" />
+    <Compile Include="New\SubscriptionAdapter.cs" />
+    <Compile Include="New\SubscriptionSession.cs" />
+    <Compile Include="New\SessionBase.cs" />
+    <Compile Include="New\UnknownCorrelationIdException.cs" />
     <Compile Include="PriceInfo.cs" />
     <Compile Include="Common\DataService.cs" />
     <Compile Include="Common\IRequestFields.cs" />
