@@ -8,40 +8,22 @@ namespace TweakToolkit.Bloomberg.New
     public class SubscriptionSession : SessionBase
     {
         public SubscriptionSession()
+            : base(new SubscriptionSessionEventHandler())
         {
             KnownCorrelationIds = new HashSet<CorrelationID>();
         }
 
-        public override void Start()
+        protected HashSet<CorrelationID> KnownCorrelationIds { get; private set; }
+
+        public IEnumerable<Subscription> GetSubscriptions()
         {
-            base.Start();
-            if (!Session.OpenService("//blp/mktdata"))
-            {
-                throw new OpenServiceException(DataService.MarketData);
-            }
+            return Session.GetSubscriptions();
         }
 
-        public void Unsubscribe(IList<Subscription> subscriptionList)
+        public Session.SubscriptionStatus GetSubscriptionStatus(CorrelationID correlationId)
         {
-            Session.Unsubscribe(subscriptionList);
-        }
-
-        public void Subscribe(IList<Subscription> subscriptionList)
-        {
-            foreach (var subscription in subscriptionList)
-            {
-                KnownCorrelationIds.Add(subscription.CorrelationID);
-            }
-            Session.Subscribe(subscriptionList);
-        }
-
-        public void Resubscribe(IList<Subscription> subscriptionList)
-        {
-            foreach (var subscription in subscriptionList.Where(subscription => !IsKnownCorrelationId(subscription.CorrelationID)))
-            {
-                throw new UnknownCorrelationIdException(subscription.CorrelationID);
-            }
-            Session.Resubscribe(subscriptionList);
+            if (!IsKnownCorrelationId(correlationId)) throw new UnknownCorrelationIdException(correlationId);
+            return Session.GetSubscriptionStatus(correlationId);
         }
 
         public string GetSubscriptionString(CorrelationID correlationId)
@@ -53,22 +35,46 @@ namespace TweakToolkit.Bloomberg.New
             return Session.GetSubscriptionString(correlationId);
         }
 
-        public Session.SubscriptionStatus GetSubscriptionStatus(CorrelationID correlationId)
+        public void Resubscribe(IList<Subscription> subscriptionList)
         {
-            if (!IsKnownCorrelationId(correlationId)) throw new UnknownCorrelationIdException(correlationId);
-            return Session.GetSubscriptionStatus(correlationId);
+            foreach (var subscription in subscriptionList.Where(subscription => !IsKnownCorrelationId(subscription.CorrelationID)))
+            {
+                throw new UnknownCorrelationIdException(subscription.CorrelationID);
+            }
+            Session.Resubscribe(subscriptionList);
+        }
+
+        public void SetEventHandler(Event.EventType eventType, SimpleEventHandler eventHandler)
+        {
+            Session.SetEventHandler((eventObject, session) => eventHandler(eventObject), eventType);
+        }
+
+        public override void Start()
+        {
+            base.Start();
+            if (!Session.OpenService("//blp/mktdata"))
+            {
+                throw new OpenServiceException(DataService.MarketData);
+            }
+        }
+
+        public void Subscribe(IList<Subscription> subscriptionList)
+        {
+            foreach (var subscription in subscriptionList)
+            {
+                KnownCorrelationIds.Add(subscription.CorrelationID);
+            }
+            Session.Subscribe(subscriptionList);
+        }
+
+        public void Unsubscribe(IList<Subscription> subscriptionList)
+        {
+            Session.Unsubscribe(subscriptionList);
         }
 
         private bool IsKnownCorrelationId(CorrelationID correlationId)
         {
             return KnownCorrelationIds.Contains(correlationId);
-        }
-
-        protected HashSet<CorrelationID> KnownCorrelationIds { get; private set; }
-
-        public IEnumerable<Subscription> GetSubscriptions()
-        {
-            return Session.GetSubscriptions();
         }
     }
 }

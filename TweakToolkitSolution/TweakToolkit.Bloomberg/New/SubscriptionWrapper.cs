@@ -4,28 +4,13 @@ using Bloomberglp.Blpapi;
 
 namespace TweakToolkit.Bloomberg.New
 {
-    internal class SubscriptionAdapter
+    public class SubscriptionWrapper
     {
         private readonly SubscriptionSession _sessionBase;
 
-        public SubscriptionAdapter()
+        public SubscriptionWrapper()
         {
             _sessionBase = new SubscriptionSession();
-        }
-
-        public void Cancel(CorrelationID correlationId)
-        {
-            _sessionBase.Cancel(correlationId);
-        }
-
-        public void Cancel(IList<CorrelationID> correlators)
-        {
-            _sessionBase.Cancel(correlators);
-        }
-
-        public Identity CreateIdentity()
-        {
-            return _sessionBase.CreateIdentity();
         }
 
         public CorrelationID GenerateToken()
@@ -63,7 +48,7 @@ namespace TweakToolkit.Bloomberg.New
             catch (Exception)
             {
                 return false;
-            }           
+            }
         }
 
         public void Stop()

@@ -34,11 +34,11 @@
     <Reference Include="Bloomberglp.Blpapi">
       <HintPath>..\lib\Bloomberglp.Blpapi.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Practices.Unity">
-      <HintPath>..\packages\Unity.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.dll</HintPath>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\lib\Microsoft.Practices.Unity.dll</HintPath>
     </Reference>
-    <Reference Include="MyToolkit">
-      <HintPath>..\packages\MyToolkit.1.6.0\lib\net40\MyToolkit.dll</HintPath>
+    <Reference Include="MyToolkit, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\lib\MyToolkit.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -48,7 +48,12 @@
     <Compile Include="BidAskRequestHandler.cs" />
     <Compile Include="BidAskResponse.cs" />
     <Compile Include="BloombergReferenceDataHandler.cs" />
-    <Compile Include="New\SubscriptionAdapter.cs" />
+    <Compile Include="New\ASessionEventHandler.cs" />
+    <Compile Include="New\SimpleEventHandler.cs" />
+    <Compile Include="New\SubscriptionDataEventArgs.cs" />
+    <Compile Include="New\SubscriptionStatusEventArgs.cs" />
+    <Compile Include="New\SubscriptionSessionEventHandler.cs" />
+    <Compile Include="New\SubscriptionWrapper.cs" />
     <Compile Include="New\SubscriptionSession.cs" />
     <Compile Include="New\SessionBase.cs" />
     <Compile Include="New\UnknownCorrelationIdException.cs" />
@@ -99,6 +104,9 @@
       <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="New\Subscription\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
