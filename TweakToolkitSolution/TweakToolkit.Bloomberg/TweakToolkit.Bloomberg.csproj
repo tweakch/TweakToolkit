@@ -48,11 +48,12 @@
     <Compile Include="BidAskRequestHandler.cs" />
     <Compile Include="BidAskResponse.cs" />
     <Compile Include="BloombergReferenceDataHandler.cs" />
-    <Compile Include="New\ASessionEventHandler.cs" />
+    <Compile Include="New\ASessionBehaviour.cs" />
+    <Compile Include="New\ServiceOpenedEventArgs.cs" />
     <Compile Include="New\SimpleEventHandler.cs" />
     <Compile Include="New\SubscriptionDataEventArgs.cs" />
     <Compile Include="New\SubscriptionStatusEventArgs.cs" />
-    <Compile Include="New\SubscriptionSessionEventHandler.cs" />
+    <Compile Include="New\SubscriptionSessionBehaviour.cs" />
     <Compile Include="New\SubscriptionWrapper.cs" />
     <Compile Include="New\SubscriptionSession.cs" />
     <Compile Include="New\SessionBase.cs" />

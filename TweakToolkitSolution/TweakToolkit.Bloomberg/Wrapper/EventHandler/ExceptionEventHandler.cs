@@ -7,7 +7,7 @@ namespace TweakToolkit.Bloomberg.Wrapper.EventHandler
     {
         public override void ProcessEvent(Event eventObj, BloombergSessionWrapper session)
         {
-            string messages = "--> inside the exception handler i received this: ";
+            string messages = "--> inside the exception Handler i received this: ";
 
             foreach (Message message in eventObj)
             {

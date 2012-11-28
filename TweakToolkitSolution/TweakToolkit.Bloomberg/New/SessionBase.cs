@@ -1,22 +1,30 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Bloomberglp.Blpapi;
-using TweakToolkit.Bloomberg.Exceptions;
 
 namespace TweakToolkit.Bloomberg.New
 {
     public abstract class SessionBase
     {
+        public AEventBehaviour Behaviour { get; set; }
         protected Session Session;
+        protected Service Service;
         private const string ServerHost = "localhost";
         private const int ServerPort = 8194;
         private readonly SessionOptions sessionOptions = new SessionOptions();
 
-        protected SessionBase(ASessionEventHandler handler)
+        protected SessionBase(AEventBehaviour behaviour)
         {
+            Behaviour = behaviour;
+            Behaviour.ServiceOpened += BehaviourOnServiceOpened;
             sessionOptions.ServerHost = ServerHost;
             sessionOptions.ServerPort = ServerPort;
-            Session = new Session(sessionOptions);
-            handler.RegisterSession(this);
+            Session = new Session(sessionOptions, ProcessEvent);
+        }
+
+        private void BehaviourOnServiceOpened(object sender, ServiceOpenedEventArgs serviceOpenedEventArgs)
+        {
+            Service = serviceOpenedEventArgs.Service;
         }
 
         public virtual void Cancel(IList<CorrelationID> correlators)
@@ -29,27 +37,19 @@ namespace TweakToolkit.Bloomberg.New
             Session.Cancel(correlationId);
         }
 
-        public virtual Identity CreateIdentity()
-        {
-            return Session.CreateIdentity();
-        }
-
         public virtual CorrelationID GenerateToken()
         {
             return Session.GenerateToken();
         }
 
-        public void SetEventHandler(SimpleEventHandler eventHandler, Event.EventType eventType)
+        public void SetEventHandler(Event.EventType type, Bloomberglp.Blpapi.EventHandler handler)
         {
-            Session.SetEventHandler((eventObject, session) => eventHandler(eventObject), eventType);
+            Session.SetEventHandler(handler, type);
         }
 
         public virtual void Start()
         {
-            if (!Session.Start())
-            {
-                throw new SessionNotStartedException();
-            }
+            Session.StartAsync();
         }
 
         public virtual void Stop()
@@ -60,6 +60,11 @@ namespace TweakToolkit.Bloomberg.New
         protected virtual bool OpenService(string blpMktdata)
         {
             return Session.OpenService(blpMktdata);
+        }
+
+        private void ProcessEvent(Event eventobject, Session session)
+        {
+            Behaviour.Execute(eventobject, session);
         }
     }
 }

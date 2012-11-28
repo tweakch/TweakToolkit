@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Bloomberglp.Blpapi;
 using TweakToolkit.Bloomberg.Exceptions;
@@ -8,12 +9,12 @@ namespace TweakToolkit.Bloomberg.New
     public class SubscriptionSession : SessionBase
     {
         public SubscriptionSession()
-            : base(new SubscriptionSessionEventHandler())
+            : base(new SubscriptionBehaviourBase())
         {
             KnownCorrelationIds = new HashSet<CorrelationID>();
         }
-
-        protected HashSet<CorrelationID> KnownCorrelationIds { get; private set; }
+        
+        public HashSet<CorrelationID> KnownCorrelationIds { get; private set; }
 
         public IEnumerable<Subscription> GetSubscriptions()
         {
@@ -22,7 +23,8 @@ namespace TweakToolkit.Bloomberg.New
 
         public Session.SubscriptionStatus GetSubscriptionStatus(CorrelationID correlationId)
         {
-            if (!IsKnownCorrelationId(correlationId)) throw new UnknownCorrelationIdException(correlationId);
+            if (!IsKnownCorrelationId(correlationId)) 
+                throw new UnknownCorrelationIdException(correlationId);
             return Session.GetSubscriptionStatus(correlationId);
         }
 
@@ -43,21 +45,7 @@ namespace TweakToolkit.Bloomberg.New
             }
             Session.Resubscribe(subscriptionList);
         }
-
-        public void SetEventHandler(Event.EventType eventType, SimpleEventHandler eventHandler)
-        {
-            Session.SetEventHandler((eventObject, session) => eventHandler(eventObject), eventType);
-        }
-
-        public override void Start()
-        {
-            base.Start();
-            if (!Session.OpenService("//blp/mktdata"))
-            {
-                throw new OpenServiceException(DataService.MarketData);
-            }
-        }
-
+        
         public void Subscribe(IList<Subscription> subscriptionList)
         {
             foreach (var subscription in subscriptionList)

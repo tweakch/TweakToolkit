@@ -68,7 +68,7 @@ namespace TweakToolkit.Bloomberg.Wrapper
             }
             catch (Exception ex)
             {
-                // take ex and pass it to the event handler...
+                // take ex and pass it to the event Handler...
                 //strategiesContainer.Resolve<ISessionEventHandler>(exceptionProcessorId).ProcessEvent(eventObj, session);
                 Console.WriteLine(ex);
             }
