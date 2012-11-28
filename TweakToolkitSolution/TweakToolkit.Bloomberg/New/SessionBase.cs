@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Bloomberglp.Blpapi;
+using EventHandler = Bloomberglp.Blpapi.EventHandler;
 
 namespace TweakToolkit.Bloomberg.New
 {
@@ -19,7 +20,7 @@ namespace TweakToolkit.Bloomberg.New
             Behaviour.ServiceOpened += BehaviourOnServiceOpened;
             sessionOptions.ServerHost = ServerHost;
             sessionOptions.ServerPort = ServerPort;
-            Session = new Session(sessionOptions, ProcessEvent);
+            Session = new Session(sessionOptions, Behaviour.Execute);
         }
 
         private void BehaviourOnServiceOpened(object sender, ServiceOpenedEventArgs serviceOpenedEventArgs)
@@ -57,14 +58,9 @@ namespace TweakToolkit.Bloomberg.New
             Session.Stop();
         }
 
-        protected virtual bool OpenService(string blpMktdata)
+        protected virtual bool OpenService(string service)
         {
-            return Session.OpenService(blpMktdata);
-        }
-
-        private void ProcessEvent(Event eventobject, Session session)
-        {
-            Behaviour.Execute(eventobject, session);
+            return Session.OpenService(service);
         }
     }
 }

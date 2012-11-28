@@ -82,5 +82,65 @@ namespace TweakToolkit.Bloomberg.Properties {
                 this["Bloomberg_Field_Time"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("reason")]
+        public string Bloomberg_Name_Reason {
+            get {
+                return ((string)(this["Bloomberg_Name_Reason"]));
+            }
+            set {
+                this["Bloomberg_Name_Reason"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("exceptions")]
+        public string Bloomberg_Name_Exceptions {
+            get {
+                return ((string)(this["Bloomberg_Name_Exceptions"]));
+            }
+            set {
+                this["Bloomberg_Name_Exceptions"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("category")]
+        public string Bloomberg_Name_Category {
+            get {
+                return ((string)(this["Bloomberg_Name_Category"]));
+            }
+            set {
+                this["Bloomberg_Name_Category"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("description")]
+        public string Bloomberg_Name_Description {
+            get {
+                return ((string)(this["Bloomberg_Name_Description"]));
+            }
+            set {
+                this["Bloomberg_Name_Description"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("fieldId")]
+        public string Bloomberg_Name_FieldId {
+            get {
+                return ((string)(this["Bloomberg_Name_FieldId"]));
+            }
+            set {
+                this["Bloomberg_Name_FieldId"] = value;
+            }
+        }
     }
 }
