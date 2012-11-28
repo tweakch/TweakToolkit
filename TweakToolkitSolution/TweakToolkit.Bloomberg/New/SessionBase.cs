@@ -5,17 +5,23 @@ using EventHandler = Bloomberglp.Blpapi.EventHandler;
 
 namespace TweakToolkit.Bloomberg.New
 {
+    public enum SessionState
+    {
+        Connecting, Connected, Disconnecting, Disconnected
+    }
+
     public abstract class SessionBase
     {
-        public AEventBehaviour Behaviour { get; set; }
+        public ASessionBehaviourBase Behaviour { get; set; }
         protected Session Session;
         protected Service Service;
         private const string ServerHost = "localhost";
         private const int ServerPort = 8194;
         private readonly SessionOptions sessionOptions = new SessionOptions();
 
-        protected SessionBase(AEventBehaviour behaviour)
+        protected SessionBase(ASessionBehaviourBase behaviour)
         {
+            State = SessionState.Disconnected;
             Behaviour = behaviour;
             Behaviour.ServiceOpened += BehaviourOnServiceOpened;
             sessionOptions.ServerHost = ServerHost;
@@ -26,6 +32,7 @@ namespace TweakToolkit.Bloomberg.New
         private void BehaviourOnServiceOpened(object sender, ServiceOpenedEventArgs serviceOpenedEventArgs)
         {
             Service = serviceOpenedEventArgs.Service;
+            if (Service != null) { State = SessionState.Connected; }
         }
 
         public virtual void Cancel(IList<CorrelationID> correlators)
@@ -50,17 +57,22 @@ namespace TweakToolkit.Bloomberg.New
 
         public virtual void Start()
         {
+            State = SessionState.Connecting;
             Session.StartAsync();
         }
 
         public virtual void Stop()
         {
+            State = SessionState.Disconnecting;
             Session.Stop();
+            State = SessionState.Disconnected;
         }
 
         protected virtual bool OpenService(string service)
         {
             return Session.OpenService(service);
         }
+
+        public SessionState State { get; set; }
     }
 }

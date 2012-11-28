@@ -32,5 +32,20 @@
     <Setting Name="Bloomberg_Name_FieldId" Type="System.String" Scope="User">
       <Value Profile="(Default)">fieldId</Value>
     </Setting>
+    <Setting Name="Bloomberg_Name_ServiceOpened" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ServiceOpened</Value>
+    </Setting>
+    <Setting Name="Bloomberg_Name_SessionStarted" Type="System.String" Scope="User">
+      <Value Profile="(Default)">SessionStarted</Value>
+    </Setting>
+    <Setting Name="Bloomberg_Name_Source" Type="System.String" Scope="User">
+      <Value Profile="(Default)">source</Value>
+    </Setting>
+    <Setting Name="Bloomberg_Name_ErrorCode" Type="System.String" Scope="User">
+      <Value Profile="(Default)">errorCode</Value>
+    </Setting>
+    <Setting Name="Bloomberg_Name_Subcategory" Type="System.String" Scope="User">
+      <Value Profile="(Default)">subcategory</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

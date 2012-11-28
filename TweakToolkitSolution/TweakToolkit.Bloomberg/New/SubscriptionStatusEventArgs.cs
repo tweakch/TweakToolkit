@@ -10,7 +10,7 @@ namespace TweakToolkit.Bloomberg.New
         {
             Id = msg.CorrelationID;
 
-            Topic = (string)msg.CorrelationID.Object;
+            Topic = msg.TopicName;
 
             if (msg.HasElement(Settings.Default.Bloomberg_Name_Reason))
             {

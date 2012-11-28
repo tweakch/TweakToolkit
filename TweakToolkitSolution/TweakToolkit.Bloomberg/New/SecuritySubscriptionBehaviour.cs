@@ -3,7 +3,7 @@ using Bloomberglp.Blpapi;
 
 namespace TweakToolkit.Bloomberg.New
 {
-    public class SecuritySubscriptionBehaviour : SubscriptionBehaviourBase
+    public class SecuritySubscriptionBehaviour : SubscriptionBehaviour
     {
         public override void HandleSubscriptionDataEvent(Event eventObj, Session session)
         {

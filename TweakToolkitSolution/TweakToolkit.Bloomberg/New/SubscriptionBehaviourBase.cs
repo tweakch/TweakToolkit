@@ -2,19 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using Bloomberglp.Blpapi;
+using TweakToolkit.Bloomberg.Properties;
 
 namespace TweakToolkit.Bloomberg.New
 {
-    public class SubscriptionBehaviourBase : AEventBehaviour
+    public class SubscriptionBehaviour : ASessionBehaviourBase
     {
         private const string ServiceUri = "//blp/mktdata";
         private const int StartTokenValue = 42;
 
-        private static readonly Name SERVICE_OPENED = new Name("ServiceOpened");
-        private static readonly Name SESSION_STARTED = new Name("SessionStarted");
         private CorrelationID startToken = new CorrelationID(StartTokenValue);
 
-        public SubscriptionBehaviourBase()
+        public SubscriptionBehaviour()
         {
             Add(Event.EventType.SESSION_STATUS, HandleSessionStatusEvent);
             Add(Event.EventType.SERVICE_STATUS, HandleServiceStatusEvent);
@@ -28,10 +27,12 @@ namespace TweakToolkit.Bloomberg.New
 
         public virtual event EventHandler<SubscriptionStatusEventArgs> SubscriptionStatusReceived;
 
+        
         public virtual void HandleSubscriptionDataEvent(Event eventObj, Session session)
         {
             foreach (var msg in eventObj)
             {
+                var str = msg.ToString();
                 OnSubscriptionDataReceived(new SubscriptionDataEventArgs(msg));
             }
         }
@@ -40,6 +41,7 @@ namespace TweakToolkit.Bloomberg.New
         {
             foreach (var msg in eventObj)
             {
+                var str = msg.ToString();
                 OnSubscriptionStatusReceived(new SubscriptionStatusEventArgs(msg));
             }
         }
@@ -64,7 +66,7 @@ namespace TweakToolkit.Bloomberg.New
 
         private static bool IsSessionStartedEvent(IEnumerable<Message> arg)
         {
-            return arg.Any(message => message.MessageType.Equals(SESSION_STARTED));
+            return arg.Any(message => message.MessageType.Equals(Settings.Default.Bloomberg_Name_SessionStarted));
         }
 
         private void HandleServiceStatusEvent(Event eventobject, Session session)
@@ -92,7 +94,7 @@ namespace TweakToolkit.Bloomberg.New
         {
             return arg.Any(msg =>
                            msg.CorrelationID.Equals(startToken) &&
-                           msg.MessageType.Equals(SERVICE_OPENED));
+                           msg.MessageType.Equals(Settings.Default.Bloomberg_Name_ServiceOpened));
         }
     }
 }

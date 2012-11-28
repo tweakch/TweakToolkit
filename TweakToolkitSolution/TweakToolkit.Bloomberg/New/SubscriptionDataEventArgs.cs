@@ -9,18 +9,26 @@ namespace TweakToolkit.Bloomberg.New
         public SubscriptionDataEventArgs(Message msg)
         {
             Id = msg.CorrelationID;
-            Topic = (string)Id.Object;
-            Fields = new Dictionary<Name, object>();
+            Topic = msg.TopicName;
+            Fields = new Dictionary<string, object>();
             foreach (var field in msg.Elements)
             {
-                Fields.Add(field.Name, field.GetValue());
+                var typeDesc = field.TypeDefinition;
+                if (field.IsNull)
+                {
+                    Fields.Add(field.Name.ToString(), null);
+                }
+                else
+                {
+                    Fields.Add(field.Name.ToString(), field.GetValue());
+                }
             }
         }
 
-        protected Dictionary<Name, object> Fields { get; private set; }
+        public Dictionary<string, object> Fields { get; private set; }
 
-        protected CorrelationID Id { get; private set; }
+        public CorrelationID Id { get; private set; }
 
-        protected string Topic { get; private set; }
+        public string Topic { get; private set; }
     }
 }

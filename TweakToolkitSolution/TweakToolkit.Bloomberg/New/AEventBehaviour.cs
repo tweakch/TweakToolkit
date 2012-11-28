@@ -6,7 +6,7 @@ using EventHandler = Bloomberglp.Blpapi.EventHandler;
 
 namespace TweakToolkit.Bloomberg.New
 {
-    public abstract class AEventBehaviour : Dictionary<Event.EventType, EventHandler>
+    public abstract class ASessionBehaviourBase : Dictionary<Event.EventType, EventHandler>
     {
         public abstract event EventHandler<ServiceOpenedEventArgs> ServiceOpened;
 
@@ -15,11 +15,19 @@ namespace TweakToolkit.Bloomberg.New
             this[eventObject.Type](eventObject,session);
         }
 
-        public void Execute(Event eventobject, Session session)
+        public void Execute(Event eventObject, Session session)
         {
-            if (ContainsKey(eventobject.Type))
+            if (ContainsKey(eventObject.Type))
             {
-                this[eventobject.Type](eventobject, session);
+                this[eventObject.Type](eventObject, session);
+            }
+            else
+            {
+                foreach (var item in eventObject)
+	            {
+                    var msg = item.ToString();
+                    Console.WriteLine(msg);
+	            }
             }
         }
     }

@@ -142,5 +142,65 @@ namespace TweakToolkit.Bloomberg.Properties {
                 this["Bloomberg_Name_FieldId"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("ServiceOpened")]
+        public string Bloomberg_Name_ServiceOpened {
+            get {
+                return ((string)(this["Bloomberg_Name_ServiceOpened"]));
+            }
+            set {
+                this["Bloomberg_Name_ServiceOpened"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("SessionStarted")]
+        public string Bloomberg_Name_SessionStarted {
+            get {
+                return ((string)(this["Bloomberg_Name_SessionStarted"]));
+            }
+            set {
+                this["Bloomberg_Name_SessionStarted"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("source")]
+        public string Bloomberg_Name_Source {
+            get {
+                return ((string)(this["Bloomberg_Name_Source"]));
+            }
+            set {
+                this["Bloomberg_Name_Source"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("errorCode")]
+        public string Bloomberg_Name_ErrorCode {
+            get {
+                return ((string)(this["Bloomberg_Name_ErrorCode"]));
+            }
+            set {
+                this["Bloomberg_Name_ErrorCode"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("subcategory")]
+        public string Bloomberg_Name_Subcategory {
+            get {
+                return ((string)(this["Bloomberg_Name_Subcategory"]));
+            }
+            set {
+                this["Bloomberg_Name_Subcategory"] = value;
+            }
+        }
     }
 }
