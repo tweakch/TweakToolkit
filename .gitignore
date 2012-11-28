@@ -56,6 +56,9 @@ ipch/
 # ReSharper is a .NET coding add-in
 _ReSharper*
 
+#NuGet Packages
+packages/
+
 # NCrunch
 *.ncrunch*
 .*crunch*.local.xml
@@ -78,9 +81,6 @@ publish
 
 # Publish Web Output
 *.Publish.xml
-
-# NuGet Packages Directory
-packages
 
 # Windows Azure Build Output
 csx
